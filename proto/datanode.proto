@@ -1,0 +1,15 @@
+syntax = "proto3";
+package gridfs;
+import "common.proto";
+
+
+// Cliente <-> DataNode
+service DataNodeIO {
+rpc WriteBlock(stream BlockChunk) returns (WriteAck);
+rpc ReadBlock(BlockId) returns (stream BlockChunk);
+rpc FsOp(FsOpRequest) returns (FsOpResponse);
+}
+
+
+// DataNode <-> DataNode
+service ReplicationService { rpc PushBlock(stream BlockChunk) returns (WriteAck); }

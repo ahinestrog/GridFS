@@ -1,0 +1,12 @@
+syntax = "proto3";
+package gridfs;
+
+
+message ReplicateCmd { string block_id = 1; string target_dn = 2; }
+message DeleteBlockCmd { string block_id = 1; }
+message AdminOrderRequest { string node_id = 1; oneof order { ReplicateCmd replicate = 2; DeleteBlockCmd delete_block = 3; } }
+message AdminOrderResponse { bool ok = 1; string message = 2; }
+
+
+// Servicio que expone el DataNode para recibir órdenes del Master
+service DataNodeAdmin { rpc AdminOrder(AdminOrderRequest) returns (AdminOrderResponse); }

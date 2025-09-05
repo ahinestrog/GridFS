@@ -1,0 +1,25 @@
+syntax = "proto3";
+package gridfs;
+
+
+option java_multiple_files = true;
+option java_package = "com.gridfs.proto";
+
+
+// ===== Tipos comunes =====
+message BlockAssignment { string block_id = 1; string primary_dn = 2; repeated string replica_dns = 3; }
+message BlockLocation { string block_id = 1; string primary_dn = 2; repeated string replica_dns = 3; }
+message BlockChunk { string block_id = 1; int64 seq = 2; bytes data = 3; bool eof = 4; }
+message WriteAck { string block_id = 1; int64 bytes_received = 2; string checksum = 3; bool ok = 4; string message = 5; }
+message BlockId { string block_id = 1; }
+
+
+// Heartbeats (key=value)
+message HeartbeatKv { string node_id = 1; string key = 2; string value = 3; int64 ts_unix_ms = 4; }
+message HeartbeatAck { bool ok = 1; string message = 2; }
+
+
+// FS ops en el DataNode
+message FsOpRequest { enum Op { LS = 0; RM = 1; MKDIR = 2; RMDIR = 3; } Op op = 1; string path = 2; }
+message FsEntry { string name = 1; bool is_dir = 2; int64 size = 3; }
+message FsOpResponse { bool ok = 1; string message = 2; repeated FsEntry entries = 3; }
