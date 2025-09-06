@@ -1,0 +1,35 @@
+# === Java / Maven ===
+/DNs-Java/target/
+
+# === C++ / CMake ===
+/master-cpp/build/
+
+# === Python ===
+/client-py/__pycache__/
+/*.pyc
+
+# === Binaries / logs / dbs temporales ===
+*.class
+*.o
+*.a
+*.jar
+*.log
+*.db
+
+# === Artefactos locales del proyecto (si no los versionas) ===
+/.client/
+/.gridFS/
+/gridFS/
+
+# venvs/entornos
+/.venv/
+/env/
+/.ENV
+/.env
+
+# Stubs generados de gRPC
+client-py/*_pb2.py
+client-py/*_pb2_grpc.py
+DNs-Java/src/main/java/com/gridfs/proto/*.java
+master-cpp/*pb.cc
+master-cpp/*pb.h

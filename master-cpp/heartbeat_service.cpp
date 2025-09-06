@@ -4,16 +4,37 @@
 #include "heartbeat_store.h"
 
 
-using grpc::ServerContext; using grpc::Status; using grpc::ServerReaderWriter;
-using gridfs::MasterHeartbeat; using gridfs::HeartbeatKv; using gridfs::HeartbeatAck;
-
+using grpc::ServerContext;
+using grpc::Status;
+using grpc::ServerReaderWriter;
+using gridfs::MasterHeartbeat;
+using gridfs::HeartbeatKv;
+using gridfs::HeartbeatAck;
 
 class HB final : public MasterHeartbeat::Service {
-public: explicit HB(HeartbeatStore* st): st_(st) {}
-Status StreamStatus(ServerContext*, ServerReaderWriter<HeartbeatAck, HeartbeatKv>* stream) override {
-HeartbeatKv kv; while(stream->Read(&kv)){ try{ st_->Upsert(kv.node_id(),kv.key(),kv.value(),kv.ts_unix_ms()); HeartbeatAck a; a.set_ok(true); a.set_message("ok"); stream->Write(a);} catch(const std::exception& e){ HeartbeatAck a; a.set_ok(false); a.set_message(e.what()); stream->Write(a);} }
-return Status::OK; }
-private: HeartbeatStore* st_; };
+public: 
+    explicit HB(HeartbeatStore* st): st_(st) {}
 
+    Status StreamStatus(ServerContext*, 
+                        ServerReaderWriter<HeartbeatAck, HeartbeatKv>* stream) override {
+        HeartbeatKv kv; 
+        while(stream->Read(&kv)){
+            try{
+                st_->Upsert(kv.node_id(), kv.key(), kv.value(), kv.ts_unix_ms());
+                HeartbeatAck a; a.set_ok(true); a.set_message("ok");
+                
+                stream->Write(a);
+            } catch(const std::exception& e){
+                HeartbeatAck a; a.set_ok(false); a.set_message(e.what());
+                stream->Write(a);
+            }
+        }
+        return Status::OK;
+    }
+private:
+    HeartbeatStore* st_;
+};
 
-std::unique_ptr<gridfs::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore* s){ return std::make_unique<HB>(s); }
+std::unique_ptr<gridfs::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore* s){
+    return std::make_unique<HB>(s);
+}
