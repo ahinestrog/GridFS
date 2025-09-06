@@ -1,0 +1,24 @@
+syntax = "proto3";
+package gridfs;
+
+option java_multiple_files = true;
+option java_package = "com.gridfs.proto";
+
+// Órdenes del Master hacia un DataNode
+message ReplicateCmd   { string block_id = 1; string target_dn = 2; }
+message DeleteBlockCmd { string block_id = 1; }
+
+message AdminOrderRequest {
+  string node_id = 1;
+  oneof order {
+    ReplicateCmd   replicate    = 2;
+    DeleteBlockCmd delete_block = 3;
+  }
+}
+
+message AdminOrderResponse { bool ok = 1; string message = 2; }
+
+// Servicio expuesto por el DataNode para recibir órdenes
+service DataNodeAdmin {
+  rpc AdminOrder (AdminOrderRequest) returns (AdminOrderResponse);
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+package gridfs;
+
+option java_multiple_files = true;
+option java_package = "com.gridfs.proto";
+
+import "common.proto";
+
+// Cliente <-> DataNode
+service DataNodeIO {
+  // Cliente sube un bloque (stream) y recibe un ACK final "sincrónico"
+  rpc WriteBlock (stream BlockChunk) returns (WriteAck);
+  // Cliente descarga un bloque como stream
+  rpc ReadBlock  (BlockId) returns (stream BlockChunk);
+  // Comandos básicos de FS locales del DN
+  rpc FsOp       (FsOpRequest) returns (FsOpResponse);
+}
+
+// DataNode <-> DataNode (replicación en cadena)
+service ReplicationService {
+  rpc PushBlock (stream BlockChunk) returns (WriteAck);
+}

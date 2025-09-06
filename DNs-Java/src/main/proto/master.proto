@@ -1,0 +1,23 @@
+syntax = "proto3";
+package gridfs;
+
+option java_multiple_files = true;
+option java_package = "com.gridfs.proto";
+
+import "common.proto";
+
+// Cliente <-> Master (unary)
+message PutPlanRequest  { string filename = 1; int64 filesize = 2; int32 block_size = 3; int32 replication = 4; }
+message PutPlanResponse { repeated BlockAssignment assignments = 1; }
+message GetPlanRequest  { string filename = 1; }
+message GetPlanResponse { repeated BlockLocation  locations   = 1; }
+
+service MasterService {
+  rpc PutPlan (PutPlanRequest) returns (PutPlanResponse);
+  rpc GetPlan (GetPlanRequest) returns (GetPlanResponse);
+}
+
+// Master <-> DataNode (bidi) para heartbeats/estado
+service MasterHeartbeat {
+  rpc StreamStatus (stream HeartbeatKv) returns (stream HeartbeatAck);
+}

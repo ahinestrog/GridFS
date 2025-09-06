@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdfs_proto_lib.a CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o
+/usr/bin/ranlib libdfs_proto_lib.a

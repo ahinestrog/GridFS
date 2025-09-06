@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o.d"
+  "CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o"
+  "CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o.d"
+  "admin.grpc.pb.cc"
+  "admin.grpc.pb.h"
+  "admin.pb.cc"
+  "admin.pb.h"
+  "common.grpc.pb.cc"
+  "common.grpc.pb.h"
+  "common.pb.cc"
+  "common.pb.h"
+  "datanode.grpc.pb.cc"
+  "datanode.grpc.pb.h"
+  "datanode.pb.cc"
+  "datanode.pb.h"
+  "libdfs_proto_lib.a"
+  "libdfs_proto_lib.pdb"
+  "master.grpc.pb.cc"
+  "master.grpc.pb.h"
+  "master.pb.cc"
+  "master.pb.h"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/dfs_proto_lib.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

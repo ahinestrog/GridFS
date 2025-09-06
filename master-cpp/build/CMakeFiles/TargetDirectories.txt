@@ -1,0 +1,4 @@
+/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles/dfs_proto_lib.dir
+/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles/master.dir
+/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles/edit_cache.dir
+/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,0 @@
-package com.gridfs.datanode;
-import com.gridfs.proto.ReplicationServiceGrpc; import com.gridfs.proto.Common.BlockChunk; import com.gridfs.proto.Common.WriteAck; import io.grpc.stub.StreamObserver;
-public class ReplicationService extends ReplicationServiceGrpc.ReplicationServiceImplBase { private final DataNodeIOService io; public ReplicationService(String dir){ this.io=new DataNodeIOService(dir);} @Override public StreamObserver<BlockChunk> pushBlock(StreamObserver<WriteAck> r){ return io.writeBlock(r);} }
