@@ -1,0 +1,77 @@
+syntax = "proto3";
+package gridfs;
+
+option java_multiple_files = true;
+
+message Path {
+  string path = 1;  // e.g. "/user/alejo/file.txt"
+}
+
+message Empty {}
+
+message FileInfo {
+  string name = 1;
+  bool is_dir = 2;
+  uint64 size = 3;        // tamaño lógico en bytes (si es archivo)
+  uint32 blocks = 4;      // número de bloques (si es archivo)
+  uint32 replication = 5; // f de replicación
+}
+
+message LsRequest { string path = 1; }
+message LsResponse { repeated FileInfo entries = 1; }
+
+message MkdirRequest { string path = 1; }
+message MkdirResponse { bool ok = 1; string msg = 2; }
+
+message RmRequest { string path = 1; }
+message RmResponse { bool ok = 1; string msg = 2; }
+
+message RmdirRequest { string path = 1; bool recursive = 2; }
+message RmdirResponse { bool ok = 1; string msg = 2; }
+
+message PlanWriteRequest {
+  string path = 1;            // destino lógico
+  uint64 size = 2;            // tamaño total del archivo
+  uint32 replication = 3;     // f de replicación (p.ej. 3)
+}
+
+message DataNodeTarget {
+  string id = 1;            // "dn-1"
+  string host = 2;          // "127.0.0.1"
+  uint32 port = 3;          // puerto IO (gRPC)
+}
+
+message BlockPlan {
+  uint64 block_id = 1;
+  repeated DataNodeTarget pipeline = 2; // orden de tubería (cliente->DN1->DN2->DN3)
+}
+
+message PlanWriteResponse {
+  uint32 chunk_size = 1;    // bytes (ej. 65536)
+  repeated BlockPlan blocks = 2;
+}
+
+message PlanReadRequest {
+  string path = 1;
+}
+
+message BlockLocation {
+  uint64 block_id = 1;
+  uint32 length = 2;                 // bytes reales del bloque (último bloque puede ir "corto")
+  repeated DataNodeTarget replicas = 3; // preferencia ya en orden
+}
+
+message PlanReadResponse {
+  uint32 chunk_size = 1;
+  repeated BlockLocation blocks = 2;
+}
+
+service Master {
+  rpc Ls(LsRequest) returns (LsResponse);
+  rpc Mkdir(MkdirRequest) returns (MkdirResponse);
+  rpc Rm(RmRequest) returns (RmResponse);
+  rpc Rmdir(RmdirRequest) returns (RmdirResponse);
+
+  rpc PlanWrite(PlanWriteRequest) returns (PlanWriteResponse);
+  rpc PlanRead(PlanReadRequest) returns (PlanReadResponse);
+}

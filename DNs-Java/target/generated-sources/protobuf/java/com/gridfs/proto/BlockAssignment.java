@@ -22,8 +22,7 @@ private static final long serialVersionUID = 0L;
   private BlockAssignment() {
     blockId_ = "";
     primaryDn_ = "";
-    replicaDns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    replicaDns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -33,6 +32,11 @@ private static final long serialVersionUID = 0L;
     return new BlockAssignment();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.gridfs.proto.Common.internal_static_gridfs_BlockAssignment_descriptor;
@@ -126,8 +130,7 @@ private static final long serialVersionUID = 0L;
 
   public static final int REPLICA_DNS_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList replicaDns_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  private com.google.protobuf.LazyStringList replicaDns_;
   /**
    * <code>repeated string replica_dns = 3;</code>
    * @return A list containing the replicaDns.
@@ -296,13 +299,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.BlockAssignment parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.BlockAssignment parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -384,8 +385,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       blockId_ = "";
       primaryDn_ = "";
-      replicaDns_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      replicaDns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -412,9 +413,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.gridfs.proto.BlockAssignment buildPartial() {
       com.gridfs.proto.BlockAssignment result = new com.gridfs.proto.BlockAssignment(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.gridfs.proto.BlockAssignment result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        replicaDns_ = replicaDns_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.replicaDns_ = replicaDns_;
     }
 
     private void buildPartial0(com.gridfs.proto.BlockAssignment result) {
@@ -424,10 +434,6 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.primaryDn_ = primaryDn_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        replicaDns_.makeImmutable();
-        result.replicaDns_ = replicaDns_;
       }
     }
 
@@ -488,7 +494,7 @@ private static final long serialVersionUID = 0L;
       if (!other.replicaDns_.isEmpty()) {
         if (replicaDns_.isEmpty()) {
           replicaDns_ = other.replicaDns_;
-          bitField0_ |= 0x00000004;
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureReplicaDnsIsMutable();
           replicaDns_.addAll(other.replicaDns_);
@@ -698,13 +704,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList replicaDns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
+    private com.google.protobuf.LazyStringList replicaDns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureReplicaDnsIsMutable() {
-      if (!replicaDns_.isModifiable()) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         replicaDns_ = new com.google.protobuf.LazyStringArrayList(replicaDns_);
-      }
-      bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000004;
+       }
     }
     /**
      * <code>repeated string replica_dns = 3;</code>
@@ -712,8 +717,7 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getReplicaDnsList() {
-      replicaDns_.makeImmutable();
-      return replicaDns_;
+      return replicaDns_.getUnmodifiableView();
     }
     /**
      * <code>repeated string replica_dns = 3;</code>
@@ -750,7 +754,6 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureReplicaDnsIsMutable();
       replicaDns_.set(index, value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -764,7 +767,6 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureReplicaDnsIsMutable();
       replicaDns_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -778,7 +780,6 @@ private static final long serialVersionUID = 0L;
       ensureReplicaDnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, replicaDns_);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -787,9 +788,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearReplicaDns() {
-      replicaDns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);;
+      replicaDns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -804,7 +804,6 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureReplicaDnsIsMutable();
       replicaDns_.add(value);
-      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

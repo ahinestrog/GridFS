@@ -1,0 +1,27 @@
+syntax = "proto3";
+package gridfs;
+
+option java_multiple_files = true;
+
+message Chunk {
+  uint64 block_id = 1;
+  bytes data = 2;
+  uint32 crc32 = 3; // opcional, 0 si no se usa
+}
+
+message UploadAck {
+  bool ok = 1;
+  string msg = 2;
+}
+
+message DownloadRequest {
+  uint64 block_id = 1;
+}
+
+service DataNodeIO {
+  // Cliente -> DN (stream de chunks) con ACK final (el DN internamente replica en pipeline)
+  rpc Upload(stream Chunk) returns (UploadAck);
+
+  // Cliente <- DN (stream de chunks)
+  rpc Download(DownloadRequest) returns (stream Chunk);
+}

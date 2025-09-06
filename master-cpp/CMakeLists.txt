@@ -11,8 +11,8 @@ list(APPEND CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake/protobuf")
 list(APPEND CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake/grpc")
 
 # ---- Dependencias: Protobuf + gRPC ------------------------------------------
-find_package(Protobuf REQUIRED)          # puede resolver en modo "módulo"
-find_package(gRPC CONFIG REQUIRED)       # gRPC::grpc++
+find_package(Protobuf REQUIRED)
+find_package(gRPC CONFIG REQUIRED)  # gRPC::grpc++
 
 message(STATUS "Protobuf libs: ${Protobuf_LIBRARIES}")
 message(STATUS "gRPC OK: gRPC::grpc++")
@@ -62,6 +62,9 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})
 include_directories(${PROTO_ROOT})  # por si hay imports entre .proto
 
+# *** PUNTO CLAVE: indicarle a protobuf_generate_cpp dónde buscar imports ***
+set(PROTOBUF_IMPORT_DIRS ${PROTO_ROOT})
+
 # Mensajes protobuf (genera *.pb.cc/*.pb.h para TODOS los .proto)
 include(${CMAKE_ROOT}/Modules/FindProtobuf.cmake)
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_FILES})
@@ -94,6 +97,7 @@ add_library(dfs_proto_lib
   ${PROTO_SRCS} ${PROTO_HDRS}
   ${GRPC_SRCS} ${GRPC_HDRS}
 )
+# Para que master herede include de generados al linkear
 target_include_directories(dfs_proto_lib PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 target_link_libraries(dfs_proto_lib PUBLIC gRPC::grpc++ ${PROTOBUF_TARGET})
 
@@ -108,6 +112,9 @@ if (MASTER_SOURCES STREQUAL "")
 endif()
 
 add_executable(master ${MASTER_SOURCES})
+# Asegura orden de generación (proto -> lib -> master)
+add_dependencies(master dfs_proto_lib)
+
 target_link_libraries(master
   PRIVATE
     dfs_proto_lib

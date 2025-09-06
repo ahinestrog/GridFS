@@ -49,5 +49,5 @@ public interface AdminOrderRequestOrBuilder extends
    */
   com.gridfs.proto.DeleteBlockCmdOrBuilder getDeleteBlockOrBuilder();
 
-  com.gridfs.proto.AdminOrderRequest.OrderCase getOrderCase();
+  public com.gridfs.proto.AdminOrderRequest.OrderCase getOrderCase();
 }

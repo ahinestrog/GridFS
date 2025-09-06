@@ -26,6 +26,11 @@ private static final long serialVersionUID = 0L;
     return new AdminOrderRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.gridfs.proto.Admin.internal_static_gridfs_AdminOrderRequest_descriptor;
@@ -40,7 +45,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private int orderCase_ = 0;
-  @SuppressWarnings("serial")
   private java.lang.Object order_;
   public enum OrderCase
       implements com.google.protobuf.Internal.EnumLite,
@@ -329,13 +333,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.AdminOrderRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.AdminOrderRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
