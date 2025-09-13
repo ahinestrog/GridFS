@@ -33,3 +33,24 @@ client-py/*_pb2_grpc.py
 DNs-Java/src/main/java/com/gridfs/proto/*.java
 master-cpp/*pb.cc
 master-cpp/*pb.h
+
+# === DataNode data y directorios temporales ===
+/DNs-Java/data/
+/tmp/gridfs/
+
+# === Archivos de respaldo y limpieza ===
+master-cpp/*.cpp.__clean__
+master-cpp/*.h.__clean__
+master-cpp/*.cpp.*
+master-cpp/*.h.*
+
+# === Stubs Python generados ===
+/generated/py-stubs/
+
+# === Archivos de bytecode en subdirectorios ===
+**/*.class
+**/*.pyc
+
+# === Archivos de configuración de IDEs ===
+.vscode/
+.idea/

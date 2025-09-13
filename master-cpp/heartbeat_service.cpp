@@ -7,9 +7,9 @@
 using grpc::ServerContext;
 using grpc::Status;
 using grpc::ServerReaderWriter;
-using gridfs::MasterHeartbeat;
-using gridfs::HeartbeatKv;
-using gridfs::HeartbeatAck;
+using com::gridfs::proto::MasterHeartbeat;
+using com::gridfs::proto::HeartbeatKv;
+using com::gridfs::proto::HeartbeatAck;
 
 class HB final : public MasterHeartbeat::Service {
 public: 
@@ -35,6 +35,6 @@ private:
     HeartbeatStore* st_;
 };
 
-std::unique_ptr<gridfs::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore* s){
+std::unique_ptr<com::gridfs::proto::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore* s){
     return std::make_unique<HB>(s);
 }

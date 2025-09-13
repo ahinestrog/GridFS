@@ -73,7 +73,14 @@
           <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
           <pluginId>grpc-java</pluginId>
           <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-          <protoSourceRoot>src/main/proto</protoSourceRoot>
+          <protoPath>${project.basedir}/../proto</protoPath>
+          <protoSourceRoot>${project.basedir}/../proto</protoSourceRoot>
+          <sourceRoot>${project.build.directory}/generated-sources/protobuf/java</sourceRoot>
+          <outputDirectory>${project.build.directory}/generated-sources/protobuf/java</outputDirectory>
+          <includes>
+            <include>**/*.proto</include>
+          </includes>
+          <addSources>true</addSources>
         </configuration>
         <executions>
           <execution>
@@ -83,6 +90,18 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+      <!-- Para ejecutar el DataNode con mvn exec:java -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+          <generatedSourcesDirectory>${project.build.directory}/generated-sources/protobuf/java</generatedSourcesDirectory>
+        </configuration>
       </plugin>
 
       <!-- Para ejecutar el DataNode con mvn exec:java -->

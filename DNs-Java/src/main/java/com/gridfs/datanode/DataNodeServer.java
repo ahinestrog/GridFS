@@ -4,8 +4,11 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
 import java.nio.file.Path;
+import java.util.Optional;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.net.ServerSocket;
+import java.io.IOException;
 
 /**
  * DataNodeServer
@@ -72,12 +75,27 @@ public class DataNodeServer {
     }
 
     public static void main(String[] args) throws Exception {
-        String nodeId     = getenv("DN_ID", "dn-1");
+        // Leemos MASTER_ADDR y dejamos que el resto se autocalcule si no está en env
         String masterAddr = getenv("MASTER_ADDR", "localhost:50051");
-        int ioPort        = Integer.parseInt(getenv("DN_IO_PORT", "50052"));
-        int adminPort     = Integer.parseInt(getenv("DN_ADMIN_PORT", "50053"));
-        int chunkSize     = Integer.parseInt(getenv("DN_CHUNK_SIZE", "65536"));
-        String dataDir    = getenv("DN_DATA_DIR", "./data");
+
+        String envIoPort    = System.getenv("DN_IO_PORT");
+        String envAdminPort = System.getenv("DN_ADMIN_PORT");
+        String envNodeId    = System.getenv("DN_ID");
+        String envDataDir   = System.getenv("DN_DATA_DIR");
+        String envChunkSize = System.getenv("DN_CHUNK_SIZE");
+
+        // 1) Seleccionar puertos: si no están definidos, buscar par libre empezando en 50052/50053
+        int[] pair = selectIoAdminPorts(envIoPort, envAdminPort);
+        int ioPort = pair[0];
+        int adminPort = pair[1];
+
+        // 2) Derivar índice y defaults coherentes: dn-{n} y /tmp/gridfs/dn{n}
+        int index = Math.max(1, ((ioPort - 50052) / 2) + 1);
+        String nodeId = envNodeId == null || envNodeId.isBlank() ? ("dn-" + index) : envNodeId;
+        String dataDir = envDataDir == null || envDataDir.isBlank() ? ("/tmp/gridfs/dn" + index) : envDataDir;
+
+        // 3) Chunk size default
+        int chunkSize = parseIntOrDefault(envChunkSize, 65536);
 
         DataNodeServer app = new DataNodeServer(nodeId, masterAddr, ioPort, adminPort, chunkSize, dataDir);
 
@@ -114,6 +132,87 @@ public class DataNodeServer {
         // soporta IPv6 con corchetes [::1]:50051
         if (a.contains("://")) return a; // ya trae esquema
         return "dns:///" + a;
+    }
+
+    // ---- Utilidades de selección de puertos y parsing ----
+    private static int[] selectIoAdminPorts(String envIo, String envAdmin) {
+        // Si ambos definidos, usarlos
+        if (isNonBlank(envIo) && isNonBlank(envAdmin)) {
+            return new int[]{parseIntOrDefault(envIo, 50052), parseIntOrDefault(envAdmin, 50053)};
+        }
+        // Si uno definido, intentar respetarlo y buscar el otro cercano (par par/impar)
+        if (isNonBlank(envIo)) {
+            int io = parseIntOrDefault(envIo, 50052);
+            int admin = (io % 2 == 0) ? io + 1 : io - 1; // parear con el vecino
+            if (!isPortFree(admin)) {
+                // buscar siguiente par libre a partir del menor par
+                int[] p = findNextFreePair(Math.min(io - (io % 2), admin - (admin % 2)), 50052);
+                return p;
+            }
+            if (!isPortFree(io)) {
+                int[] p = findNextFreePair(alignEven(io), 50052);
+                return p;
+            }
+            return new int[]{io, admin};
+        }
+        if (isNonBlank(envAdmin)) {
+            int admin = parseIntOrDefault(envAdmin, 50053);
+            int io = (admin % 2 == 0) ? admin - 1 : admin + 1;
+            if (!isPortFree(io)) {
+                int[] p = findNextFreePair(alignEven(io), 50052);
+                return p;
+            }
+            if (!isPortFree(admin)) {
+                int[] p = findNextFreePair(alignEven(io), 50052);
+                return p;
+            }
+            return new int[]{io, admin};
+        }
+        // Ninguno definido: buscar par libre 50052/50053, 50054/50055, ...
+        return findNextFreePair(50052, 50052);
+    }
+
+    private static int[] findNextFreePair(int startEven, int min) {
+        int p = Math.max(alignEven(startEven), Math.max(alignEven(min), 50052));
+        while (p < 65534) {
+            int io = p;
+            int admin = p + 1;
+            if (isPortFree(io) && isPortFree(admin)) {
+                return new int[]{io, admin};
+            }
+            p += 2;
+        }
+        // Fallback: usar puertos efímeros si no encontramos (muy improbable)
+        int io = randomFreePort();
+        int admin = randomFreePort();
+        return new int[]{io, admin};
+    }
+
+    private static int alignEven(int x) { return (x % 2 == 0) ? x : x - 1; }
+
+    private static boolean isNonBlank(String s) { return s != null && !s.isBlank(); }
+
+    private static int parseIntOrDefault(String s, int def) {
+        try { return Integer.parseInt(s.trim()); } catch (Exception e) { return def; }
+    }
+
+    private static boolean isPortFree(int port) {
+        try (ServerSocket ss = new ServerSocket(port)) {
+            ss.setReuseAddress(true);
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    private static int randomFreePort() {
+        try (ServerSocket ss = new ServerSocket(0)) {
+            ss.setReuseAddress(true);
+            return ss.getLocalPort();
+        } catch (IOException e) {
+            // último recurso
+            return 0;
+        }
     }
 
     /**

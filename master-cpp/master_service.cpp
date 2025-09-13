@@ -12,9 +12,9 @@
 using grpc::ServerContext;
 using grpc::Status;
 using grpc::StatusCode;
-using gridfs::MasterService;
-using gridfs::PutPlanRequest; using gridfs::PutPlanResponse; using gridfs::BlockAssignment;
-using gridfs::GetPlanRequest; using gridfs::GetPlanResponse; using gridfs::BlockLocation;
+using com::gridfs::proto::MasterService;
+using com::gridfs::proto::PutPlanRequest; using com::gridfs::proto::PutPlanResponse; using com::gridfs::proto::BlockAssignment;
+using com::gridfs::proto::GetPlanRequest; using com::gridfs::proto::GetPlanResponse; using com::gridfs::proto::BlockLocation;
 
 // ---- SOLO IO (no admin). Sube aquí los DN IO que tengas (50052, 50054, ...).
 static std::vector<std::string> kDataNodes = {
@@ -38,102 +38,162 @@ static std::string NormalizeIO(const std::string& ep) {
 }
 
 class MasterSvcImpl final : public MasterService::Service {
+    Status RegisterUser(ServerContext* ctx, const com::gridfs::proto::RegisterUserRequest* req, com::gridfs::proto::RegisterUserResponse* resp) override {
+        const std::string& user = req->user();
+        const std::string& pass = req->pass();
+        if (user.empty() || pass.empty()) {
+            resp->set_ok(false);
+            resp->set_error("Usuario y contraseña requeridos");
+            return Status(StatusCode::INVALID_ARGUMENT, "Usuario y contraseña requeridos");
+        }
+        bool ok = ms_->RegisterUser(user, pass);
+        resp->set_ok(ok);
+        resp->set_error(ok ? "" : "No se pudo registrar el usuario (¿ya existe?)");
+        return Status::OK;
+    }
 public:
     explicit MasterSvcImpl(MetaStore* ms): ms_(ms) {}
 
     Status PutPlan(ServerContext*, const PutPlanRequest* req, PutPlanResponse* resp) override {
-        const auto fname = req->filename();
-        const int64_t blocks = (req->filesize() + req->block_size() - 1) / req->block_size();
-
-        // --- archivo vacío: registrar y responder plan vacío
-        if (blocks == 0) {
-            {
-                std::lock_guard<std::mutex> lk(mu_);
-                empty_files_.insert(fname);
+            // Autenticación
+            const auto& auth = req->has_auth() ? req->auth() : com::gridfs::proto::Auth();
+            if (!ms_->ValidateUser(auth.user(), auth.pass())) {
+                return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
             }
-            // registra en metastore aunque no haya bloques
-            std::vector<BlockAssignment> none;
-            ms_->SavePutPlan(fname, none);
+            // ...existing code...
+            const auto fname = req->filename();
+            const int64_t blocks = (req->filesize() + req->block_size() - 1) / req->block_size();
+            if (blocks == 0) {
+                {
+                    std::lock_guard<std::mutex> lk(mu_);
+                    empty_files_.insert(fname);
+                }
+                std::vector<BlockAssignment> none;
+                ms_->SavePutPlan(fname, none, auth.user());
+                return Status::OK;
+            }
+            std::vector<std::string> ios; ios.reserve(kDataNodes.size());
+            for (auto& ep : kDataNodes) ios.push_back(NormalizeIO(ep));
+            std::sort(ios.begin(), ios.end());
+            ios.erase(std::unique(ios.begin(), ios.end()), ios.end());
+            if (ios.empty()) return Status(StatusCode::FAILED_PRECONDITION, "Sin DataNodes registrados (IO)");
+            std::lock_guard<std::mutex> lk(mu_);
+            std::mt19937 rng{std::random_device{}()};
+            std::vector<BlockAssignment> asgs; asgs.reserve(blocks);
+            int rep = std::max(1, req->replication());
+            rep = std::min(rep, static_cast<int>(ios.size()));
+            for (int64_t i = 0; i < blocks; ++i) {
+                BlockAssignment a;
+                a.set_block_id(fname + "#blk" + std::to_string(i));
+                size_t idx = static_cast<size_t>(rng() % ios.size());
+                std::string primary = ios[idx];
+                a.set_primary_dn(primary);
+                for (size_t j = 0, added = 0; j < ios.size() && added < static_cast<size_t>(rep - 1); ++j) {
+                    if (j == idx) continue;
+                    *a.add_replica_dns() = ios[j];
+                    ++added;
+                }
+                asgs.push_back(a);
+                *resp->add_assignments() = a;
+            }
+            ms_->SavePutPlan(fname, asgs, auth.user());
             return Status::OK;
-        }
-
-        // candidatos IO normalizados y únicos
-        std::vector<std::string> ios; ios.reserve(kDataNodes.size());
-        for (auto& ep : kDataNodes) ios.push_back(NormalizeIO(ep));
-        std::sort(ios.begin(), ios.end());
-        ios.erase(std::unique(ios.begin(), ios.end()), ios.end());
-        if (ios.empty()) return Status(StatusCode::FAILED_PRECONDITION, "Sin DataNodes registrados (IO)");
-
-        std::lock_guard<std::mutex> lk(mu_);
-        std::mt19937 rng{std::random_device{}()};
-        std::vector<BlockAssignment> asgs; asgs.reserve(blocks);
-
-        int rep = std::max(1, req->replication());
-        rep = std::min(rep, static_cast<int>(ios.size())); // no más réplicas que DNs
-
-        for (int64_t i = 0; i < blocks; ++i) {
-            BlockAssignment a;
-            a.set_block_id(fname + "#blk" + std::to_string(i));
-
-            // elige primario al azar
-            size_t idx = static_cast<size_t>(rng() % ios.size());
-            std::string primary = ios[idx];
-            a.set_primary_dn(primary);
-
-            // réplicas: las siguientes en el vector
-            for (size_t j = 0, added = 0; j < ios.size() && added < static_cast<size_t>(rep - 1); ++j) {
-                if (j == idx) continue;
-                *a.add_replica_dns() = ios[j];
-                ++added;
-            }
-
-            asgs.push_back(a);
-            *resp->add_assignments() = a;
-        }
-
-        ms_->SavePutPlan(fname, asgs);
-        return Status::OK;
     }
 
     Status GetPlan(ServerContext*, const GetPlanRequest* req, GetPlanResponse* resp) override {
-        const auto fname = req->filename();
-        auto rows = ms_->GetFileLayout(fname);
-
-        // si no hay filas, puede ser archivo vacío previamente registrado
-        if (rows.empty()) {
-            std::lock_guard<std::mutex> lk(mu_);
-            if (empty_files_.count(fname)) return Status::OK; // plan vacío (0 locations)
-            return Status(StatusCode::NOT_FOUND, "No existe");
-        }
-
-        for (const auto& r : rows) {
-            BlockLocation loc;
-            loc.set_block_id(r.block_id);
-            // normaliza IO también al responder
-            loc.set_primary_dn(NormalizeIO(r.primary_dn));
-
-            size_t p = 0, q = 0;
-            while ((q = r.replicas_csv.find(',', p)) != std::string::npos) {
-                auto s = r.replicas_csv.substr(p, q - p);
-                if (!s.empty()) *loc.add_replica_dns() = NormalizeIO(s);
-                p = q + 1;
+            // Autenticación (opcional, si quieres proteger Get también)
+            // ...existing code...
+            const auto fname = req->filename();
+                auto rows = ms_->GetFileLayout(fname, req->has_auth() ? req->auth().user() : "");
+            if (rows.empty()) {
+                std::lock_guard<std::mutex> lk(mu_);
+                if (empty_files_.count(fname)) return Status::OK;
+                return Status(StatusCode::NOT_FOUND, "No existe");
             }
-            auto s = r.replicas_csv.substr(p);
-            if (!s.empty()) *loc.add_replica_dns() = NormalizeIO(s);
-
-            *resp->add_locations() = loc;
-        }
-        return Status::OK;
+            for (const auto& r : rows) {
+                BlockLocation loc;
+                loc.set_block_id(r.block_id);
+                loc.set_primary_dn(NormalizeIO(r.primary_dn));
+                size_t p = 0, q = 0;
+                while ((q = r.replicas_csv.find(',', p)) != std::string::npos) {
+                    auto s = r.replicas_csv.substr(p, q - p);
+                    if (!s.empty()) *loc.add_replica_dns() = NormalizeIO(s);
+                    p = q + 1;
+                }
+                auto s = r.replicas_csv.substr(p);
+                if (!s.empty()) *loc.add_replica_dns() = NormalizeIO(s);
+                *resp->add_locations() = loc;
+            }
+            return Status::OK;
     }
+
+    // NUEVOS MÉTODOS
+    Status Ls(ServerContext* ctx, const com::gridfs::proto::LsRequest* req, com::gridfs::proto::LsResponse* resp) override {
+            // Autenticación
+            const auto& auth = req->auth();
+            if (!ms_->ValidateUser(auth.user(), auth.pass())) {
+                return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
+            }
+            // Listar archivos y directorios reales
+        auto files = ms_->ListFiles(auth.user());
+        auto dirs = ms_->ListDirs(auth.user());
+            for (const auto& d : dirs) resp->add_entries(d + "/");
+            for (const auto& f : files) resp->add_entries(f);
+            return Status::OK;
+    }
+
+    Status Rm(ServerContext* ctx, const com::gridfs::proto::RmRequest* req, com::gridfs::proto::RmResponse* resp) override {
+            // Autenticación
+            const auto& auth = req->auth();
+            if (!ms_->ValidateUser(auth.user(), auth.pass())) {
+                resp->set_ok(false);
+                resp->set_error("Usuario o contraseña incorrectos");
+                return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
+            }
+        bool ok = ms_->RemoveFile(req->path(), auth.user());
+            resp->set_ok(ok);
+            resp->set_error(ok ? "" : "No se pudo eliminar el archivo");
+            return Status::OK;
+    }
+
+    Status Mkdir(ServerContext* ctx, const com::gridfs::proto::MkdirRequest* req, com::gridfs::proto::MkdirResponse* resp) override {
+            // Autenticación
+            const auto& auth = req->auth();
+            if (!ms_->ValidateUser(auth.user(), auth.pass())) {
+                resp->set_ok(false);
+                resp->set_error("Usuario o contraseña incorrectos");
+                return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
+            }
+        bool ok = ms_->CreateDir(req->path(), auth.user());
+            resp->set_ok(ok);
+            resp->set_error(ok ? "" : "No se pudo crear el directorio");
+            return Status::OK;
+    }
+
+    Status Rmdir(ServerContext* ctx, const com::gridfs::proto::RmdirRequest* req, com::gridfs::proto::RmdirResponse* resp) override {
+            // Autenticación
+            const auto& auth = req->auth();
+            if (!ms_->ValidateUser(auth.user(), auth.pass())) {
+                resp->set_ok(false);
+                resp->set_error("Usuario o contraseña incorrectos");
+                return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
+            }
+        bool ok = ms_->RemoveDir(req->path(), auth.user());
+            resp->set_ok(ok);
+            resp->set_error(ok ? "" : "No se pudo eliminar el directorio");
+            return Status::OK;
+    }
+
+    // Eliminado: método Auth no existe en el proto
 
 private:
     std::mutex mu_;
     MetaStore* ms_;
-    std::unordered_set<std::string> empty_files_; // registra archivos de tamaño 0
+    std::unordered_set<std::string> empty_files_;
 };
 
 // ...
 
-std::unique_ptr<gridfs::MasterService::Service> MakeMasterService(MetaStore* ms){
+std::unique_ptr<com::gridfs::proto::MasterService::Service> MakeMasterService(MetaStore* ms){
     return std::make_unique<MasterSvcImpl>(ms);
 }

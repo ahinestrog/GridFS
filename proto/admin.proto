@@ -1,5 +1,8 @@
 syntax = "proto3";
-package gridfs;
+package com.gridfs.proto;
+
+option java_multiple_files = true;
+option java_package = "com.gridfs.proto";
 
 
 message ReplicateCmd { string block_id = 1; string target_dn = 2; }

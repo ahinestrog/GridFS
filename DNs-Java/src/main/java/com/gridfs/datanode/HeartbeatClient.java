@@ -45,7 +45,7 @@ public class HeartbeatClient implements AutoCloseable {
                 .usePlaintext()
                 .build();
 
-        this.stub = MasterHeartbeatGrpc.newStub(ch);
+    this.stub = MasterHeartbeatGrpc.newStub(ch);
     }
 
     /** Inicia el stream y programa beats periódicos. */
