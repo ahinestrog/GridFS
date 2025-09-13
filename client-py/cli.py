@@ -1,19 +1,22 @@
 import os, sys, argparse, grpc
-# Añadir la carpeta de stubs generados al PYTHONPATH
-#sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../generated/py-stubs')))
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../proto')))
+import os
+import sys
+# Añadir la carpeta de stubs generados al PYTHONPATH de forma robusta
+STUBS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'generated', 'py-stubs'))
+if STUBS_DIR not in sys.path:
+    sys.path.insert(0, STUBS_DIR)
 
-sys.path.append(os.path.abspath(".."))
-from proto import master_pb2
-from proto import master_pb2_grpc
-from proto import datanode_pb2
-from proto import datanode_pb2_grpc
-from proto import common_pb2
+import master_pb2
+import master_pb2_grpc
+import datanode_pb2
+import datanode_pb2_grpc
+import common_pb2
+
 
 from master_pb2 import (
     PutPlanRequest, PutPlanResponse, GetPlanRequest, GetPlanResponse,
-    Auth, LsRequest, LsResponse, RmRequest, RmResponse, 
-    MkdirRequest, MkdirResponse, RmdirRequest, RmdirResponse, 
+    Auth, LsRequest, LsResponse, RmRequest, RmResponse,
+    MkdirRequest, MkdirResponse, RmdirRequest, RmdirResponse,
     RegisterUserRequest, RegisterUserResponse
 )
 from master_pb2_grpc import MasterServiceStub
