@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface BlockAssignmentOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.BlockAssignment)
+    // @@protoc_insertion_point(interface_extends:proto.BlockAssignment)
     com.google.protobuf.MessageOrBuilder {
 
   /**

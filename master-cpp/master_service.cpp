@@ -12,9 +12,9 @@
 using grpc::ServerContext;
 using grpc::Status;
 using grpc::StatusCode;
-using com::gridfs::proto::MasterService;
-using com::gridfs::proto::PutPlanRequest; using com::gridfs::proto::PutPlanResponse; using com::gridfs::proto::BlockAssignment;
-using com::gridfs::proto::GetPlanRequest; using com::gridfs::proto::GetPlanResponse; using com::gridfs::proto::BlockLocation;
+using proto::MasterService;
+using proto::PutPlanRequest; using proto::PutPlanResponse; using proto::BlockAssignment;
+using proto::GetPlanRequest; using proto::GetPlanResponse; using proto::BlockLocation;
 
 // ---- SOLO IO (no admin). Sube aquí los DN IO que tengas (50052, 50054, ...).
 static std::vector<std::string> kDataNodes = {
@@ -38,7 +38,7 @@ static std::string NormalizeIO(const std::string& ep) {
 }
 
 class MasterSvcImpl final : public MasterService::Service {
-    Status RegisterUser(ServerContext* ctx, const com::gridfs::proto::RegisterUserRequest* req, com::gridfs::proto::RegisterUserResponse* resp) override {
+    Status RegisterUser(ServerContext* ctx, const proto::RegisterUserRequest* req, proto::RegisterUserResponse* resp) override {
         const std::string& user = req->user();
         const std::string& pass = req->pass();
         if (user.empty() || pass.empty()) {
@@ -56,7 +56,7 @@ public:
 
     Status PutPlan(ServerContext*, const PutPlanRequest* req, PutPlanResponse* resp) override {
             // Autenticación
-            const auto& auth = req->has_auth() ? req->auth() : com::gridfs::proto::Auth();
+            const auto& auth = req->has_auth() ? req->auth() : proto::Auth();
             if (!ms_->ValidateUser(auth.user(), auth.pass())) {
                 return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
             }
@@ -128,7 +128,7 @@ public:
     }
 
     // NUEVOS MÉTODOS
-    Status Ls(ServerContext* ctx, const com::gridfs::proto::LsRequest* req, com::gridfs::proto::LsResponse* resp) override {
+    Status Ls(ServerContext* ctx, const proto::LsRequest* req, proto::LsResponse* resp) override {
             // Autenticación
             const auto& auth = req->auth();
             if (!ms_->ValidateUser(auth.user(), auth.pass())) {
@@ -142,7 +142,7 @@ public:
             return Status::OK;
     }
 
-    Status Rm(ServerContext* ctx, const com::gridfs::proto::RmRequest* req, com::gridfs::proto::RmResponse* resp) override {
+    Status Rm(ServerContext* ctx, const proto::RmRequest* req, proto::RmResponse* resp) override {
             // Autenticación
             const auto& auth = req->auth();
             if (!ms_->ValidateUser(auth.user(), auth.pass())) {
@@ -156,7 +156,7 @@ public:
             return Status::OK;
     }
 
-    Status Mkdir(ServerContext* ctx, const com::gridfs::proto::MkdirRequest* req, com::gridfs::proto::MkdirResponse* resp) override {
+    Status Mkdir(ServerContext* ctx, const proto::MkdirRequest* req, proto::MkdirResponse* resp) override {
             // Autenticación
             const auto& auth = req->auth();
             if (!ms_->ValidateUser(auth.user(), auth.pass())) {
@@ -170,7 +170,7 @@ public:
             return Status::OK;
     }
 
-    Status Rmdir(ServerContext* ctx, const com::gridfs::proto::RmdirRequest* req, com::gridfs::proto::RmdirResponse* resp) override {
+    Status Rmdir(ServerContext* ctx, const proto::RmdirRequest* req, proto::RmdirResponse* resp) override {
             // Autenticación
             const auto& auth = req->auth();
             if (!ms_->ValidateUser(auth.user(), auth.pass())) {
@@ -194,6 +194,6 @@ private:
 
 // ...
 
-std::unique_ptr<com::gridfs::proto::MasterService::Service> MakeMasterService(MetaStore* ms){
+std::unique_ptr<proto::MasterService::Service> MakeMasterService(MetaStore* ms){
     return std::make_unique<MasterSvcImpl>(ms);
 }

@@ -19,10 +19,10 @@
 #include <grpcpp/server_context.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/support/sync_stream.h>
-namespace gridfs {
+namespace proto {
 
 static const char* DataNodeAdmin_method_names[] = {
-  "/gridfs.DataNodeAdmin/AdminOrder",
+  "/proto.DataNodeAdmin/AdminOrder",
 };
 
 std::unique_ptr< DataNodeAdmin::Stub> DataNodeAdmin::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -35,23 +35,23 @@ DataNodeAdmin::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   : channel_(channel), rpcmethod_AdminOrder_(DataNodeAdmin_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status DataNodeAdmin::Stub::AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::gridfs::AdminOrderResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AdminOrder_, context, request, response);
+::grpc::Status DataNodeAdmin::Stub::AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::proto::AdminOrderResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::AdminOrderRequest, ::proto::AdminOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AdminOrder_, context, request, response);
 }
 
-void DataNodeAdmin::Stub::async::AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AdminOrder_, context, request, response, std::move(f));
+void DataNodeAdmin::Stub::async::AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::AdminOrderRequest, ::proto::AdminOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AdminOrder_, context, request, response, std::move(f));
 }
 
-void DataNodeAdmin::Stub::async::AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void DataNodeAdmin::Stub::async::AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AdminOrder_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>* DataNodeAdmin::Stub::PrepareAsyncAdminOrderRaw(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::gridfs::AdminOrderResponse, ::gridfs::AdminOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AdminOrder_, context, request);
+::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>* DataNodeAdmin::Stub::PrepareAsyncAdminOrderRaw(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::AdminOrderResponse, ::proto::AdminOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AdminOrder_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>* DataNodeAdmin::Stub::AsyncAdminOrderRaw(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>* DataNodeAdmin::Stub::AsyncAdminOrderRaw(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncAdminOrderRaw(context, request, cq);
   result->StartCall();
@@ -62,11 +62,11 @@ DataNodeAdmin::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataNodeAdmin_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< DataNodeAdmin::Service, ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< DataNodeAdmin::Service, ::proto::AdminOrderRequest, ::proto::AdminOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](DataNodeAdmin::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::gridfs::AdminOrderRequest* req,
-             ::gridfs::AdminOrderResponse* resp) {
+             const ::proto::AdminOrderRequest* req,
+             ::proto::AdminOrderResponse* resp) {
                return service->AdminOrder(ctx, req, resp);
              }, this)));
 }
@@ -74,7 +74,7 @@ DataNodeAdmin::Service::Service() {
 DataNodeAdmin::Service::~Service() {
 }
 
-::grpc::Status DataNodeAdmin::Service::AdminOrder(::grpc::ServerContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response) {
+::grpc::Status DataNodeAdmin::Service::AdminOrder(::grpc::ServerContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -82,5 +82,5 @@ DataNodeAdmin::Service::~Service() {
 }
 
 
-}  // namespace gridfs
+}  // namespace proto
 

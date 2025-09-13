@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface BlockChunkOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.BlockChunk)
+    // @@protoc_insertion_point(interface_extends:proto.BlockChunk)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -20,30 +20,18 @@ public interface BlockChunkOrBuilder extends
       getBlockIdBytes();
 
   /**
-   * <pre>
-   * 0..N
-   * </pre>
-   *
    * <code>int64 seq = 2;</code>
    * @return The seq.
    */
   long getSeq();
 
   /**
-   * <pre>
-   * &lt;= block_size
-   * </pre>
-   *
    * <code>bytes data = 3;</code>
    * @return The data.
    */
   com.google.protobuf.ByteString getData();
 
   /**
-   * <pre>
-   * último chunk del bloque
-   * </pre>
-   *
    * <code>bool eof = 4;</code>
    * @return The eof.
    */

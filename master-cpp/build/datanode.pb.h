@@ -45,7 +45,7 @@ struct TableStruct_datanode_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_datanode_2eproto;
 PROTOBUF_NAMESPACE_OPEN
 PROTOBUF_NAMESPACE_CLOSE
-namespace gridfs {
+namespace proto {
 
 // ===================================================================
 
@@ -65,7 +65,7 @@ namespace gridfs {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace gridfs
+}  // namespace proto
 
 // @@protoc_insertion_point(global_scope)
 

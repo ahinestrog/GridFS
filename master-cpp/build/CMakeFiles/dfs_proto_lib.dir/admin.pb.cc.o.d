@@ -1,7 +1,7 @@
 CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o: \
- /home/alejo/dev/GridFS/master-cpp/build/admin.pb.cc \
+ /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.pb.cc \
  /usr/include/stdc-predef.h \
- /home/alejo/dev/GridFS/master-cpp/build/admin.pb.h \
+ /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.pb.h \
  /usr/include/c++/13/limits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

@@ -25,52 +25,52 @@
 #include <grpcpp/support/stub_options.h>
 #include <grpcpp/support/sync_stream.h>
 
-namespace gridfs {
+namespace proto {
 
 // Servicio que expone el DataNode para recibir órdenes del Master
 class DataNodeAdmin final {
  public:
   static constexpr char const* service_full_name() {
-    return "gridfs.DataNodeAdmin";
+    return "proto.DataNodeAdmin";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::gridfs::AdminOrderResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::AdminOrderResponse>> AsyncAdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::AdminOrderResponse>>(AsyncAdminOrderRaw(context, request, cq));
+    virtual ::grpc::Status AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::proto::AdminOrderResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::AdminOrderResponse>> AsyncAdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::AdminOrderResponse>>(AsyncAdminOrderRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::AdminOrderResponse>> PrepareAsyncAdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::AdminOrderResponse>>(PrepareAsyncAdminOrderRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::AdminOrderResponse>> PrepareAsyncAdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::AdminOrderResponse>>(PrepareAsyncAdminOrderRaw(context, request, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::AdminOrderResponse>* AsyncAdminOrderRaw(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::AdminOrderResponse>* PrepareAsyncAdminOrderRaw(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::AdminOrderResponse>* AsyncAdminOrderRaw(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::AdminOrderResponse>* PrepareAsyncAdminOrderRaw(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::gridfs::AdminOrderResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>> AsyncAdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>>(AsyncAdminOrderRaw(context, request, cq));
+    ::grpc::Status AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::proto::AdminOrderResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>> AsyncAdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>>(AsyncAdminOrderRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>> PrepareAsyncAdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>>(PrepareAsyncAdminOrderRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>> PrepareAsyncAdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>>(PrepareAsyncAdminOrderRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response, std::function<void(::grpc::Status)>) override;
-      void AdminOrder(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response, std::function<void(::grpc::Status)>) override;
+      void AdminOrder(::grpc::ClientContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -82,8 +82,8 @@ class DataNodeAdmin final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>* AsyncAdminOrderRaw(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::gridfs::AdminOrderResponse>* PrepareAsyncAdminOrderRaw(::grpc::ClientContext* context, const ::gridfs::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>* AsyncAdminOrderRaw(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::AdminOrderResponse>* PrepareAsyncAdminOrderRaw(::grpc::ClientContext* context, const ::proto::AdminOrderRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AdminOrder_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -92,7 +92,7 @@ class DataNodeAdmin final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status AdminOrder(::grpc::ServerContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response);
+    virtual ::grpc::Status AdminOrder(::grpc::ServerContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AdminOrder : public BaseClass {
@@ -106,11 +106,11 @@ class DataNodeAdmin final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/) override {
+    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAdminOrder(::grpc::ServerContext* context, ::gridfs::AdminOrderRequest* request, ::grpc::ServerAsyncResponseWriter< ::gridfs::AdminOrderResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAdminOrder(::grpc::ServerContext* context, ::proto::AdminOrderRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::AdminOrderResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -122,25 +122,25 @@ class DataNodeAdmin final {
    public:
     WithCallbackMethod_AdminOrder() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::AdminOrderRequest, ::proto::AdminOrderResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::gridfs::AdminOrderRequest* request, ::gridfs::AdminOrderResponse* response) { return this->AdminOrder(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::proto::AdminOrderRequest* request, ::proto::AdminOrderResponse* response) { return this->AdminOrder(context, request, response); }));}
     void SetMessageAllocatorFor_AdminOrder(
-        ::grpc::MessageAllocator< ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse>* allocator) {
+        ::grpc::MessageAllocator< ::proto::AdminOrderRequest, ::proto::AdminOrderResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::AdminOrderRequest, ::proto::AdminOrderResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_AdminOrder() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/) override {
+    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* AdminOrder(
-      ::grpc::CallbackServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/)  { return nullptr; }
   };
   typedef WithCallbackMethod_AdminOrder<Service > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
@@ -156,7 +156,7 @@ class DataNodeAdmin final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/) override {
+    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -173,7 +173,7 @@ class DataNodeAdmin final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/) override {
+    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -196,7 +196,7 @@ class DataNodeAdmin final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/) override {
+    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -211,10 +211,10 @@ class DataNodeAdmin final {
     WithStreamedUnaryMethod_AdminOrder() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse>(
+          ::proto::AdminOrderRequest, ::proto::AdminOrderResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::gridfs::AdminOrderRequest, ::gridfs::AdminOrderResponse>* streamer) {
+                     ::proto::AdminOrderRequest, ::proto::AdminOrderResponse>* streamer) {
                        return this->StreamedAdminOrder(context,
                          streamer);
                   }));
@@ -223,19 +223,19 @@ class DataNodeAdmin final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::gridfs::AdminOrderRequest* /*request*/, ::gridfs::AdminOrderResponse* /*response*/) override {
+    ::grpc::Status AdminOrder(::grpc::ServerContext* /*context*/, const ::proto::AdminOrderRequest* /*request*/, ::proto::AdminOrderResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAdminOrder(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::gridfs::AdminOrderRequest,::gridfs::AdminOrderResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAdminOrder(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::AdminOrderRequest,::proto::AdminOrderResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_AdminOrder<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;
   typedef WithStreamedUnaryMethod_AdminOrder<Service > StreamedService;
 };
 
-}  // namespace gridfs
+}  // namespace proto
 
 
 #endif  // GRPC_admin_2eproto__INCLUDED

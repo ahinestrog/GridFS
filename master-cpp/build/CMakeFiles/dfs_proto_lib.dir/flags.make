@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alejo/dev/GridFS/master-cpp/build -I/home/alejo/dev/GridFS/master-cpp/../proto
+CXX_INCLUDES = -I/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build -I/home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto
 
 CXX_FLAGS = -std=gnu++17 -Wall -Wextra -Wpedantic -pthread
 

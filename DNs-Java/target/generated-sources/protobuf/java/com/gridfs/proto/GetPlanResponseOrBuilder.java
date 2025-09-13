@@ -4,29 +4,29 @@
 package com.gridfs.proto;
 
 public interface GetPlanResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.GetPlanResponse)
+    // @@protoc_insertion_point(interface_extends:proto.GetPlanResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .gridfs.BlockLocation locations = 1;</code>
+   * <code>repeated .proto.BlockLocation locations = 1;</code>
    */
   java.util.List<com.gridfs.proto.BlockLocation> 
       getLocationsList();
   /**
-   * <code>repeated .gridfs.BlockLocation locations = 1;</code>
+   * <code>repeated .proto.BlockLocation locations = 1;</code>
    */
   com.gridfs.proto.BlockLocation getLocations(int index);
   /**
-   * <code>repeated .gridfs.BlockLocation locations = 1;</code>
+   * <code>repeated .proto.BlockLocation locations = 1;</code>
    */
   int getLocationsCount();
   /**
-   * <code>repeated .gridfs.BlockLocation locations = 1;</code>
+   * <code>repeated .proto.BlockLocation locations = 1;</code>
    */
   java.util.List<? extends com.gridfs.proto.BlockLocationOrBuilder> 
       getLocationsOrBuilderList();
   /**
-   * <code>repeated .gridfs.BlockLocation locations = 1;</code>
+   * <code>repeated .proto.BlockLocation locations = 1;</code>
    */
   com.gridfs.proto.BlockLocationOrBuilder getLocationsOrBuilder(
       int index);

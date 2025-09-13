@@ -25,71 +25,171 @@
 #include <grpcpp/support/stub_options.h>
 #include <grpcpp/support/sync_stream.h>
 
-namespace gridfs {
+namespace proto {
 
 class MasterService final {
  public:
   static constexpr char const* service_full_name() {
-    return "gridfs.MasterService";
+    return "proto.MasterService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::gridfs::PutPlanResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::PutPlanResponse>> AsyncPutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::PutPlanResponse>>(AsyncPutPlanRaw(context, request, cq));
+    virtual ::grpc::Status PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::proto::PutPlanResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::PutPlanResponse>> AsyncPutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::PutPlanResponse>>(AsyncPutPlanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::PutPlanResponse>> PrepareAsyncPutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::PutPlanResponse>>(PrepareAsyncPutPlanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::PutPlanResponse>> PrepareAsyncPutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::PutPlanResponse>>(PrepareAsyncPutPlanRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::gridfs::GetPlanResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::GetPlanResponse>> AsyncGetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::GetPlanResponse>>(AsyncGetPlanRaw(context, request, cq));
+    virtual ::grpc::Status GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::proto::GetPlanResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::GetPlanResponse>> AsyncGetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::GetPlanResponse>>(AsyncGetPlanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::GetPlanResponse>> PrepareAsyncGetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::GetPlanResponse>>(PrepareAsyncGetPlanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::GetPlanResponse>> PrepareAsyncGetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::GetPlanResponse>>(PrepareAsyncGetPlanRaw(context, request, cq));
+    }
+    virtual ::grpc::Status Ls(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::proto::LsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::LsResponse>> AsyncLs(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::LsResponse>>(AsyncLsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::LsResponse>> PrepareAsyncLs(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::LsResponse>>(PrepareAsyncLsRaw(context, request, cq));
+    }
+    virtual ::grpc::Status Rm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::proto::RmResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmResponse>> AsyncRm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmResponse>>(AsyncRmRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmResponse>> PrepareAsyncRm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmResponse>>(PrepareAsyncRmRaw(context, request, cq));
+    }
+    virtual ::grpc::Status Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::proto::MkdirResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::MkdirResponse>> AsyncMkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::MkdirResponse>>(AsyncMkdirRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::MkdirResponse>> PrepareAsyncMkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::MkdirResponse>>(PrepareAsyncMkdirRaw(context, request, cq));
+    }
+    virtual ::grpc::Status Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::proto::RmdirResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmdirResponse>> AsyncRmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmdirResponse>>(AsyncRmdirRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmdirResponse>> PrepareAsyncRmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmdirResponse>>(PrepareAsyncRmdirRaw(context, request, cq));
+    }
+    virtual ::grpc::Status RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::proto::RegisterUserResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RegisterUserResponse>> AsyncRegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RegisterUserResponse>>(AsyncRegisterUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RegisterUserResponse>> PrepareAsyncRegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::RegisterUserResponse>>(PrepareAsyncRegisterUserRaw(context, request, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Ls(::grpc::ClientContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Ls(::grpc::ClientContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Rm(::grpc::ClientContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Rm(::grpc::ClientContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::PutPlanResponse>* AsyncPutPlanRaw(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::PutPlanResponse>* PrepareAsyncPutPlanRaw(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::GetPlanResponse>* AsyncGetPlanRaw(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::GetPlanResponse>* PrepareAsyncGetPlanRaw(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::PutPlanResponse>* AsyncPutPlanRaw(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::PutPlanResponse>* PrepareAsyncPutPlanRaw(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::GetPlanResponse>* AsyncGetPlanRaw(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::GetPlanResponse>* PrepareAsyncGetPlanRaw(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::LsResponse>* AsyncLsRaw(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::LsResponse>* PrepareAsyncLsRaw(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmResponse>* AsyncRmRaw(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmResponse>* PrepareAsyncRmRaw(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::MkdirResponse>* AsyncMkdirRaw(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::MkdirResponse>* PrepareAsyncMkdirRaw(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmdirResponse>* AsyncRmdirRaw(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::RmdirResponse>* PrepareAsyncRmdirRaw(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::RegisterUserResponse>* AsyncRegisterUserRaw(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::RegisterUserResponse>* PrepareAsyncRegisterUserRaw(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::gridfs::PutPlanResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>> AsyncPutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>>(AsyncPutPlanRaw(context, request, cq));
+    ::grpc::Status PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::proto::PutPlanResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>> AsyncPutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>>(AsyncPutPlanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>> PrepareAsyncPutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>>(PrepareAsyncPutPlanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>> PrepareAsyncPutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>>(PrepareAsyncPutPlanRaw(context, request, cq));
     }
-    ::grpc::Status GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::gridfs::GetPlanResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>> AsyncGetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>>(AsyncGetPlanRaw(context, request, cq));
+    ::grpc::Status GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::proto::GetPlanResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>> AsyncGetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>>(AsyncGetPlanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>> PrepareAsyncGetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>>(PrepareAsyncGetPlanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>> PrepareAsyncGetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>>(PrepareAsyncGetPlanRaw(context, request, cq));
+    }
+    ::grpc::Status Ls(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::proto::LsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::LsResponse>> AsyncLs(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::LsResponse>>(AsyncLsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::LsResponse>> PrepareAsyncLs(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::LsResponse>>(PrepareAsyncLsRaw(context, request, cq));
+    }
+    ::grpc::Status Rm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::proto::RmResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmResponse>> AsyncRm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmResponse>>(AsyncRmRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmResponse>> PrepareAsyncRm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmResponse>>(PrepareAsyncRmRaw(context, request, cq));
+    }
+    ::grpc::Status Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::proto::MkdirResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>> AsyncMkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>>(AsyncMkdirRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>> PrepareAsyncMkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>>(PrepareAsyncMkdirRaw(context, request, cq));
+    }
+    ::grpc::Status Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::proto::RmdirResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>> AsyncRmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>>(AsyncRmdirRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>> PrepareAsyncRmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>>(PrepareAsyncRmdirRaw(context, request, cq));
+    }
+    ::grpc::Status RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::proto::RegisterUserResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>> AsyncRegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>>(AsyncRegisterUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>> PrepareAsyncRegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>>(PrepareAsyncRegisterUserRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response, std::function<void(::grpc::Status)>) override;
-      void PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response, std::function<void(::grpc::Status)>) override;
+      void PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Ls(::grpc::ClientContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response, std::function<void(::grpc::Status)>) override;
+      void Ls(::grpc::ClientContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Rm(::grpc::ClientContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response, std::function<void(::grpc::Status)>) override;
+      void Rm(::grpc::ClientContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response, std::function<void(::grpc::Status)>) override;
+      void Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response, std::function<void(::grpc::Status)>) override;
+      void Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response, std::function<void(::grpc::Status)>) override;
+      void RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -101,12 +201,27 @@ class MasterService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>* AsyncPutPlanRaw(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>* PrepareAsyncPutPlanRaw(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>* AsyncGetPlanRaw(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>* PrepareAsyncGetPlanRaw(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>* AsyncPutPlanRaw(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>* PrepareAsyncPutPlanRaw(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>* AsyncGetPlanRaw(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>* PrepareAsyncGetPlanRaw(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::LsResponse>* AsyncLsRaw(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::LsResponse>* PrepareAsyncLsRaw(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::RmResponse>* AsyncRmRaw(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::RmResponse>* PrepareAsyncRmRaw(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>* AsyncMkdirRaw(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>* PrepareAsyncMkdirRaw(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>* AsyncRmdirRaw(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>* PrepareAsyncRmdirRaw(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>* AsyncRegisterUserRaw(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>* PrepareAsyncRegisterUserRaw(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_PutPlan_;
     const ::grpc::internal::RpcMethod rpcmethod_GetPlan_;
+    const ::grpc::internal::RpcMethod rpcmethod_Ls_;
+    const ::grpc::internal::RpcMethod rpcmethod_Rm_;
+    const ::grpc::internal::RpcMethod rpcmethod_Mkdir_;
+    const ::grpc::internal::RpcMethod rpcmethod_Rmdir_;
+    const ::grpc::internal::RpcMethod rpcmethod_RegisterUser_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -114,8 +229,13 @@ class MasterService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status PutPlan(::grpc::ServerContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response);
-    virtual ::grpc::Status GetPlan(::grpc::ServerContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response);
+    virtual ::grpc::Status PutPlan(::grpc::ServerContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response);
+    virtual ::grpc::Status GetPlan(::grpc::ServerContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response);
+    virtual ::grpc::Status Ls(::grpc::ServerContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response);
+    virtual ::grpc::Status Rm(::grpc::ServerContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response);
+    virtual ::grpc::Status Mkdir(::grpc::ServerContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response);
+    virtual ::grpc::Status Rmdir(::grpc::ServerContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response);
+    virtual ::grpc::Status RegisterUser(::grpc::ServerContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_PutPlan : public BaseClass {
@@ -129,11 +249,11 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/) override {
+    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestPutPlan(::grpc::ServerContext* context, ::gridfs::PutPlanRequest* request, ::grpc::ServerAsyncResponseWriter< ::gridfs::PutPlanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestPutPlan(::grpc::ServerContext* context, ::proto::PutPlanRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::PutPlanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -149,15 +269,115 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/) override {
+    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetPlan(::grpc::ServerContext* context, ::gridfs::GetPlanRequest* request, ::grpc::ServerAsyncResponseWriter< ::gridfs::GetPlanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetPlan(::grpc::ServerContext* context, ::proto::GetPlanRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::GetPlanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_PutPlan<WithAsyncMethod_GetPlan<Service > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_Ls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Ls() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_Ls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Ls(::grpc::ServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLs(::grpc::ServerContext* context, ::proto::LsRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::LsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Rm : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Rm() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_Rm() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rm(::grpc::ServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRm(::grpc::ServerContext* context, ::proto::RmRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::RmResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Mkdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Mkdir() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_Mkdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Mkdir(::grpc::ServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestMkdir(::grpc::ServerContext* context, ::proto::MkdirRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::MkdirResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Rmdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Rmdir() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_Rmdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rmdir(::grpc::ServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRmdir(::grpc::ServerContext* context, ::proto::RmdirRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::RmdirResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_RegisterUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_RegisterUser() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_RegisterUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RegisterUser(::grpc::ServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRegisterUser(::grpc::ServerContext* context, ::proto::RegisterUserRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::RegisterUserResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_PutPlan<WithAsyncMethod_GetPlan<WithAsyncMethod_Ls<WithAsyncMethod_Rm<WithAsyncMethod_Mkdir<WithAsyncMethod_Rmdir<WithAsyncMethod_RegisterUser<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_PutPlan : public BaseClass {
    private:
@@ -165,25 +385,25 @@ class MasterService final {
    public:
     WithCallbackMethod_PutPlan() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::PutPlanRequest, ::proto::PutPlanResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response) { return this->PutPlan(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response) { return this->PutPlan(context, request, response); }));}
     void SetMessageAllocatorFor_PutPlan(
-        ::grpc::MessageAllocator< ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse>* allocator) {
+        ::grpc::MessageAllocator< ::proto::PutPlanRequest, ::proto::PutPlanResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::PutPlanRequest, ::proto::PutPlanResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_PutPlan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/) override {
+    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* PutPlan(
-      ::grpc::CallbackServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_GetPlan : public BaseClass {
@@ -192,27 +412,162 @@ class MasterService final {
    public:
     WithCallbackMethod_GetPlan() {
       ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::GetPlanRequest, ::proto::GetPlanResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response) { return this->GetPlan(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response) { return this->GetPlan(context, request, response); }));}
     void SetMessageAllocatorFor_GetPlan(
-        ::grpc::MessageAllocator< ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse>* allocator) {
+        ::grpc::MessageAllocator< ::proto::GetPlanRequest, ::proto::GetPlanResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::GetPlanRequest, ::proto::GetPlanResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_GetPlan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/) override {
+    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetPlan(
-      ::grpc::CallbackServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_PutPlan<WithCallbackMethod_GetPlan<Service > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_Ls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Ls() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::LsRequest, ::proto::LsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response) { return this->Ls(context, request, response); }));}
+    void SetMessageAllocatorFor_Ls(
+        ::grpc::MessageAllocator< ::proto::LsRequest, ::proto::LsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::LsRequest, ::proto::LsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Ls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Ls(::grpc::ServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Ls(
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_Rm : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Rm() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::RmRequest, ::proto::RmResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response) { return this->Rm(context, request, response); }));}
+    void SetMessageAllocatorFor_Rm(
+        ::grpc::MessageAllocator< ::proto::RmRequest, ::proto::RmResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::RmRequest, ::proto::RmResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Rm() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rm(::grpc::ServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Rm(
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_Mkdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Mkdir() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::MkdirRequest, ::proto::MkdirResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response) { return this->Mkdir(context, request, response); }));}
+    void SetMessageAllocatorFor_Mkdir(
+        ::grpc::MessageAllocator< ::proto::MkdirRequest, ::proto::MkdirResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::MkdirRequest, ::proto::MkdirResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Mkdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Mkdir(::grpc::ServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Mkdir(
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_Rmdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_Rmdir() {
+      ::grpc::Service::MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::RmdirRequest, ::proto::RmdirResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response) { return this->Rmdir(context, request, response); }));}
+    void SetMessageAllocatorFor_Rmdir(
+        ::grpc::MessageAllocator< ::proto::RmdirRequest, ::proto::RmdirResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::RmdirRequest, ::proto::RmdirResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_Rmdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rmdir(::grpc::ServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Rmdir(
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_RegisterUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_RegisterUser() {
+      ::grpc::Service::MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::RegisterUserRequest, ::proto::RegisterUserResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response) { return this->RegisterUser(context, request, response); }));}
+    void SetMessageAllocatorFor_RegisterUser(
+        ::grpc::MessageAllocator< ::proto::RegisterUserRequest, ::proto::RegisterUserResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::RegisterUserRequest, ::proto::RegisterUserResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_RegisterUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RegisterUser(::grpc::ServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* RegisterUser(
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_PutPlan<WithCallbackMethod_GetPlan<WithCallbackMethod_Ls<WithCallbackMethod_Rm<WithCallbackMethod_Mkdir<WithCallbackMethod_Rmdir<WithCallbackMethod_RegisterUser<Service > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_PutPlan : public BaseClass {
@@ -226,7 +581,7 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/) override {
+    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -243,7 +598,92 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/) override {
+    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Ls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Ls() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_Ls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Ls(::grpc::ServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Rm : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Rm() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_Rm() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rm(::grpc::ServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Mkdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Mkdir() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_Mkdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Mkdir(::grpc::ServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Rmdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Rmdir() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_Rmdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rmdir(::grpc::ServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_RegisterUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_RegisterUser() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_RegisterUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RegisterUser(::grpc::ServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -260,7 +700,7 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/) override {
+    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -280,12 +720,112 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/) override {
+    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPlan(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Ls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Ls() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_Ls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Ls(::grpc::ServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Rm : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Rm() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_Rm() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rm(::grpc::ServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRm(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Mkdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Mkdir() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_Mkdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Mkdir(::grpc::ServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestMkdir(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Rmdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Rmdir() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_Rmdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rmdir(::grpc::ServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRmdir(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_RegisterUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_RegisterUser() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_RegisterUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RegisterUser(::grpc::ServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRegisterUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -303,7 +843,7 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/) override {
+    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -325,11 +865,121 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/) override {
+    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetPlan(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Ls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Ls() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Ls(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Ls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Ls(::grpc::ServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Ls(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Rm : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Rm() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Rm(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Rm() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rm(::grpc::ServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Rm(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Mkdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Mkdir() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Mkdir(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Mkdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Mkdir(::grpc::ServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Mkdir(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_Rmdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_Rmdir() {
+      ::grpc::Service::MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Rmdir(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_Rmdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Rmdir(::grpc::ServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* Rmdir(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_RegisterUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_RegisterUser() {
+      ::grpc::Service::MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RegisterUser(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_RegisterUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RegisterUser(::grpc::ServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* RegisterUser(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -340,10 +990,10 @@ class MasterService final {
     WithStreamedUnaryMethod_PutPlan() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse>(
+          ::proto::PutPlanRequest, ::proto::PutPlanResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse>* streamer) {
+                     ::proto::PutPlanRequest, ::proto::PutPlanResponse>* streamer) {
                        return this->StreamedPutPlan(context,
                          streamer);
                   }));
@@ -352,12 +1002,12 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::gridfs::PutPlanRequest* /*request*/, ::gridfs::PutPlanResponse* /*response*/) override {
+    ::grpc::Status PutPlan(::grpc::ServerContext* /*context*/, const ::proto::PutPlanRequest* /*request*/, ::proto::PutPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedPutPlan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::gridfs::PutPlanRequest,::gridfs::PutPlanResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedPutPlan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::PutPlanRequest,::proto::PutPlanResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetPlan : public BaseClass {
@@ -367,10 +1017,10 @@ class MasterService final {
     WithStreamedUnaryMethod_GetPlan() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse>(
+          ::proto::GetPlanRequest, ::proto::GetPlanResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse>* streamer) {
+                     ::proto::GetPlanRequest, ::proto::GetPlanResponse>* streamer) {
                        return this->StreamedGetPlan(context,
                          streamer);
                   }));
@@ -379,65 +1029,200 @@ class MasterService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::gridfs::GetPlanRequest* /*request*/, ::gridfs::GetPlanResponse* /*response*/) override {
+    ::grpc::Status GetPlan(::grpc::ServerContext* /*context*/, const ::proto::GetPlanRequest* /*request*/, ::proto::GetPlanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetPlan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::gridfs::GetPlanRequest,::gridfs::GetPlanResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetPlan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::GetPlanRequest,::proto::GetPlanResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_PutPlan<WithStreamedUnaryMethod_GetPlan<Service > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Ls : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Ls() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::proto::LsRequest, ::proto::LsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::proto::LsRequest, ::proto::LsResponse>* streamer) {
+                       return this->StreamedLs(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Ls() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Ls(::grpc::ServerContext* /*context*/, const ::proto::LsRequest* /*request*/, ::proto::LsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedLs(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::LsRequest,::proto::LsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Rm : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Rm() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::proto::RmRequest, ::proto::RmResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::proto::RmRequest, ::proto::RmResponse>* streamer) {
+                       return this->StreamedRm(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Rm() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Rm(::grpc::ServerContext* /*context*/, const ::proto::RmRequest* /*request*/, ::proto::RmResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::RmRequest,::proto::RmResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Mkdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Mkdir() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::proto::MkdirRequest, ::proto::MkdirResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::proto::MkdirRequest, ::proto::MkdirResponse>* streamer) {
+                       return this->StreamedMkdir(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Mkdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Mkdir(::grpc::ServerContext* /*context*/, const ::proto::MkdirRequest* /*request*/, ::proto::MkdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedMkdir(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::MkdirRequest,::proto::MkdirResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Rmdir : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Rmdir() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::proto::RmdirRequest, ::proto::RmdirResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::proto::RmdirRequest, ::proto::RmdirResponse>* streamer) {
+                       return this->StreamedRmdir(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Rmdir() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Rmdir(::grpc::ServerContext* /*context*/, const ::proto::RmdirRequest* /*request*/, ::proto::RmdirResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRmdir(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::RmdirRequest,::proto::RmdirResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_RegisterUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_RegisterUser() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::proto::RegisterUserRequest, ::proto::RegisterUserResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::proto::RegisterUserRequest, ::proto::RegisterUserResponse>* streamer) {
+                       return this->StreamedRegisterUser(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_RegisterUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status RegisterUser(::grpc::ServerContext* /*context*/, const ::proto::RegisterUserRequest* /*request*/, ::proto::RegisterUserResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRegisterUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::RegisterUserRequest,::proto::RegisterUserResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_PutPlan<WithStreamedUnaryMethod_GetPlan<WithStreamedUnaryMethod_Ls<WithStreamedUnaryMethod_Rm<WithStreamedUnaryMethod_Mkdir<WithStreamedUnaryMethod_Rmdir<WithStreamedUnaryMethod_RegisterUser<Service > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_PutPlan<WithStreamedUnaryMethod_GetPlan<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_PutPlan<WithStreamedUnaryMethod_GetPlan<WithStreamedUnaryMethod_Ls<WithStreamedUnaryMethod_Rm<WithStreamedUnaryMethod_Mkdir<WithStreamedUnaryMethod_Rmdir<WithStreamedUnaryMethod_RegisterUser<Service > > > > > > > StreamedService;
 };
 
 // Master <-> DataNode (bidi) para heartbeats
 class MasterHeartbeat final {
  public:
   static constexpr char const* service_full_name() {
-    return "gridfs.MasterHeartbeat";
+    return "proto.MasterHeartbeat";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>> StreamStatus(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>>(StreamStatusRaw(context));
+    std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>> StreamStatus(::grpc::ClientContext* context) {
+      return std::unique_ptr< ::grpc::ClientReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>>(StreamStatusRaw(context));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>> AsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>>(AsyncStreamStatusRaw(context, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>> AsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>>(AsyncStreamStatusRaw(context, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>> PrepareAsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>>(PrepareAsyncStreamStatusRaw(context, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>> PrepareAsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>>(PrepareAsyncStreamStatusRaw(context, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void StreamStatus(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::gridfs::HeartbeatKv,::gridfs::HeartbeatAck>* reactor) = 0;
+      virtual void StreamStatus(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::proto::HeartbeatKv,::proto::HeartbeatAck>* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* StreamStatusRaw(::grpc::ClientContext* context) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* AsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderWriterInterface< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* PrepareAsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* StreamStatusRaw(::grpc::ClientContext* context) = 0;
+    virtual ::grpc::ClientAsyncReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* AsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderWriterInterface< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* PrepareAsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    std::unique_ptr< ::grpc::ClientReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>> StreamStatus(::grpc::ClientContext* context) {
-      return std::unique_ptr< ::grpc::ClientReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>>(StreamStatusRaw(context));
+    std::unique_ptr< ::grpc::ClientReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>> StreamStatus(::grpc::ClientContext* context) {
+      return std::unique_ptr< ::grpc::ClientReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>>(StreamStatusRaw(context));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>> AsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>>(AsyncStreamStatusRaw(context, cq, tag));
+    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>> AsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>>(AsyncStreamStatusRaw(context, cq, tag));
     }
-    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>> PrepareAsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>>(PrepareAsyncStreamStatusRaw(context, cq));
+    std::unique_ptr<  ::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>> PrepareAsyncStreamStatus(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>>(PrepareAsyncStreamStatusRaw(context, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void StreamStatus(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::gridfs::HeartbeatKv,::gridfs::HeartbeatAck>* reactor) override;
+      void StreamStatus(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::proto::HeartbeatKv,::proto::HeartbeatAck>* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -449,9 +1234,9 @@ class MasterHeartbeat final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* StreamStatusRaw(::grpc::ClientContext* context) override;
-    ::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* AsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* PrepareAsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* StreamStatusRaw(::grpc::ClientContext* context) override;
+    ::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* AsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* PrepareAsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_StreamStatus_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -460,7 +1245,7 @@ class MasterHeartbeat final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status StreamStatus(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* stream);
+    virtual ::grpc::Status StreamStatus(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* stream);
   };
   template <class BaseClass>
   class WithAsyncMethod_StreamStatus : public BaseClass {
@@ -474,11 +1259,11 @@ class MasterHeartbeat final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* /*stream*/)  override {
+    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* /*stream*/)  override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestStreamStatus(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestStreamStatus(::grpc::ServerContext* context, ::grpc::ServerAsyncReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* stream, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncBidiStreaming(0, context, stream, new_call_cq, notification_cq, tag);
     }
   };
@@ -490,7 +1275,7 @@ class MasterHeartbeat final {
    public:
     WithCallbackMethod_StreamStatus() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackBidiHandler< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>(
+          new ::grpc::internal::CallbackBidiHandler< ::proto::HeartbeatKv, ::proto::HeartbeatAck>(
             [this](
                    ::grpc::CallbackServerContext* context) { return this->StreamStatus(context); }));
     }
@@ -498,11 +1283,11 @@ class MasterHeartbeat final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* /*stream*/)  override {
+    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* /*stream*/)  override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerBidiReactor< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* StreamStatus(
+    virtual ::grpc::ServerBidiReactor< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* StreamStatus(
       ::grpc::CallbackServerContext* /*context*/)
       { return nullptr; }
   };
@@ -520,7 +1305,7 @@ class MasterHeartbeat final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* /*stream*/)  override {
+    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* /*stream*/)  override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -537,7 +1322,7 @@ class MasterHeartbeat final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* /*stream*/)  override {
+    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* /*stream*/)  override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -560,7 +1345,7 @@ class MasterHeartbeat final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* /*stream*/)  override {
+    ::grpc::Status StreamStatus(::grpc::ServerContext* /*context*/, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* /*stream*/)  override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -573,7 +1358,7 @@ class MasterHeartbeat final {
   typedef Service StreamedService;
 };
 
-}  // namespace gridfs
+}  // namespace proto
 
 
 #endif  // GRPC_master_2eproto__INCLUDED

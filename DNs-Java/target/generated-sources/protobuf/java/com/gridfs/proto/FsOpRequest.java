@@ -8,11 +8,11 @@ package com.gridfs.proto;
  * FS ops en el DataNode
  * </pre>
  *
- * Protobuf type {@code gridfs.FsOpRequest}
+ * Protobuf type {@code proto.FsOpRequest}
  */
 public final class FsOpRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.FsOpRequest)
+    // @@protoc_insertion_point(message_implements:proto.FsOpRequest)
     FsOpRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use FsOpRequest.newBuilder() to construct.
@@ -31,21 +31,26 @@ private static final long serialVersionUID = 0L;
     return new FsOpRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_FsOpRequest_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_FsOpRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_FsOpRequest_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_FsOpRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.FsOpRequest.class, com.gridfs.proto.FsOpRequest.Builder.class);
   }
 
   /**
-   * Protobuf enum {@code gridfs.FsOpRequest.Op}
+   * Protobuf enum {@code proto.FsOpRequest.Op}
    */
   public enum Op
       implements com.google.protobuf.ProtocolMessageEnum {
@@ -167,20 +172,20 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:gridfs.FsOpRequest.Op)
+    // @@protoc_insertion_point(enum_scope:proto.FsOpRequest.Op)
   }
 
   public static final int OP_FIELD_NUMBER = 1;
   private int op_ = 0;
   /**
-   * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+   * <code>.proto.FsOpRequest.Op op = 1;</code>
    * @return The enum numeric value on the wire for op.
    */
   @java.lang.Override public int getOpValue() {
     return op_;
   }
   /**
-   * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+   * <code>.proto.FsOpRequest.Op op = 1;</code>
    * @return The op.
    */
   @java.lang.Override public com.gridfs.proto.FsOpRequest.Op getOp() {
@@ -345,13 +350,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.FsOpRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.FsOpRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -398,21 +401,21 @@ private static final long serialVersionUID = 0L;
    * FS ops en el DataNode
    * </pre>
    *
-   * Protobuf type {@code gridfs.FsOpRequest}
+   * Protobuf type {@code proto.FsOpRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.FsOpRequest)
+      // @@protoc_insertion_point(builder_implements:proto.FsOpRequest)
       com.gridfs.proto.FsOpRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsOpRequest_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_FsOpRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsOpRequest_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_FsOpRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.FsOpRequest.class, com.gridfs.proto.FsOpRequest.Builder.class);
     }
@@ -439,7 +442,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsOpRequest_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_FsOpRequest_descriptor;
     }
 
     @java.lang.Override
@@ -581,14 +584,14 @@ private static final long serialVersionUID = 0L;
 
     private int op_ = 0;
     /**
-     * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+     * <code>.proto.FsOpRequest.Op op = 1;</code>
      * @return The enum numeric value on the wire for op.
      */
     @java.lang.Override public int getOpValue() {
       return op_;
     }
     /**
-     * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+     * <code>.proto.FsOpRequest.Op op = 1;</code>
      * @param value The enum numeric value on the wire for op to set.
      * @return This builder for chaining.
      */
@@ -599,7 +602,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+     * <code>.proto.FsOpRequest.Op op = 1;</code>
      * @return The op.
      */
     @java.lang.Override
@@ -608,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.gridfs.proto.FsOpRequest.Op.UNRECOGNIZED : result;
     }
     /**
-     * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+     * <code>.proto.FsOpRequest.Op op = 1;</code>
      * @param value The op to set.
      * @return This builder for chaining.
      */
@@ -622,7 +625,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+     * <code>.proto.FsOpRequest.Op op = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearOp() {
@@ -716,10 +719,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.FsOpRequest)
+    // @@protoc_insertion_point(builder_scope:proto.FsOpRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(class_scope:proto.FsOpRequest)
   private static final com.gridfs.proto.FsOpRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.FsOpRequest();

@@ -25,9 +25,9 @@
 #include <grpcpp/support/stub_options.h>
 #include <grpcpp/support/sync_stream.h>
 
-namespace gridfs {
+namespace proto {
 
-}  // namespace gridfs
+}  // namespace proto
 
 
 #endif  // GRPC_common_2eproto__INCLUDED

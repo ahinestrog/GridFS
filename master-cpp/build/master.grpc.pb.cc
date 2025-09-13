@@ -19,11 +19,16 @@
 #include <grpcpp/server_context.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/support/sync_stream.h>
-namespace gridfs {
+namespace proto {
 
 static const char* MasterService_method_names[] = {
-  "/gridfs.MasterService/PutPlan",
-  "/gridfs.MasterService/GetPlan",
+  "/proto.MasterService/PutPlan",
+  "/proto.MasterService/GetPlan",
+  "/proto.MasterService/Ls",
+  "/proto.MasterService/Rm",
+  "/proto.MasterService/Mkdir",
+  "/proto.MasterService/Rmdir",
+  "/proto.MasterService/RegisterUser",
 };
 
 std::unique_ptr< MasterService::Stub> MasterService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -35,50 +40,170 @@ std::unique_ptr< MasterService::Stub> MasterService::NewStub(const std::shared_p
 MasterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_PutPlan_(MasterService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetPlan_(MasterService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Ls_(MasterService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Rm_(MasterService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Mkdir_(MasterService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Rmdir_(MasterService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RegisterUser_(MasterService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MasterService::Stub::PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::gridfs::PutPlanResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PutPlan_, context, request, response);
+::grpc::Status MasterService::Stub::PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::proto::PutPlanResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::PutPlanRequest, ::proto::PutPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PutPlan_, context, request, response);
 }
 
-void MasterService::Stub::async::PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PutPlan_, context, request, response, std::move(f));
+void MasterService::Stub::async::PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::PutPlanRequest, ::proto::PutPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PutPlan_, context, request, response, std::move(f));
 }
 
-void MasterService::Stub::async::PutPlan(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void MasterService::Stub::async::PutPlan(::grpc::ClientContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PutPlan_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>* MasterService::Stub::PrepareAsyncPutPlanRaw(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::gridfs::PutPlanResponse, ::gridfs::PutPlanRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PutPlan_, context, request);
+::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>* MasterService::Stub::PrepareAsyncPutPlanRaw(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::PutPlanResponse, ::proto::PutPlanRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PutPlan_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::PutPlanResponse>* MasterService::Stub::AsyncPutPlanRaw(::grpc::ClientContext* context, const ::gridfs::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::proto::PutPlanResponse>* MasterService::Stub::AsyncPutPlanRaw(::grpc::ClientContext* context, const ::proto::PutPlanRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPutPlanRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MasterService::Stub::GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::gridfs::GetPlanResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPlan_, context, request, response);
+::grpc::Status MasterService::Stub::GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::proto::GetPlanResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::GetPlanRequest, ::proto::GetPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPlan_, context, request, response);
 }
 
-void MasterService::Stub::async::GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPlan_, context, request, response, std::move(f));
+void MasterService::Stub::async::GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::GetPlanRequest, ::proto::GetPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPlan_, context, request, response, std::move(f));
 }
 
-void MasterService::Stub::async::GetPlan(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void MasterService::Stub::async::GetPlan(::grpc::ClientContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPlan_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>* MasterService::Stub::PrepareAsyncGetPlanRaw(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::gridfs::GetPlanResponse, ::gridfs::GetPlanRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetPlan_, context, request);
+::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>* MasterService::Stub::PrepareAsyncGetPlanRaw(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::GetPlanResponse, ::proto::GetPlanRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetPlan_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::GetPlanResponse>* MasterService::Stub::AsyncGetPlanRaw(::grpc::ClientContext* context, const ::gridfs::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::proto::GetPlanResponse>* MasterService::Stub::AsyncGetPlanRaw(::grpc::ClientContext* context, const ::proto::GetPlanRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetPlanRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MasterService::Stub::Ls(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::proto::LsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::LsRequest, ::proto::LsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Ls_, context, request, response);
+}
+
+void MasterService::Stub::async::Ls(::grpc::ClientContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::LsRequest, ::proto::LsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Ls_, context, request, response, std::move(f));
+}
+
+void MasterService::Stub::async::Ls(::grpc::ClientContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Ls_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::LsResponse>* MasterService::Stub::PrepareAsyncLsRaw(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::LsResponse, ::proto::LsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Ls_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::LsResponse>* MasterService::Stub::AsyncLsRaw(::grpc::ClientContext* context, const ::proto::LsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MasterService::Stub::Rm(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::proto::RmResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::RmRequest, ::proto::RmResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Rm_, context, request, response);
+}
+
+void MasterService::Stub::async::Rm(::grpc::ClientContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::RmRequest, ::proto::RmResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Rm_, context, request, response, std::move(f));
+}
+
+void MasterService::Stub::async::Rm(::grpc::ClientContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Rm_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::RmResponse>* MasterService::Stub::PrepareAsyncRmRaw(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::RmResponse, ::proto::RmRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Rm_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::RmResponse>* MasterService::Stub::AsyncRmRaw(::grpc::ClientContext* context, const ::proto::RmRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRmRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MasterService::Stub::Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::proto::MkdirResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::MkdirRequest, ::proto::MkdirResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Mkdir_, context, request, response);
+}
+
+void MasterService::Stub::async::Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::MkdirRequest, ::proto::MkdirResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Mkdir_, context, request, response, std::move(f));
+}
+
+void MasterService::Stub::async::Mkdir(::grpc::ClientContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Mkdir_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>* MasterService::Stub::PrepareAsyncMkdirRaw(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::MkdirResponse, ::proto::MkdirRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Mkdir_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::MkdirResponse>* MasterService::Stub::AsyncMkdirRaw(::grpc::ClientContext* context, const ::proto::MkdirRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncMkdirRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MasterService::Stub::Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::proto::RmdirResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::RmdirRequest, ::proto::RmdirResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Rmdir_, context, request, response);
+}
+
+void MasterService::Stub::async::Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::RmdirRequest, ::proto::RmdirResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Rmdir_, context, request, response, std::move(f));
+}
+
+void MasterService::Stub::async::Rmdir(::grpc::ClientContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Rmdir_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>* MasterService::Stub::PrepareAsyncRmdirRaw(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::RmdirResponse, ::proto::RmdirRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Rmdir_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::RmdirResponse>* MasterService::Stub::AsyncRmdirRaw(::grpc::ClientContext* context, const ::proto::RmdirRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRmdirRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status MasterService::Stub::RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::proto::RegisterUserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::RegisterUserRequest, ::proto::RegisterUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RegisterUser_, context, request, response);
+}
+
+void MasterService::Stub::async::RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::RegisterUserRequest, ::proto::RegisterUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RegisterUser_, context, request, response, std::move(f));
+}
+
+void MasterService::Stub::async::RegisterUser(::grpc::ClientContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RegisterUser_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>* MasterService::Stub::PrepareAsyncRegisterUserRaw(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::RegisterUserResponse, ::proto::RegisterUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RegisterUser_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::proto::RegisterUserResponse>* MasterService::Stub::AsyncRegisterUserRaw(::grpc::ClientContext* context, const ::proto::RegisterUserRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRegisterUserRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -87,36 +212,121 @@ MasterService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MasterService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::gridfs::PutPlanRequest, ::gridfs::PutPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::PutPlanRequest, ::proto::PutPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MasterService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::gridfs::PutPlanRequest* req,
-             ::gridfs::PutPlanResponse* resp) {
+             const ::proto::PutPlanRequest* req,
+             ::proto::PutPlanResponse* resp) {
                return service->PutPlan(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MasterService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::gridfs::GetPlanRequest, ::gridfs::GetPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::GetPlanRequest, ::proto::GetPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](MasterService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::gridfs::GetPlanRequest* req,
-             ::gridfs::GetPlanResponse* resp) {
+             const ::proto::GetPlanRequest* req,
+             ::proto::GetPlanResponse* resp) {
                return service->GetPlan(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MasterService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::LsRequest, ::proto::LsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MasterService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::proto::LsRequest* req,
+             ::proto::LsResponse* resp) {
+               return service->Ls(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MasterService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::RmRequest, ::proto::RmResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MasterService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::proto::RmRequest* req,
+             ::proto::RmResponse* resp) {
+               return service->Rm(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MasterService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::MkdirRequest, ::proto::MkdirResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MasterService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::proto::MkdirRequest* req,
+             ::proto::MkdirResponse* resp) {
+               return service->Mkdir(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MasterService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::RmdirRequest, ::proto::RmdirResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MasterService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::proto::RmdirRequest* req,
+             ::proto::RmdirResponse* resp) {
+               return service->Rmdir(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MasterService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MasterService::Service, ::proto::RegisterUserRequest, ::proto::RegisterUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](MasterService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::proto::RegisterUserRequest* req,
+             ::proto::RegisterUserResponse* resp) {
+               return service->RegisterUser(ctx, req, resp);
              }, this)));
 }
 
 MasterService::Service::~Service() {
 }
 
-::grpc::Status MasterService::Service::PutPlan(::grpc::ServerContext* context, const ::gridfs::PutPlanRequest* request, ::gridfs::PutPlanResponse* response) {
+::grpc::Status MasterService::Service::PutPlan(::grpc::ServerContext* context, const ::proto::PutPlanRequest* request, ::proto::PutPlanResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MasterService::Service::GetPlan(::grpc::ServerContext* context, const ::gridfs::GetPlanRequest* request, ::gridfs::GetPlanResponse* response) {
+::grpc::Status MasterService::Service::GetPlan(::grpc::ServerContext* context, const ::proto::GetPlanRequest* request, ::proto::GetPlanResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MasterService::Service::Ls(::grpc::ServerContext* context, const ::proto::LsRequest* request, ::proto::LsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MasterService::Service::Rm(::grpc::ServerContext* context, const ::proto::RmRequest* request, ::proto::RmResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MasterService::Service::Mkdir(::grpc::ServerContext* context, const ::proto::MkdirRequest* request, ::proto::MkdirResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MasterService::Service::Rmdir(::grpc::ServerContext* context, const ::proto::RmdirRequest* request, ::proto::RmdirResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MasterService::Service::RegisterUser(::grpc::ServerContext* context, const ::proto::RegisterUserRequest* request, ::proto::RegisterUserResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -125,7 +335,7 @@ MasterService::Service::~Service() {
 
 
 static const char* MasterHeartbeat_method_names[] = {
-  "/gridfs.MasterHeartbeat/StreamStatus",
+  "/proto.MasterHeartbeat/StreamStatus",
 };
 
 std::unique_ptr< MasterHeartbeat::Stub> MasterHeartbeat::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -138,31 +348,31 @@ MasterHeartbeat::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   : channel_(channel), rpcmethod_StreamStatus_(MasterHeartbeat_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::BIDI_STREAMING, channel)
   {}
 
-::grpc::ClientReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* MasterHeartbeat::Stub::StreamStatusRaw(::grpc::ClientContext* context) {
-  return ::grpc::internal::ClientReaderWriterFactory< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>::Create(channel_.get(), rpcmethod_StreamStatus_, context);
+::grpc::ClientReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* MasterHeartbeat::Stub::StreamStatusRaw(::grpc::ClientContext* context) {
+  return ::grpc::internal::ClientReaderWriterFactory< ::proto::HeartbeatKv, ::proto::HeartbeatAck>::Create(channel_.get(), rpcmethod_StreamStatus_, context);
 }
 
-void MasterHeartbeat::Stub::async::StreamStatus(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::gridfs::HeartbeatKv,::gridfs::HeartbeatAck>* reactor) {
-  ::grpc::internal::ClientCallbackReaderWriterFactory< ::gridfs::HeartbeatKv,::gridfs::HeartbeatAck>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamStatus_, context, reactor);
+void MasterHeartbeat::Stub::async::StreamStatus(::grpc::ClientContext* context, ::grpc::ClientBidiReactor< ::proto::HeartbeatKv,::proto::HeartbeatAck>* reactor) {
+  ::grpc::internal::ClientCallbackReaderWriterFactory< ::proto::HeartbeatKv,::proto::HeartbeatAck>::Create(stub_->channel_.get(), stub_->rpcmethod_StreamStatus_, context, reactor);
 }
 
-::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* MasterHeartbeat::Stub::AsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>::Create(channel_.get(), cq, rpcmethod_StreamStatus_, context, true, tag);
+::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* MasterHeartbeat::Stub::AsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::proto::HeartbeatKv, ::proto::HeartbeatAck>::Create(channel_.get(), cq, rpcmethod_StreamStatus_, context, true, tag);
 }
 
-::grpc::ClientAsyncReaderWriter< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>* MasterHeartbeat::Stub::PrepareAsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>::Create(channel_.get(), cq, rpcmethod_StreamStatus_, context, false, nullptr);
+::grpc::ClientAsyncReaderWriter< ::proto::HeartbeatKv, ::proto::HeartbeatAck>* MasterHeartbeat::Stub::PrepareAsyncStreamStatusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::proto::HeartbeatKv, ::proto::HeartbeatAck>::Create(channel_.get(), cq, rpcmethod_StreamStatus_, context, false, nullptr);
 }
 
 MasterHeartbeat::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MasterHeartbeat_method_names[0],
       ::grpc::internal::RpcMethod::BIDI_STREAMING,
-      new ::grpc::internal::BidiStreamingHandler< MasterHeartbeat::Service, ::gridfs::HeartbeatKv, ::gridfs::HeartbeatAck>(
+      new ::grpc::internal::BidiStreamingHandler< MasterHeartbeat::Service, ::proto::HeartbeatKv, ::proto::HeartbeatAck>(
           [](MasterHeartbeat::Service* service,
              ::grpc::ServerContext* ctx,
-             ::grpc::ServerReaderWriter<::gridfs::HeartbeatAck,
-             ::gridfs::HeartbeatKv>* stream) {
+             ::grpc::ServerReaderWriter<::proto::HeartbeatAck,
+             ::proto::HeartbeatKv>* stream) {
                return service->StreamStatus(ctx, stream);
              }, this)));
 }
@@ -170,12 +380,12 @@ MasterHeartbeat::Service::Service() {
 MasterHeartbeat::Service::~Service() {
 }
 
-::grpc::Status MasterHeartbeat::Service::StreamStatus(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::gridfs::HeartbeatAck, ::gridfs::HeartbeatKv>* stream) {
+::grpc::Status MasterHeartbeat::Service::StreamStatus(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::proto::HeartbeatAck, ::proto::HeartbeatKv>* stream) {
   (void) context;
   (void) stream;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 
-}  // namespace gridfs
+}  // namespace proto
 

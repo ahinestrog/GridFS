@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface FsOpResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.FsOpResponse)
+    // @@protoc_insertion_point(interface_extends:proto.FsOpResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -26,25 +26,25 @@ public interface FsOpResponseOrBuilder extends
       getMessageBytes();
 
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   java.util.List<com.gridfs.proto.FsEntry> 
       getEntriesList();
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   com.gridfs.proto.FsEntry getEntries(int index);
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   int getEntriesCount();
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   java.util.List<? extends com.gridfs.proto.FsEntryOrBuilder> 
       getEntriesOrBuilderList();
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   com.gridfs.proto.FsEntryOrBuilder getEntriesOrBuilder(
       int index);

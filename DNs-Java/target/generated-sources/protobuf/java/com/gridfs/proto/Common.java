@@ -15,55 +15,55 @@ public final class Common {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_BlockAssignment_descriptor;
+    internal_static_proto_BlockAssignment_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_BlockAssignment_fieldAccessorTable;
+      internal_static_proto_BlockAssignment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_BlockLocation_descriptor;
+    internal_static_proto_BlockLocation_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_BlockLocation_fieldAccessorTable;
+      internal_static_proto_BlockLocation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_BlockChunk_descriptor;
+    internal_static_proto_BlockChunk_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_BlockChunk_fieldAccessorTable;
+      internal_static_proto_BlockChunk_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_WriteAck_descriptor;
+    internal_static_proto_WriteAck_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_WriteAck_fieldAccessorTable;
+      internal_static_proto_WriteAck_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_BlockId_descriptor;
+    internal_static_proto_BlockId_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_BlockId_fieldAccessorTable;
+      internal_static_proto_BlockId_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_HeartbeatKv_descriptor;
+    internal_static_proto_HeartbeatKv_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_HeartbeatKv_fieldAccessorTable;
+      internal_static_proto_HeartbeatKv_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_HeartbeatAck_descriptor;
+    internal_static_proto_HeartbeatAck_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_HeartbeatAck_fieldAccessorTable;
+      internal_static_proto_HeartbeatAck_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_FsOpRequest_descriptor;
+    internal_static_proto_FsOpRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_FsOpRequest_fieldAccessorTable;
+      internal_static_proto_FsOpRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_FsEntry_descriptor;
+    internal_static_proto_FsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_FsEntry_fieldAccessorTable;
+      internal_static_proto_FsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_FsOpResponse_descriptor;
+    internal_static_proto_FsOpResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_FsOpResponse_fieldAccessorTable;
+      internal_static_proto_FsOpResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -73,90 +73,90 @@ public final class Common {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014common.proto\022\006gridfs\"L\n\017BlockAssignmen" +
-      "t\022\020\n\010block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022" +
-      "\023\n\013replica_dns\030\003 \003(\t\"J\n\rBlockLocation\022\020\n" +
-      "\010block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022\023\n\013r" +
-      "eplica_dns\030\003 \003(\t\"F\n\nBlockChunk\022\020\n\010block_" +
-      "id\030\001 \001(\t\022\013\n\003seq\030\002 \001(\003\022\014\n\004data\030\003 \001(\014\022\013\n\003e" +
-      "of\030\004 \001(\010\"c\n\010WriteAck\022\020\n\010block_id\030\001 \001(\t\022\026" +
-      "\n\016bytes_received\030\002 \001(\003\022\020\n\010checksum\030\003 \001(\t" +
-      "\022\n\n\002ok\030\004 \001(\010\022\017\n\007message\030\005 \001(\t\"\033\n\007BlockId" +
-      "\022\020\n\010block_id\030\001 \001(\t\"N\n\013HeartbeatKv\022\017\n\007nod" +
-      "e_id\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\022" +
-      "\n\nts_unix_ms\030\004 \001(\003\"+\n\014HeartbeatAck\022\n\n\002ok" +
-      "\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"k\n\013FsOpRequest\022\"" +
-      "\n\002op\030\001 \001(\0162\026.gridfs.FsOpRequest.Op\022\014\n\004pa" +
-      "th\030\002 \001(\t\"*\n\002Op\022\006\n\002LS\020\000\022\006\n\002RM\020\001\022\t\n\005MKDIR\020" +
-      "\002\022\t\n\005RMDIR\020\003\"5\n\007FsEntry\022\014\n\004name\030\001 \001(\t\022\016\n" +
-      "\006is_dir\030\002 \001(\010\022\014\n\004size\030\003 \001(\003\"M\n\014FsOpRespo" +
-      "nse\022\n\n\002ok\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022 \n\007entr" +
-      "ies\030\003 \003(\0132\017.gridfs.FsEntryB\024\n\020com.gridfs" +
-      ".protoP\001b\006proto3"
+      "\n\014common.proto\022\005proto\"L\n\017BlockAssignment" +
+      "\022\020\n\010block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022\023" +
+      "\n\013replica_dns\030\003 \003(\t\"J\n\rBlockLocation\022\020\n\010" +
+      "block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022\023\n\013re" +
+      "plica_dns\030\003 \003(\t\"F\n\nBlockChunk\022\020\n\010block_i" +
+      "d\030\001 \001(\t\022\013\n\003seq\030\002 \001(\003\022\014\n\004data\030\003 \001(\014\022\013\n\003eo" +
+      "f\030\004 \001(\010\"c\n\010WriteAck\022\020\n\010block_id\030\001 \001(\t\022\026\n" +
+      "\016bytes_received\030\002 \001(\003\022\020\n\010checksum\030\003 \001(\t\022" +
+      "\n\n\002ok\030\004 \001(\010\022\017\n\007message\030\005 \001(\t\"\033\n\007BlockId\022" +
+      "\020\n\010block_id\030\001 \001(\t\"N\n\013HeartbeatKv\022\017\n\007node" +
+      "_id\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\022\n" +
+      "\nts_unix_ms\030\004 \001(\003\"+\n\014HeartbeatAck\022\n\n\002ok\030" +
+      "\001 \001(\010\022\017\n\007message\030\002 \001(\t\"j\n\013FsOpRequest\022!\n" +
+      "\002op\030\001 \001(\0162\025.proto.FsOpRequest.Op\022\014\n\004path" +
+      "\030\002 \001(\t\"*\n\002Op\022\006\n\002LS\020\000\022\006\n\002RM\020\001\022\t\n\005MKDIR\020\002\022" +
+      "\t\n\005RMDIR\020\003\"5\n\007FsEntry\022\014\n\004name\030\001 \001(\t\022\016\n\006i" +
+      "s_dir\030\002 \001(\010\022\014\n\004size\030\003 \001(\003\"L\n\014FsOpRespons" +
+      "e\022\n\n\002ok\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\037\n\007entrie" +
+      "s\030\003 \003(\0132\016.proto.FsEntryB\024\n\020com.gridfs.pr" +
+      "otoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_gridfs_BlockAssignment_descriptor =
+    internal_static_proto_BlockAssignment_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_gridfs_BlockAssignment_fieldAccessorTable = new
+    internal_static_proto_BlockAssignment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_BlockAssignment_descriptor,
+        internal_static_proto_BlockAssignment_descriptor,
         new java.lang.String[] { "BlockId", "PrimaryDn", "ReplicaDns", });
-    internal_static_gridfs_BlockLocation_descriptor =
+    internal_static_proto_BlockLocation_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_gridfs_BlockLocation_fieldAccessorTable = new
+    internal_static_proto_BlockLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_BlockLocation_descriptor,
+        internal_static_proto_BlockLocation_descriptor,
         new java.lang.String[] { "BlockId", "PrimaryDn", "ReplicaDns", });
-    internal_static_gridfs_BlockChunk_descriptor =
+    internal_static_proto_BlockChunk_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_gridfs_BlockChunk_fieldAccessorTable = new
+    internal_static_proto_BlockChunk_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_BlockChunk_descriptor,
+        internal_static_proto_BlockChunk_descriptor,
         new java.lang.String[] { "BlockId", "Seq", "Data", "Eof", });
-    internal_static_gridfs_WriteAck_descriptor =
+    internal_static_proto_WriteAck_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_gridfs_WriteAck_fieldAccessorTable = new
+    internal_static_proto_WriteAck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_WriteAck_descriptor,
+        internal_static_proto_WriteAck_descriptor,
         new java.lang.String[] { "BlockId", "BytesReceived", "Checksum", "Ok", "Message", });
-    internal_static_gridfs_BlockId_descriptor =
+    internal_static_proto_BlockId_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_gridfs_BlockId_fieldAccessorTable = new
+    internal_static_proto_BlockId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_BlockId_descriptor,
+        internal_static_proto_BlockId_descriptor,
         new java.lang.String[] { "BlockId", });
-    internal_static_gridfs_HeartbeatKv_descriptor =
+    internal_static_proto_HeartbeatKv_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_gridfs_HeartbeatKv_fieldAccessorTable = new
+    internal_static_proto_HeartbeatKv_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_HeartbeatKv_descriptor,
+        internal_static_proto_HeartbeatKv_descriptor,
         new java.lang.String[] { "NodeId", "Key", "Value", "TsUnixMs", });
-    internal_static_gridfs_HeartbeatAck_descriptor =
+    internal_static_proto_HeartbeatAck_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_gridfs_HeartbeatAck_fieldAccessorTable = new
+    internal_static_proto_HeartbeatAck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_HeartbeatAck_descriptor,
+        internal_static_proto_HeartbeatAck_descriptor,
         new java.lang.String[] { "Ok", "Message", });
-    internal_static_gridfs_FsOpRequest_descriptor =
+    internal_static_proto_FsOpRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_gridfs_FsOpRequest_fieldAccessorTable = new
+    internal_static_proto_FsOpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_FsOpRequest_descriptor,
+        internal_static_proto_FsOpRequest_descriptor,
         new java.lang.String[] { "Op", "Path", });
-    internal_static_gridfs_FsEntry_descriptor =
+    internal_static_proto_FsEntry_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_gridfs_FsEntry_fieldAccessorTable = new
+    internal_static_proto_FsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_FsEntry_descriptor,
+        internal_static_proto_FsEntry_descriptor,
         new java.lang.String[] { "Name", "IsDir", "Size", });
-    internal_static_gridfs_FsOpResponse_descriptor =
+    internal_static_proto_FsOpResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_gridfs_FsOpResponse_fieldAccessorTable = new
+    internal_static_proto_FsOpResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_FsOpResponse_descriptor,
+        internal_static_proto_FsOpResponse_descriptor,
         new java.lang.String[] { "Ok", "Message", "Entries", });
   }
 

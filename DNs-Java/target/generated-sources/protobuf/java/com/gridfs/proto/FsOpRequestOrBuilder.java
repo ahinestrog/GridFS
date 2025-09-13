@@ -4,16 +4,16 @@
 package com.gridfs.proto;
 
 public interface FsOpRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.FsOpRequest)
+    // @@protoc_insertion_point(interface_extends:proto.FsOpRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+   * <code>.proto.FsOpRequest.Op op = 1;</code>
    * @return The enum numeric value on the wire for op.
    */
   int getOpValue();
   /**
-   * <code>.gridfs.FsOpRequest.Op op = 1;</code>
+   * <code>.proto.FsOpRequest.Op op = 1;</code>
    * @return The op.
    */
   com.gridfs.proto.FsOpRequest.Op getOp();

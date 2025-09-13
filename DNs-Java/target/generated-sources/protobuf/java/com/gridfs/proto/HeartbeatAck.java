@@ -4,11 +4,11 @@
 package com.gridfs.proto;
 
 /**
- * Protobuf type {@code gridfs.HeartbeatAck}
+ * Protobuf type {@code proto.HeartbeatAck}
  */
 public final class HeartbeatAck extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.HeartbeatAck)
+    // @@protoc_insertion_point(message_implements:proto.HeartbeatAck)
     HeartbeatAckOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use HeartbeatAck.newBuilder() to construct.
@@ -26,15 +26,20 @@ private static final long serialVersionUID = 0L;
     return new HeartbeatAck();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatAck_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_HeartbeatAck_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatAck_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_HeartbeatAck_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.HeartbeatAck.class, com.gridfs.proto.HeartbeatAck.Builder.class);
   }
@@ -209,13 +214,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.HeartbeatAck parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.HeartbeatAck parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -258,21 +261,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code gridfs.HeartbeatAck}
+   * Protobuf type {@code proto.HeartbeatAck}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.HeartbeatAck)
+      // @@protoc_insertion_point(builder_implements:proto.HeartbeatAck)
       com.gridfs.proto.HeartbeatAckOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatAck_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_HeartbeatAck_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatAck_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_HeartbeatAck_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.HeartbeatAck.class, com.gridfs.proto.HeartbeatAck.Builder.class);
     }
@@ -299,7 +302,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatAck_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_HeartbeatAck_descriptor;
     }
 
     @java.lang.Override
@@ -454,7 +457,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setOk(boolean value) {
-
+      
       ok_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
@@ -555,10 +558,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.HeartbeatAck)
+    // @@protoc_insertion_point(builder_scope:proto.HeartbeatAck)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(class_scope:proto.HeartbeatAck)
   private static final com.gridfs.proto.HeartbeatAck DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.HeartbeatAck();

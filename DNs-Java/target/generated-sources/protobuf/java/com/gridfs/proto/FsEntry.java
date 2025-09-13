@@ -4,11 +4,11 @@
 package com.gridfs.proto;
 
 /**
- * Protobuf type {@code gridfs.FsEntry}
+ * Protobuf type {@code proto.FsEntry}
  */
 public final class FsEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.FsEntry)
+    // @@protoc_insertion_point(message_implements:proto.FsEntry)
     FsEntryOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use FsEntry.newBuilder() to construct.
@@ -26,15 +26,20 @@ private static final long serialVersionUID = 0L;
     return new FsEntry();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_FsEntry_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_FsEntry_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_FsEntry_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_FsEntry_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.FsEntry.class, com.gridfs.proto.FsEntry.Builder.class);
   }
@@ -232,13 +237,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.FsEntry parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.FsEntry parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -281,21 +284,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code gridfs.FsEntry}
+   * Protobuf type {@code proto.FsEntry}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.FsEntry)
+      // @@protoc_insertion_point(builder_implements:proto.FsEntry)
       com.gridfs.proto.FsEntryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsEntry_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_FsEntry_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsEntry_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_FsEntry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.FsEntry.class, com.gridfs.proto.FsEntry.Builder.class);
     }
@@ -323,7 +326,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsEntry_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_FsEntry_descriptor;
     }
 
     @java.lang.Override
@@ -561,7 +564,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setIsDir(boolean value) {
-
+      
       isDir_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
@@ -593,7 +596,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setSize(long value) {
-
+      
       size_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
@@ -622,10 +625,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.FsEntry)
+    // @@protoc_insertion_point(builder_scope:proto.FsEntry)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.FsEntry)
+  // @@protoc_insertion_point(class_scope:proto.FsEntry)
   private static final com.gridfs.proto.FsEntry DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.FsEntry();

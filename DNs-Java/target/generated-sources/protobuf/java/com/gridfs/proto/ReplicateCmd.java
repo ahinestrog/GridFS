@@ -4,15 +4,11 @@
 package com.gridfs.proto;
 
 /**
- * <pre>
- * Órdenes del Master hacia un DataNode
- * </pre>
- *
- * Protobuf type {@code gridfs.ReplicateCmd}
+ * Protobuf type {@code proto.ReplicateCmd}
  */
 public final class ReplicateCmd extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.ReplicateCmd)
+    // @@protoc_insertion_point(message_implements:proto.ReplicateCmd)
     ReplicateCmdOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use ReplicateCmd.newBuilder() to construct.
@@ -31,15 +27,20 @@ private static final long serialVersionUID = 0L;
     return new ReplicateCmd();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Admin.internal_static_gridfs_ReplicateCmd_descriptor;
+    return com.gridfs.proto.Admin.internal_static_proto_ReplicateCmd_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Admin.internal_static_gridfs_ReplicateCmd_fieldAccessorTable
+    return com.gridfs.proto.Admin.internal_static_proto_ReplicateCmd_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.ReplicateCmd.class, com.gridfs.proto.ReplicateCmd.Builder.class);
   }
@@ -240,13 +241,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.ReplicateCmd parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.ReplicateCmd parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -289,25 +288,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Órdenes del Master hacia un DataNode
-   * </pre>
-   *
-   * Protobuf type {@code gridfs.ReplicateCmd}
+   * Protobuf type {@code proto.ReplicateCmd}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.ReplicateCmd)
+      // @@protoc_insertion_point(builder_implements:proto.ReplicateCmd)
       com.gridfs.proto.ReplicateCmdOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Admin.internal_static_gridfs_ReplicateCmd_descriptor;
+      return com.gridfs.proto.Admin.internal_static_proto_ReplicateCmd_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Admin.internal_static_gridfs_ReplicateCmd_fieldAccessorTable
+      return com.gridfs.proto.Admin.internal_static_proto_ReplicateCmd_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.ReplicateCmd.class, com.gridfs.proto.ReplicateCmd.Builder.class);
     }
@@ -334,7 +329,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Admin.internal_static_gridfs_ReplicateCmd_descriptor;
+      return com.gridfs.proto.Admin.internal_static_proto_ReplicateCmd_descriptor;
     }
 
     @java.lang.Override
@@ -632,10 +627,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.ReplicateCmd)
+    // @@protoc_insertion_point(builder_scope:proto.ReplicateCmd)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(class_scope:proto.ReplicateCmd)
   private static final com.gridfs.proto.ReplicateCmd DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.ReplicateCmd();

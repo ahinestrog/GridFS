@@ -4,29 +4,29 @@
 package com.gridfs.proto;
 
 public interface PutPlanResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.PutPlanResponse)
+    // @@protoc_insertion_point(interface_extends:proto.PutPlanResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .gridfs.BlockAssignment assignments = 1;</code>
+   * <code>repeated .proto.BlockAssignment assignments = 1;</code>
    */
   java.util.List<com.gridfs.proto.BlockAssignment> 
       getAssignmentsList();
   /**
-   * <code>repeated .gridfs.BlockAssignment assignments = 1;</code>
+   * <code>repeated .proto.BlockAssignment assignments = 1;</code>
    */
   com.gridfs.proto.BlockAssignment getAssignments(int index);
   /**
-   * <code>repeated .gridfs.BlockAssignment assignments = 1;</code>
+   * <code>repeated .proto.BlockAssignment assignments = 1;</code>
    */
   int getAssignmentsCount();
   /**
-   * <code>repeated .gridfs.BlockAssignment assignments = 1;</code>
+   * <code>repeated .proto.BlockAssignment assignments = 1;</code>
    */
   java.util.List<? extends com.gridfs.proto.BlockAssignmentOrBuilder> 
       getAssignmentsOrBuilderList();
   /**
-   * <code>repeated .gridfs.BlockAssignment assignments = 1;</code>
+   * <code>repeated .proto.BlockAssignment assignments = 1;</code>
    */
   com.gridfs.proto.BlockAssignmentOrBuilder getAssignmentsOrBuilder(
       int index);

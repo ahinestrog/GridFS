@@ -6,30 +6,43 @@
   <groupId>com.gridfs</groupId>
   <artifactId>datanode</artifactId>
   <version>0.1.0</version>
+  <name>GridFS DataNode</name>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <grpc.version>1.64.0</grpc.version>
-    <protobuf.version>3.24.4</protobuf.version>
+
+    <!-- Versiones centrales, coherentes -->
+    <grpc.version>1.66.0</grpc.version>
+    <protobuf.version>3.21.12</protobuf.version>
   </properties>
 
+  <!-- BOM de gRPC: fija versiones internas para TODAS las libs io.grpc -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-bom</artifactId>
+        <version>${grpc.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
-    <!-- gRPC runtime -->
+    <!-- gRPC runtime (SIN versión: la pone el BOM) -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <version>${grpc.version}</version>
     </dependency>
 
     <!-- Protobuf runtime -->
@@ -39,22 +52,23 @@
       <version>${protobuf.version}</version>
     </dependency>
 
-    <!-- Opcional: logging simple -->
+    <!-- Logging simple (opcional) -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>2.0.13</version>
     </dependency>
 
+    <!-- Anotaciones (usadas por stubs) -->
     <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>javax.annotation-api</artifactId>
-        <version>1.3.2</version>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
     </dependency>
-    
   </dependencies>
 
   <build>
+    <!-- Detecta el classifier del SO para bajar protoc/protoc-gen-grpc-java -->
     <extensions>
       <extension>
         <groupId>kr.motd.maven</groupId>
@@ -70,48 +84,48 @@
         <artifactId>protobuf-maven-plugin</artifactId>
         <version>0.6.1</version>
         <configuration>
-          <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+          <protocArtifact>
+            com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
+          </protocArtifact>
           <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-          <protoPath>${project.basedir}/../proto</protoPath>
+          <pluginArtifact>
+            io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}
+          </pluginArtifact>
+
+          <!-- Usar proto/ central en la raíz del repo -->
           <protoSourceRoot>${project.basedir}/../proto</protoSourceRoot>
-          <sourceRoot>${project.build.directory}/generated-sources/protobuf/java</sourceRoot>
+
+          <!-- Directorios de salida de los stubs -->
           <outputDirectory>${project.build.directory}/generated-sources/protobuf/java</outputDirectory>
-          <includes>
-            <include>**/*.proto</include>
-          </includes>
-          <addSources>true</addSources>
+          <clearOutputDirectory>false</clearOutputDirectory>
         </configuration>
         <executions>
           <execution>
+            <id>protoc</id>
             <goals>
               <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>grpc</id>
+            <goals>
               <goal>compile-custom</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
 
-      <!-- Para ejecutar el DataNode con mvn exec:java -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-          <generatedSourcesDirectory>${project.build.directory}/generated-sources/protobuf/java</generatedSourcesDirectory>
-        </configuration>
-      </plugin>
-
-      <!-- Para ejecutar el DataNode con mvn exec:java -->
+      <!-- Ejecutar el DataNode con mvn exec:java -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
+        <configuration>
+          <mainClass>com.gridfs.datanode.DataNodeServer</mainClass>
+        </configuration>
       </plugin>
 
-      <!-- Para crear un jar ejecutable con todas las dependencias -->
+      <!-- Empaquetar jar "fat" -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -132,6 +146,17 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <!-- Compilación Java -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+          <release>${maven.compiler.target}</release>
+        </configuration>
       </plugin>
     </plugins>
   </build>

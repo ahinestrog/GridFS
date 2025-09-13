@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface FsEntryOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.FsEntry)
+    // @@protoc_insertion_point(interface_extends:proto.FsEntry)
     com.google.protobuf.MessageOrBuilder {
 
   /**

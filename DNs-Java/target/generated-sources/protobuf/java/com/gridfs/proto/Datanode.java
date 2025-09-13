@@ -23,14 +23,14 @@ public final class Datanode {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016datanode.proto\022\006gridfs\032\014common.proto2\251" +
-      "\001\n\nDataNodeIO\0224\n\nWriteBlock\022\022.gridfs.Blo" +
-      "ckChunk\032\020.gridfs.WriteAck(\001\0222\n\tReadBlock" +
-      "\022\017.gridfs.BlockId\032\022.gridfs.BlockChunk0\001\022" +
-      "1\n\004FsOp\022\023.gridfs.FsOpRequest\032\024.gridfs.Fs" +
-      "OpResponse2I\n\022ReplicationService\0223\n\tPush" +
-      "Block\022\022.gridfs.BlockChunk\032\020.gridfs.Write" +
-      "Ack(\001B\024\n\020com.gridfs.protoP\001b\006proto3"
+      "\n\016datanode.proto\022\005proto\032\014common.proto2\243\001" +
+      "\n\nDataNodeIO\0222\n\nWriteBlock\022\021.proto.Block" +
+      "Chunk\032\017.proto.WriteAck(\001\0220\n\tReadBlock\022\016." +
+      "proto.BlockId\032\021.proto.BlockChunk0\001\022/\n\004Fs" +
+      "Op\022\022.proto.FsOpRequest\032\023.proto.FsOpRespo" +
+      "nse2G\n\022ReplicationService\0221\n\tPushBlock\022\021" +
+      ".proto.BlockChunk\032\017.proto.WriteAck(\001B\024\n\020" +
+      "com.gridfs.protoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

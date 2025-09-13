@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface PutPlanRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.PutPlanRequest)
+    // @@protoc_insertion_point(interface_extends:proto.PutPlanRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -36,4 +36,19 @@ public interface PutPlanRequestOrBuilder extends
    * @return The replication.
    */
   int getReplication();
+
+  /**
+   * <code>.proto.Auth auth = 5;</code>
+   * @return Whether the auth field is set.
+   */
+  boolean hasAuth();
+  /**
+   * <code>.proto.Auth auth = 5;</code>
+   * @return The auth.
+   */
+  com.gridfs.proto.Auth getAuth();
+  /**
+   * <code>.proto.Auth auth = 5;</code>
+   */
+  com.gridfs.proto.AuthOrBuilder getAuthOrBuilder();
 }

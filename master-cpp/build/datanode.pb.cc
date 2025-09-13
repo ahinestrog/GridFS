@@ -20,8 +20,8 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
-namespace gridfs {
-}  // namespace gridfs
+namespace proto {
+}  // namespace proto
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_datanode_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_datanode_2eproto = nullptr;
 const uint32_t TableStruct_datanode_2eproto::offsets[1] = {};
@@ -29,21 +29,21 @@ static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
 static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_datanode_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016datanode.proto\022\006gridfs\032\014common.proto2\251"
-  "\001\n\nDataNodeIO\0224\n\nWriteBlock\022\022.gridfs.Blo"
-  "ckChunk\032\020.gridfs.WriteAck(\001\0222\n\tReadBlock"
-  "\022\017.gridfs.BlockId\032\022.gridfs.BlockChunk0\001\022"
-  "1\n\004FsOp\022\023.gridfs.FsOpRequest\032\024.gridfs.Fs"
-  "OpResponse2I\n\022ReplicationService\0223\n\tPush"
-  "Block\022\022.gridfs.BlockChunk\032\020.gridfs.Write"
-  "Ack(\001b\006proto3"
+  "\n\016datanode.proto\022\005proto\032\014common.proto2\243\001"
+  "\n\nDataNodeIO\0222\n\nWriteBlock\022\021.proto.Block"
+  "Chunk\032\017.proto.WriteAck(\001\0220\n\tReadBlock\022\016."
+  "proto.BlockId\032\021.proto.BlockChunk0\001\022/\n\004Fs"
+  "Op\022\022.proto.FsOpRequest\032\023.proto.FsOpRespo"
+  "nse2G\n\022ReplicationService\0221\n\tPushBlock\022\021"
+  ".proto.BlockChunk\032\017.proto.WriteAck(\001B\024\n\020"
+  "com.gridfs.protoP\001b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_datanode_2eproto_deps[1] = {
   &::descriptor_table_common_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_datanode_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_datanode_2eproto = {
-    false, false, 293, descriptor_table_protodef_datanode_2eproto,
+    false, false, 306, descriptor_table_protodef_datanode_2eproto,
     "datanode.proto",
     &descriptor_table_datanode_2eproto_once, descriptor_table_datanode_2eproto_deps, 1, 0,
     schemas, file_default_instances, TableStruct_datanode_2eproto::offsets,
@@ -56,10 +56,10 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_datanode
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_datanode_2eproto(&descriptor_table_datanode_2eproto);
-namespace gridfs {
+namespace proto {
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace gridfs
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
 PROTOBUF_NAMESPACE_CLOSE
 

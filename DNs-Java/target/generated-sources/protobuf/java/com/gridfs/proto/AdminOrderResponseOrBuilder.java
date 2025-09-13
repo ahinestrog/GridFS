@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface AdminOrderResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.AdminOrderResponse)
+    // @@protoc_insertion_point(interface_extends:proto.AdminOrderResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

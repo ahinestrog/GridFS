@@ -4,11 +4,11 @@
 package com.gridfs.proto;
 
 /**
- * Protobuf type {@code gridfs.FsOpResponse}
+ * Protobuf type {@code proto.FsOpResponse}
  */
 public final class FsOpResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.FsOpResponse)
+    // @@protoc_insertion_point(message_implements:proto.FsOpResponse)
     FsOpResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use FsOpResponse.newBuilder() to construct.
@@ -27,15 +27,20 @@ private static final long serialVersionUID = 0L;
     return new FsOpResponse();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_FsOpResponse_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_FsOpResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_FsOpResponse_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_FsOpResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.FsOpResponse.class, com.gridfs.proto.FsOpResponse.Builder.class);
   }
@@ -94,14 +99,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.gridfs.proto.FsEntry> entries_;
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.gridfs.proto.FsEntry> getEntriesList() {
     return entries_;
   }
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.gridfs.proto.FsEntryOrBuilder> 
@@ -109,21 +114,21 @@ private static final long serialVersionUID = 0L;
     return entries_;
   }
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   @java.lang.Override
   public int getEntriesCount() {
     return entries_.size();
   }
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   @java.lang.Override
   public com.gridfs.proto.FsEntry getEntries(int index) {
     return entries_.get(index);
   }
   /**
-   * <code>repeated .gridfs.FsEntry entries = 3;</code>
+   * <code>repeated .proto.FsEntry entries = 3;</code>
    */
   @java.lang.Override
   public com.gridfs.proto.FsEntryOrBuilder getEntriesOrBuilder(
@@ -264,13 +269,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.FsOpResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.FsOpResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -313,21 +316,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code gridfs.FsOpResponse}
+   * Protobuf type {@code proto.FsOpResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.FsOpResponse)
+      // @@protoc_insertion_point(builder_implements:proto.FsOpResponse)
       com.gridfs.proto.FsOpResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsOpResponse_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_FsOpResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsOpResponse_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_FsOpResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.FsOpResponse.class, com.gridfs.proto.FsOpResponse.Builder.class);
     }
@@ -361,7 +364,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_FsOpResponse_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_FsOpResponse_descriptor;
     }
 
     @java.lang.Override
@@ -568,7 +571,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setOk(boolean value) {
-
+      
       ok_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
@@ -670,7 +673,7 @@ private static final long serialVersionUID = 0L;
         com.gridfs.proto.FsEntry, com.gridfs.proto.FsEntry.Builder, com.gridfs.proto.FsEntryOrBuilder> entriesBuilder_;
 
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public java.util.List<com.gridfs.proto.FsEntry> getEntriesList() {
       if (entriesBuilder_ == null) {
@@ -680,7 +683,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public int getEntriesCount() {
       if (entriesBuilder_ == null) {
@@ -690,7 +693,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public com.gridfs.proto.FsEntry getEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -700,7 +703,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder setEntries(
         int index, com.gridfs.proto.FsEntry value) {
@@ -717,7 +720,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder setEntries(
         int index, com.gridfs.proto.FsEntry.Builder builderForValue) {
@@ -731,7 +734,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder addEntries(com.gridfs.proto.FsEntry value) {
       if (entriesBuilder_ == null) {
@@ -747,7 +750,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder addEntries(
         int index, com.gridfs.proto.FsEntry value) {
@@ -764,7 +767,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder addEntries(
         com.gridfs.proto.FsEntry.Builder builderForValue) {
@@ -778,7 +781,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder addEntries(
         int index, com.gridfs.proto.FsEntry.Builder builderForValue) {
@@ -792,7 +795,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder addAllEntries(
         java.lang.Iterable<? extends com.gridfs.proto.FsEntry> values) {
@@ -807,7 +810,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
@@ -820,7 +823,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public Builder removeEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -833,14 +836,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public com.gridfs.proto.FsEntry.Builder getEntriesBuilder(
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public com.gridfs.proto.FsEntryOrBuilder getEntriesOrBuilder(
         int index) {
@@ -850,7 +853,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public java.util.List<? extends com.gridfs.proto.FsEntryOrBuilder> 
          getEntriesOrBuilderList() {
@@ -861,14 +864,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public com.gridfs.proto.FsEntry.Builder addEntriesBuilder() {
       return getEntriesFieldBuilder().addBuilder(
           com.gridfs.proto.FsEntry.getDefaultInstance());
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public com.gridfs.proto.FsEntry.Builder addEntriesBuilder(
         int index) {
@@ -876,7 +879,7 @@ private static final long serialVersionUID = 0L;
           index, com.gridfs.proto.FsEntry.getDefaultInstance());
     }
     /**
-     * <code>repeated .gridfs.FsEntry entries = 3;</code>
+     * <code>repeated .proto.FsEntry entries = 3;</code>
      */
     public java.util.List<com.gridfs.proto.FsEntry.Builder> 
          getEntriesBuilderList() {
@@ -909,10 +912,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.FsOpResponse)
+    // @@protoc_insertion_point(builder_scope:proto.FsOpResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(class_scope:proto.FsOpResponse)
   private static final com.gridfs.proto.FsOpResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.FsOpResponse();

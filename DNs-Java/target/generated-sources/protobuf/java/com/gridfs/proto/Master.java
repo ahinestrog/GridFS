@@ -15,25 +15,80 @@ public final class Master {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_PutPlanRequest_descriptor;
+    internal_static_proto_RegisterUserRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_PutPlanRequest_fieldAccessorTable;
+      internal_static_proto_RegisterUserRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_PutPlanResponse_descriptor;
+    internal_static_proto_RegisterUserResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_PutPlanResponse_fieldAccessorTable;
+      internal_static_proto_RegisterUserResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_GetPlanRequest_descriptor;
+    internal_static_proto_PutPlanRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_GetPlanRequest_fieldAccessorTable;
+      internal_static_proto_PutPlanRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_GetPlanResponse_descriptor;
+    internal_static_proto_PutPlanResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_GetPlanResponse_fieldAccessorTable;
+      internal_static_proto_PutPlanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetPlanRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetPlanRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetPlanResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetPlanResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Auth_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Auth_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_LsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_LsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_LsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_LsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RmRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RmRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RmResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RmResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MkdirRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MkdirRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MkdirResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MkdirResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RmdirRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RmdirRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RmdirResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RmdirResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,50 +98,137 @@ public final class Master {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014master.proto\022\006gridfs\032\014common.proto\"]\n\016" +
-      "PutPlanRequest\022\020\n\010filename\030\001 \001(\t\022\020\n\010file" +
-      "size\030\002 \001(\003\022\022\n\nblock_size\030\003 \001(\005\022\023\n\013replic" +
-      "ation\030\004 \001(\005\"?\n\017PutPlanResponse\022,\n\013assign" +
-      "ments\030\001 \003(\0132\027.gridfs.BlockAssignment\"\"\n\016" +
-      "GetPlanRequest\022\020\n\010filename\030\001 \001(\t\";\n\017GetP" +
-      "lanResponse\022(\n\tlocations\030\001 \003(\0132\025.gridfs." +
-      "BlockLocation2\207\001\n\rMasterService\022:\n\007PutPl" +
-      "an\022\026.gridfs.PutPlanRequest\032\027.gridfs.PutP" +
-      "lanResponse\022:\n\007GetPlan\022\026.gridfs.GetPlanR" +
-      "equest\032\027.gridfs.GetPlanResponse2P\n\017Maste" +
-      "rHeartbeat\022=\n\014StreamStatus\022\023.gridfs.Hear" +
-      "tbeatKv\032\024.gridfs.HeartbeatAck(\0010\001B\024\n\020com" +
-      ".gridfs.protoP\001b\006proto3"
+      "\n\014master.proto\022\005proto\032\014common.proto\"1\n\023R" +
+      "egisterUserRequest\022\014\n\004user\030\001 \001(\t\022\014\n\004pass" +
+      "\030\002 \001(\t\"1\n\024RegisterUserResponse\022\n\n\002ok\030\001 \001" +
+      "(\010\022\r\n\005error\030\002 \001(\t\"x\n\016PutPlanRequest\022\020\n\010f" +
+      "ilename\030\001 \001(\t\022\020\n\010filesize\030\002 \001(\003\022\022\n\nblock" +
+      "_size\030\003 \001(\005\022\023\n\013replication\030\004 \001(\005\022\031\n\004auth" +
+      "\030\005 \001(\0132\013.proto.Auth\">\n\017PutPlanResponse\022+" +
+      "\n\013assignments\030\001 \003(\0132\026.proto.BlockAssignm" +
+      "ent\"=\n\016GetPlanRequest\022\020\n\010filename\030\001 \001(\t\022" +
+      "\031\n\004auth\030\002 \001(\0132\013.proto.Auth\":\n\017GetPlanRes" +
+      "ponse\022\'\n\tlocations\030\001 \003(\0132\024.proto.BlockLo" +
+      "cation\"\"\n\004Auth\022\014\n\004user\030\001 \001(\t\022\014\n\004pass\030\002 \001" +
+      "(\t\"4\n\tLsRequest\022\031\n\004auth\030\001 \001(\0132\013.proto.Au" +
+      "th\022\014\n\004path\030\002 \001(\t\"\035\n\nLsResponse\022\017\n\007entrie" +
+      "s\030\001 \003(\t\"4\n\tRmRequest\022\031\n\004auth\030\001 \001(\0132\013.pro" +
+      "to.Auth\022\014\n\004path\030\002 \001(\t\"\'\n\nRmResponse\022\n\n\002o" +
+      "k\030\001 \001(\010\022\r\n\005error\030\002 \001(\t\"7\n\014MkdirRequest\022\031" +
+      "\n\004auth\030\001 \001(\0132\013.proto.Auth\022\014\n\004path\030\002 \001(\t\"" +
+      "*\n\rMkdirResponse\022\n\n\002ok\030\001 \001(\010\022\r\n\005error\030\002 " +
+      "\001(\t\"7\n\014RmdirRequest\022\031\n\004auth\030\001 \001(\0132\013.prot" +
+      "o.Auth\022\014\n\004path\030\002 \001(\t\"*\n\rRmdirResponse\022\n\n" +
+      "\002ok\030\001 \001(\010\022\r\n\005error\030\002 \001(\t2\212\003\n\rMasterServi" +
+      "ce\0228\n\007PutPlan\022\025.proto.PutPlanRequest\032\026.p" +
+      "roto.PutPlanResponse\0228\n\007GetPlan\022\025.proto." +
+      "GetPlanRequest\032\026.proto.GetPlanResponse\022)" +
+      "\n\002Ls\022\020.proto.LsRequest\032\021.proto.LsRespons" +
+      "e\022)\n\002Rm\022\020.proto.RmRequest\032\021.proto.RmResp" +
+      "onse\0222\n\005Mkdir\022\023.proto.MkdirRequest\032\024.pro" +
+      "to.MkdirResponse\0222\n\005Rmdir\022\023.proto.RmdirR" +
+      "equest\032\024.proto.RmdirResponse\022G\n\014Register" +
+      "User\022\032.proto.RegisterUserRequest\032\033.proto" +
+      ".RegisterUserResponse2N\n\017MasterHeartbeat" +
+      "\022;\n\014StreamStatus\022\022.proto.HeartbeatKv\032\023.p" +
+      "roto.HeartbeatAck(\0010\001B\024\n\020com.gridfs.prot" +
+      "oP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.gridfs.proto.Common.getDescriptor(),
         });
-    internal_static_gridfs_PutPlanRequest_descriptor =
+    internal_static_proto_RegisterUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_gridfs_PutPlanRequest_fieldAccessorTable = new
+    internal_static_proto_RegisterUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_PutPlanRequest_descriptor,
-        new java.lang.String[] { "Filename", "Filesize", "BlockSize", "Replication", });
-    internal_static_gridfs_PutPlanResponse_descriptor =
+        internal_static_proto_RegisterUserRequest_descriptor,
+        new java.lang.String[] { "User", "Pass", });
+    internal_static_proto_RegisterUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_gridfs_PutPlanResponse_fieldAccessorTable = new
+    internal_static_proto_RegisterUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_PutPlanResponse_descriptor,
-        new java.lang.String[] { "Assignments", });
-    internal_static_gridfs_GetPlanRequest_descriptor =
+        internal_static_proto_RegisterUserResponse_descriptor,
+        new java.lang.String[] { "Ok", "Error", });
+    internal_static_proto_PutPlanRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_gridfs_GetPlanRequest_fieldAccessorTable = new
+    internal_static_proto_PutPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_GetPlanRequest_descriptor,
-        new java.lang.String[] { "Filename", });
-    internal_static_gridfs_GetPlanResponse_descriptor =
+        internal_static_proto_PutPlanRequest_descriptor,
+        new java.lang.String[] { "Filename", "Filesize", "BlockSize", "Replication", "Auth", });
+    internal_static_proto_PutPlanResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_gridfs_GetPlanResponse_fieldAccessorTable = new
+    internal_static_proto_PutPlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_GetPlanResponse_descriptor,
+        internal_static_proto_PutPlanResponse_descriptor,
+        new java.lang.String[] { "Assignments", });
+    internal_static_proto_GetPlanRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_proto_GetPlanRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetPlanRequest_descriptor,
+        new java.lang.String[] { "Filename", "Auth", });
+    internal_static_proto_GetPlanResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_proto_GetPlanResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetPlanResponse_descriptor,
         new java.lang.String[] { "Locations", });
+    internal_static_proto_Auth_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_proto_Auth_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Auth_descriptor,
+        new java.lang.String[] { "User", "Pass", });
+    internal_static_proto_LsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_proto_LsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_LsRequest_descriptor,
+        new java.lang.String[] { "Auth", "Path", });
+    internal_static_proto_LsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_proto_LsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_LsResponse_descriptor,
+        new java.lang.String[] { "Entries", });
+    internal_static_proto_RmRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_proto_RmRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RmRequest_descriptor,
+        new java.lang.String[] { "Auth", "Path", });
+    internal_static_proto_RmResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_proto_RmResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RmResponse_descriptor,
+        new java.lang.String[] { "Ok", "Error", });
+    internal_static_proto_MkdirRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_proto_MkdirRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MkdirRequest_descriptor,
+        new java.lang.String[] { "Auth", "Path", });
+    internal_static_proto_MkdirResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_proto_MkdirResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MkdirResponse_descriptor,
+        new java.lang.String[] { "Ok", "Error", });
+    internal_static_proto_RmdirRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_proto_RmdirRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RmdirRequest_descriptor,
+        new java.lang.String[] { "Auth", "Path", });
+    internal_static_proto_RmdirResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_proto_RmdirResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RmdirResponse_descriptor,
+        new java.lang.String[] { "Ok", "Error", });
     com.gridfs.proto.Common.getDescriptor();
   }
 

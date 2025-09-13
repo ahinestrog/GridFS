@@ -45,7 +45,7 @@ struct TableStruct_common_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2eproto;
-namespace gridfs {
+namespace proto {
 class BlockAssignment;
 struct BlockAssignmentDefaultTypeInternal;
 extern BlockAssignmentDefaultTypeInternal _BlockAssignment_default_instance_;
@@ -76,20 +76,20 @@ extern HeartbeatKvDefaultTypeInternal _HeartbeatKv_default_instance_;
 class WriteAck;
 struct WriteAckDefaultTypeInternal;
 extern WriteAckDefaultTypeInternal _WriteAck_default_instance_;
-}  // namespace gridfs
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> ::gridfs::BlockAssignment* Arena::CreateMaybeMessage<::gridfs::BlockAssignment>(Arena*);
-template<> ::gridfs::BlockChunk* Arena::CreateMaybeMessage<::gridfs::BlockChunk>(Arena*);
-template<> ::gridfs::BlockId* Arena::CreateMaybeMessage<::gridfs::BlockId>(Arena*);
-template<> ::gridfs::BlockLocation* Arena::CreateMaybeMessage<::gridfs::BlockLocation>(Arena*);
-template<> ::gridfs::FsEntry* Arena::CreateMaybeMessage<::gridfs::FsEntry>(Arena*);
-template<> ::gridfs::FsOpRequest* Arena::CreateMaybeMessage<::gridfs::FsOpRequest>(Arena*);
-template<> ::gridfs::FsOpResponse* Arena::CreateMaybeMessage<::gridfs::FsOpResponse>(Arena*);
-template<> ::gridfs::HeartbeatAck* Arena::CreateMaybeMessage<::gridfs::HeartbeatAck>(Arena*);
-template<> ::gridfs::HeartbeatKv* Arena::CreateMaybeMessage<::gridfs::HeartbeatKv>(Arena*);
-template<> ::gridfs::WriteAck* Arena::CreateMaybeMessage<::gridfs::WriteAck>(Arena*);
+template<> ::proto::BlockAssignment* Arena::CreateMaybeMessage<::proto::BlockAssignment>(Arena*);
+template<> ::proto::BlockChunk* Arena::CreateMaybeMessage<::proto::BlockChunk>(Arena*);
+template<> ::proto::BlockId* Arena::CreateMaybeMessage<::proto::BlockId>(Arena*);
+template<> ::proto::BlockLocation* Arena::CreateMaybeMessage<::proto::BlockLocation>(Arena*);
+template<> ::proto::FsEntry* Arena::CreateMaybeMessage<::proto::FsEntry>(Arena*);
+template<> ::proto::FsOpRequest* Arena::CreateMaybeMessage<::proto::FsOpRequest>(Arena*);
+template<> ::proto::FsOpResponse* Arena::CreateMaybeMessage<::proto::FsOpResponse>(Arena*);
+template<> ::proto::HeartbeatAck* Arena::CreateMaybeMessage<::proto::HeartbeatAck>(Arena*);
+template<> ::proto::HeartbeatKv* Arena::CreateMaybeMessage<::proto::HeartbeatKv>(Arena*);
+template<> ::proto::WriteAck* Arena::CreateMaybeMessage<::proto::WriteAck>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace gridfs {
+namespace proto {
 
 enum FsOpRequest_Op : int {
   FsOpRequest_Op_LS = 0,
@@ -121,7 +121,7 @@ inline bool FsOpRequest_Op_Parse(
 // ===================================================================
 
 class BlockAssignment final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.BlockAssignment) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.BlockAssignment) */ {
  public:
   inline BlockAssignment() : BlockAssignment(nullptr) {}
   ~BlockAssignment() override;
@@ -224,7 +224,7 @@ class BlockAssignment final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.BlockAssignment";
+    return "proto.BlockAssignment";
   }
   protected:
   explicit BlockAssignment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -297,7 +297,7 @@ class BlockAssignment final :
   std::string* _internal_mutable_primary_dn();
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(class_scope:proto.BlockAssignment)
  private:
   class _Internal;
 
@@ -316,7 +316,7 @@ class BlockAssignment final :
 // -------------------------------------------------------------------
 
 class BlockLocation final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.BlockLocation) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.BlockLocation) */ {
  public:
   inline BlockLocation() : BlockLocation(nullptr) {}
   ~BlockLocation() override;
@@ -419,7 +419,7 @@ class BlockLocation final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.BlockLocation";
+    return "proto.BlockLocation";
   }
   protected:
   explicit BlockLocation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -492,7 +492,7 @@ class BlockLocation final :
   std::string* _internal_mutable_primary_dn();
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.BlockLocation)
+  // @@protoc_insertion_point(class_scope:proto.BlockLocation)
  private:
   class _Internal;
 
@@ -511,7 +511,7 @@ class BlockLocation final :
 // -------------------------------------------------------------------
 
 class BlockChunk final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.BlockChunk) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.BlockChunk) */ {
  public:
   inline BlockChunk() : BlockChunk(nullptr) {}
   ~BlockChunk() override;
@@ -614,7 +614,7 @@ class BlockChunk final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.BlockChunk";
+    return "proto.BlockChunk";
   }
   protected:
   explicit BlockChunk(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -682,7 +682,7 @@ class BlockChunk final :
   void _internal_set_eof(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.BlockChunk)
+  // @@protoc_insertion_point(class_scope:proto.BlockChunk)
  private:
   class _Internal;
 
@@ -702,7 +702,7 @@ class BlockChunk final :
 // -------------------------------------------------------------------
 
 class WriteAck final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.WriteAck) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.WriteAck) */ {
  public:
   inline WriteAck() : WriteAck(nullptr) {}
   ~WriteAck() override;
@@ -805,7 +805,7 @@ class WriteAck final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.WriteAck";
+    return "proto.WriteAck";
   }
   protected:
   explicit WriteAck(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -888,7 +888,7 @@ class WriteAck final :
   void _internal_set_ok(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.WriteAck)
+  // @@protoc_insertion_point(class_scope:proto.WriteAck)
  private:
   class _Internal;
 
@@ -909,7 +909,7 @@ class WriteAck final :
 // -------------------------------------------------------------------
 
 class BlockId final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.BlockId) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.BlockId) */ {
  public:
   inline BlockId() : BlockId(nullptr) {}
   ~BlockId() override;
@@ -1012,7 +1012,7 @@ class BlockId final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.BlockId";
+    return "proto.BlockId";
   }
   protected:
   explicit BlockId(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1045,7 +1045,7 @@ class BlockId final :
   std::string* _internal_mutable_block_id();
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.BlockId)
+  // @@protoc_insertion_point(class_scope:proto.BlockId)
  private:
   class _Internal;
 
@@ -1062,7 +1062,7 @@ class BlockId final :
 // -------------------------------------------------------------------
 
 class HeartbeatKv final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.HeartbeatKv) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.HeartbeatKv) */ {
  public:
   inline HeartbeatKv() : HeartbeatKv(nullptr) {}
   ~HeartbeatKv() override;
@@ -1165,7 +1165,7 @@ class HeartbeatKv final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.HeartbeatKv";
+    return "proto.HeartbeatKv";
   }
   protected:
   explicit HeartbeatKv(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1238,7 +1238,7 @@ class HeartbeatKv final :
   void _internal_set_ts_unix_ms(int64_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(class_scope:proto.HeartbeatKv)
  private:
   class _Internal;
 
@@ -1258,7 +1258,7 @@ class HeartbeatKv final :
 // -------------------------------------------------------------------
 
 class HeartbeatAck final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.HeartbeatAck) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.HeartbeatAck) */ {
  public:
   inline HeartbeatAck() : HeartbeatAck(nullptr) {}
   ~HeartbeatAck() override;
@@ -1361,7 +1361,7 @@ class HeartbeatAck final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.HeartbeatAck";
+    return "proto.HeartbeatAck";
   }
   protected:
   explicit HeartbeatAck(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1404,7 +1404,7 @@ class HeartbeatAck final :
   void _internal_set_ok(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(class_scope:proto.HeartbeatAck)
  private:
   class _Internal;
 
@@ -1422,7 +1422,7 @@ class HeartbeatAck final :
 // -------------------------------------------------------------------
 
 class FsOpRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.FsOpRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.FsOpRequest) */ {
  public:
   inline FsOpRequest() : FsOpRequest(nullptr) {}
   ~FsOpRequest() override;
@@ -1525,7 +1525,7 @@ class FsOpRequest final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.FsOpRequest";
+    return "proto.FsOpRequest";
   }
   protected:
   explicit FsOpRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1593,16 +1593,16 @@ class FsOpRequest final :
   std::string* _internal_mutable_path();
   public:
 
-  // .gridfs.FsOpRequest.Op op = 1;
+  // .proto.FsOpRequest.Op op = 1;
   void clear_op();
-  ::gridfs::FsOpRequest_Op op() const;
-  void set_op(::gridfs::FsOpRequest_Op value);
+  ::proto::FsOpRequest_Op op() const;
+  void set_op(::proto::FsOpRequest_Op value);
   private:
-  ::gridfs::FsOpRequest_Op _internal_op() const;
-  void _internal_set_op(::gridfs::FsOpRequest_Op value);
+  ::proto::FsOpRequest_Op _internal_op() const;
+  void _internal_set_op(::proto::FsOpRequest_Op value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(class_scope:proto.FsOpRequest)
  private:
   class _Internal;
 
@@ -1620,7 +1620,7 @@ class FsOpRequest final :
 // -------------------------------------------------------------------
 
 class FsEntry final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.FsEntry) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.FsEntry) */ {
  public:
   inline FsEntry() : FsEntry(nullptr) {}
   ~FsEntry() override;
@@ -1723,7 +1723,7 @@ class FsEntry final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.FsEntry";
+    return "proto.FsEntry";
   }
   protected:
   explicit FsEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1776,7 +1776,7 @@ class FsEntry final :
   void _internal_set_is_dir(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.FsEntry)
+  // @@protoc_insertion_point(class_scope:proto.FsEntry)
  private:
   class _Internal;
 
@@ -1795,7 +1795,7 @@ class FsEntry final :
 // -------------------------------------------------------------------
 
 class FsOpResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:gridfs.FsOpResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.FsOpResponse) */ {
  public:
   inline FsOpResponse() : FsOpResponse(nullptr) {}
   ~FsOpResponse() override;
@@ -1898,7 +1898,7 @@ class FsOpResponse final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "gridfs.FsOpResponse";
+    return "proto.FsOpResponse";
   }
   protected:
   explicit FsOpResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1919,22 +1919,22 @@ class FsOpResponse final :
     kMessageFieldNumber = 2,
     kOkFieldNumber = 1,
   };
-  // repeated .gridfs.FsEntry entries = 3;
+  // repeated .proto.FsEntry entries = 3;
   int entries_size() const;
   private:
   int _internal_entries_size() const;
   public:
   void clear_entries();
-  ::gridfs::FsEntry* mutable_entries(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::gridfs::FsEntry >*
+  ::proto::FsEntry* mutable_entries(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::FsEntry >*
       mutable_entries();
   private:
-  const ::gridfs::FsEntry& _internal_entries(int index) const;
-  ::gridfs::FsEntry* _internal_add_entries();
+  const ::proto::FsEntry& _internal_entries(int index) const;
+  ::proto::FsEntry* _internal_add_entries();
   public:
-  const ::gridfs::FsEntry& entries(int index) const;
-  ::gridfs::FsEntry* add_entries();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::gridfs::FsEntry >&
+  const ::proto::FsEntry& entries(int index) const;
+  ::proto::FsEntry* add_entries();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::FsEntry >&
       entries() const;
 
   // string message = 2;
@@ -1960,7 +1960,7 @@ class FsOpResponse final :
   void _internal_set_ok(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(class_scope:proto.FsOpResponse)
  private:
   class _Internal;
 
@@ -1968,7 +1968,7 @@ class FsOpResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::gridfs::FsEntry > entries_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::FsEntry > entries_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
     bool ok_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1992,7 +1992,7 @@ inline void BlockAssignment::clear_block_id() {
   _impl_.block_id_.ClearToEmpty();
 }
 inline const std::string& BlockAssignment::block_id() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockAssignment.block_id)
+  // @@protoc_insertion_point(field_get:proto.BlockAssignment.block_id)
   return _internal_block_id();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2000,11 +2000,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockAssignment::set_block_id(ArgT0&& arg0, ArgT... args) {
  
  _impl_.block_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockAssignment.block_id)
+  // @@protoc_insertion_point(field_set:proto.BlockAssignment.block_id)
 }
 inline std::string* BlockAssignment::mutable_block_id() {
   std::string* _s = _internal_mutable_block_id();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockAssignment.block_id)
+  // @@protoc_insertion_point(field_mutable:proto.BlockAssignment.block_id)
   return _s;
 }
 inline const std::string& BlockAssignment::_internal_block_id() const {
@@ -2019,7 +2019,7 @@ inline std::string* BlockAssignment::_internal_mutable_block_id() {
   return _impl_.block_id_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockAssignment::release_block_id() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockAssignment.block_id)
+  // @@protoc_insertion_point(field_release:proto.BlockAssignment.block_id)
   return _impl_.block_id_.Release();
 }
 inline void BlockAssignment::set_allocated_block_id(std::string* block_id) {
@@ -2034,7 +2034,7 @@ inline void BlockAssignment::set_allocated_block_id(std::string* block_id) {
     _impl_.block_id_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockAssignment.block_id)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockAssignment.block_id)
 }
 
 // string primary_dn = 2;
@@ -2042,7 +2042,7 @@ inline void BlockAssignment::clear_primary_dn() {
   _impl_.primary_dn_.ClearToEmpty();
 }
 inline const std::string& BlockAssignment::primary_dn() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockAssignment.primary_dn)
+  // @@protoc_insertion_point(field_get:proto.BlockAssignment.primary_dn)
   return _internal_primary_dn();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2050,11 +2050,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockAssignment::set_primary_dn(ArgT0&& arg0, ArgT... args) {
  
  _impl_.primary_dn_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockAssignment.primary_dn)
+  // @@protoc_insertion_point(field_set:proto.BlockAssignment.primary_dn)
 }
 inline std::string* BlockAssignment::mutable_primary_dn() {
   std::string* _s = _internal_mutable_primary_dn();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockAssignment.primary_dn)
+  // @@protoc_insertion_point(field_mutable:proto.BlockAssignment.primary_dn)
   return _s;
 }
 inline const std::string& BlockAssignment::_internal_primary_dn() const {
@@ -2069,7 +2069,7 @@ inline std::string* BlockAssignment::_internal_mutable_primary_dn() {
   return _impl_.primary_dn_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockAssignment::release_primary_dn() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockAssignment.primary_dn)
+  // @@protoc_insertion_point(field_release:proto.BlockAssignment.primary_dn)
   return _impl_.primary_dn_.Release();
 }
 inline void BlockAssignment::set_allocated_primary_dn(std::string* primary_dn) {
@@ -2084,7 +2084,7 @@ inline void BlockAssignment::set_allocated_primary_dn(std::string* primary_dn) {
     _impl_.primary_dn_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockAssignment.primary_dn)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockAssignment.primary_dn)
 }
 
 // repeated string replica_dns = 3;
@@ -2099,66 +2099,66 @@ inline void BlockAssignment::clear_replica_dns() {
 }
 inline std::string* BlockAssignment::add_replica_dns() {
   std::string* _s = _internal_add_replica_dns();
-  // @@protoc_insertion_point(field_add_mutable:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_add_mutable:proto.BlockAssignment.replica_dns)
   return _s;
 }
 inline const std::string& BlockAssignment::_internal_replica_dns(int index) const {
   return _impl_.replica_dns_.Get(index);
 }
 inline const std::string& BlockAssignment::replica_dns(int index) const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_get:proto.BlockAssignment.replica_dns)
   return _internal_replica_dns(index);
 }
 inline std::string* BlockAssignment::mutable_replica_dns(int index) {
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_mutable:proto.BlockAssignment.replica_dns)
   return _impl_.replica_dns_.Mutable(index);
 }
 inline void BlockAssignment::set_replica_dns(int index, const std::string& value) {
   _impl_.replica_dns_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_set:proto.BlockAssignment.replica_dns)
 }
 inline void BlockAssignment::set_replica_dns(int index, std::string&& value) {
   _impl_.replica_dns_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_set:proto.BlockAssignment.replica_dns)
 }
 inline void BlockAssignment::set_replica_dns(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.replica_dns_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_set_char:proto.BlockAssignment.replica_dns)
 }
 inline void BlockAssignment::set_replica_dns(int index, const char* value, size_t size) {
   _impl_.replica_dns_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_set_pointer:proto.BlockAssignment.replica_dns)
 }
 inline std::string* BlockAssignment::_internal_add_replica_dns() {
   return _impl_.replica_dns_.Add();
 }
 inline void BlockAssignment::add_replica_dns(const std::string& value) {
   _impl_.replica_dns_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_add:proto.BlockAssignment.replica_dns)
 }
 inline void BlockAssignment::add_replica_dns(std::string&& value) {
   _impl_.replica_dns_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_add:proto.BlockAssignment.replica_dns)
 }
 inline void BlockAssignment::add_replica_dns(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.replica_dns_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_add_char:proto.BlockAssignment.replica_dns)
 }
 inline void BlockAssignment::add_replica_dns(const char* value, size_t size) {
   _impl_.replica_dns_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_add_pointer:proto.BlockAssignment.replica_dns)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 BlockAssignment::replica_dns() const {
-  // @@protoc_insertion_point(field_list:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_list:proto.BlockAssignment.replica_dns)
   return _impl_.replica_dns_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 BlockAssignment::mutable_replica_dns() {
-  // @@protoc_insertion_point(field_mutable_list:gridfs.BlockAssignment.replica_dns)
+  // @@protoc_insertion_point(field_mutable_list:proto.BlockAssignment.replica_dns)
   return &_impl_.replica_dns_;
 }
 
@@ -2171,7 +2171,7 @@ inline void BlockLocation::clear_block_id() {
   _impl_.block_id_.ClearToEmpty();
 }
 inline const std::string& BlockLocation::block_id() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockLocation.block_id)
+  // @@protoc_insertion_point(field_get:proto.BlockLocation.block_id)
   return _internal_block_id();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2179,11 +2179,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockLocation::set_block_id(ArgT0&& arg0, ArgT... args) {
  
  _impl_.block_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockLocation.block_id)
+  // @@protoc_insertion_point(field_set:proto.BlockLocation.block_id)
 }
 inline std::string* BlockLocation::mutable_block_id() {
   std::string* _s = _internal_mutable_block_id();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockLocation.block_id)
+  // @@protoc_insertion_point(field_mutable:proto.BlockLocation.block_id)
   return _s;
 }
 inline const std::string& BlockLocation::_internal_block_id() const {
@@ -2198,7 +2198,7 @@ inline std::string* BlockLocation::_internal_mutable_block_id() {
   return _impl_.block_id_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockLocation::release_block_id() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockLocation.block_id)
+  // @@protoc_insertion_point(field_release:proto.BlockLocation.block_id)
   return _impl_.block_id_.Release();
 }
 inline void BlockLocation::set_allocated_block_id(std::string* block_id) {
@@ -2213,7 +2213,7 @@ inline void BlockLocation::set_allocated_block_id(std::string* block_id) {
     _impl_.block_id_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockLocation.block_id)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockLocation.block_id)
 }
 
 // string primary_dn = 2;
@@ -2221,7 +2221,7 @@ inline void BlockLocation::clear_primary_dn() {
   _impl_.primary_dn_.ClearToEmpty();
 }
 inline const std::string& BlockLocation::primary_dn() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockLocation.primary_dn)
+  // @@protoc_insertion_point(field_get:proto.BlockLocation.primary_dn)
   return _internal_primary_dn();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2229,11 +2229,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockLocation::set_primary_dn(ArgT0&& arg0, ArgT... args) {
  
  _impl_.primary_dn_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockLocation.primary_dn)
+  // @@protoc_insertion_point(field_set:proto.BlockLocation.primary_dn)
 }
 inline std::string* BlockLocation::mutable_primary_dn() {
   std::string* _s = _internal_mutable_primary_dn();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockLocation.primary_dn)
+  // @@protoc_insertion_point(field_mutable:proto.BlockLocation.primary_dn)
   return _s;
 }
 inline const std::string& BlockLocation::_internal_primary_dn() const {
@@ -2248,7 +2248,7 @@ inline std::string* BlockLocation::_internal_mutable_primary_dn() {
   return _impl_.primary_dn_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockLocation::release_primary_dn() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockLocation.primary_dn)
+  // @@protoc_insertion_point(field_release:proto.BlockLocation.primary_dn)
   return _impl_.primary_dn_.Release();
 }
 inline void BlockLocation::set_allocated_primary_dn(std::string* primary_dn) {
@@ -2263,7 +2263,7 @@ inline void BlockLocation::set_allocated_primary_dn(std::string* primary_dn) {
     _impl_.primary_dn_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockLocation.primary_dn)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockLocation.primary_dn)
 }
 
 // repeated string replica_dns = 3;
@@ -2278,66 +2278,66 @@ inline void BlockLocation::clear_replica_dns() {
 }
 inline std::string* BlockLocation::add_replica_dns() {
   std::string* _s = _internal_add_replica_dns();
-  // @@protoc_insertion_point(field_add_mutable:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_add_mutable:proto.BlockLocation.replica_dns)
   return _s;
 }
 inline const std::string& BlockLocation::_internal_replica_dns(int index) const {
   return _impl_.replica_dns_.Get(index);
 }
 inline const std::string& BlockLocation::replica_dns(int index) const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_get:proto.BlockLocation.replica_dns)
   return _internal_replica_dns(index);
 }
 inline std::string* BlockLocation::mutable_replica_dns(int index) {
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_mutable:proto.BlockLocation.replica_dns)
   return _impl_.replica_dns_.Mutable(index);
 }
 inline void BlockLocation::set_replica_dns(int index, const std::string& value) {
   _impl_.replica_dns_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_set:proto.BlockLocation.replica_dns)
 }
 inline void BlockLocation::set_replica_dns(int index, std::string&& value) {
   _impl_.replica_dns_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_set:proto.BlockLocation.replica_dns)
 }
 inline void BlockLocation::set_replica_dns(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.replica_dns_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_set_char:proto.BlockLocation.replica_dns)
 }
 inline void BlockLocation::set_replica_dns(int index, const char* value, size_t size) {
   _impl_.replica_dns_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_set_pointer:proto.BlockLocation.replica_dns)
 }
 inline std::string* BlockLocation::_internal_add_replica_dns() {
   return _impl_.replica_dns_.Add();
 }
 inline void BlockLocation::add_replica_dns(const std::string& value) {
   _impl_.replica_dns_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_add:proto.BlockLocation.replica_dns)
 }
 inline void BlockLocation::add_replica_dns(std::string&& value) {
   _impl_.replica_dns_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_add:proto.BlockLocation.replica_dns)
 }
 inline void BlockLocation::add_replica_dns(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.replica_dns_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_add_char:proto.BlockLocation.replica_dns)
 }
 inline void BlockLocation::add_replica_dns(const char* value, size_t size) {
   _impl_.replica_dns_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_add_pointer:proto.BlockLocation.replica_dns)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 BlockLocation::replica_dns() const {
-  // @@protoc_insertion_point(field_list:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_list:proto.BlockLocation.replica_dns)
   return _impl_.replica_dns_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 BlockLocation::mutable_replica_dns() {
-  // @@protoc_insertion_point(field_mutable_list:gridfs.BlockLocation.replica_dns)
+  // @@protoc_insertion_point(field_mutable_list:proto.BlockLocation.replica_dns)
   return &_impl_.replica_dns_;
 }
 
@@ -2350,7 +2350,7 @@ inline void BlockChunk::clear_block_id() {
   _impl_.block_id_.ClearToEmpty();
 }
 inline const std::string& BlockChunk::block_id() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockChunk.block_id)
+  // @@protoc_insertion_point(field_get:proto.BlockChunk.block_id)
   return _internal_block_id();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2358,11 +2358,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockChunk::set_block_id(ArgT0&& arg0, ArgT... args) {
  
  _impl_.block_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockChunk.block_id)
+  // @@protoc_insertion_point(field_set:proto.BlockChunk.block_id)
 }
 inline std::string* BlockChunk::mutable_block_id() {
   std::string* _s = _internal_mutable_block_id();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockChunk.block_id)
+  // @@protoc_insertion_point(field_mutable:proto.BlockChunk.block_id)
   return _s;
 }
 inline const std::string& BlockChunk::_internal_block_id() const {
@@ -2377,7 +2377,7 @@ inline std::string* BlockChunk::_internal_mutable_block_id() {
   return _impl_.block_id_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockChunk::release_block_id() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockChunk.block_id)
+  // @@protoc_insertion_point(field_release:proto.BlockChunk.block_id)
   return _impl_.block_id_.Release();
 }
 inline void BlockChunk::set_allocated_block_id(std::string* block_id) {
@@ -2392,7 +2392,7 @@ inline void BlockChunk::set_allocated_block_id(std::string* block_id) {
     _impl_.block_id_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockChunk.block_id)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockChunk.block_id)
 }
 
 // int64 seq = 2;
@@ -2403,7 +2403,7 @@ inline int64_t BlockChunk::_internal_seq() const {
   return _impl_.seq_;
 }
 inline int64_t BlockChunk::seq() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockChunk.seq)
+  // @@protoc_insertion_point(field_get:proto.BlockChunk.seq)
   return _internal_seq();
 }
 inline void BlockChunk::_internal_set_seq(int64_t value) {
@@ -2412,7 +2412,7 @@ inline void BlockChunk::_internal_set_seq(int64_t value) {
 }
 inline void BlockChunk::set_seq(int64_t value) {
   _internal_set_seq(value);
-  // @@protoc_insertion_point(field_set:gridfs.BlockChunk.seq)
+  // @@protoc_insertion_point(field_set:proto.BlockChunk.seq)
 }
 
 // bytes data = 3;
@@ -2420,7 +2420,7 @@ inline void BlockChunk::clear_data() {
   _impl_.data_.ClearToEmpty();
 }
 inline const std::string& BlockChunk::data() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockChunk.data)
+  // @@protoc_insertion_point(field_get:proto.BlockChunk.data)
   return _internal_data();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2428,11 +2428,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockChunk::set_data(ArgT0&& arg0, ArgT... args) {
  
  _impl_.data_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockChunk.data)
+  // @@protoc_insertion_point(field_set:proto.BlockChunk.data)
 }
 inline std::string* BlockChunk::mutable_data() {
   std::string* _s = _internal_mutable_data();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockChunk.data)
+  // @@protoc_insertion_point(field_mutable:proto.BlockChunk.data)
   return _s;
 }
 inline const std::string& BlockChunk::_internal_data() const {
@@ -2447,7 +2447,7 @@ inline std::string* BlockChunk::_internal_mutable_data() {
   return _impl_.data_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockChunk::release_data() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockChunk.data)
+  // @@protoc_insertion_point(field_release:proto.BlockChunk.data)
   return _impl_.data_.Release();
 }
 inline void BlockChunk::set_allocated_data(std::string* data) {
@@ -2462,7 +2462,7 @@ inline void BlockChunk::set_allocated_data(std::string* data) {
     _impl_.data_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockChunk.data)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockChunk.data)
 }
 
 // bool eof = 4;
@@ -2473,7 +2473,7 @@ inline bool BlockChunk::_internal_eof() const {
   return _impl_.eof_;
 }
 inline bool BlockChunk::eof() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockChunk.eof)
+  // @@protoc_insertion_point(field_get:proto.BlockChunk.eof)
   return _internal_eof();
 }
 inline void BlockChunk::_internal_set_eof(bool value) {
@@ -2482,7 +2482,7 @@ inline void BlockChunk::_internal_set_eof(bool value) {
 }
 inline void BlockChunk::set_eof(bool value) {
   _internal_set_eof(value);
-  // @@protoc_insertion_point(field_set:gridfs.BlockChunk.eof)
+  // @@protoc_insertion_point(field_set:proto.BlockChunk.eof)
 }
 
 // -------------------------------------------------------------------
@@ -2494,7 +2494,7 @@ inline void WriteAck::clear_block_id() {
   _impl_.block_id_.ClearToEmpty();
 }
 inline const std::string& WriteAck::block_id() const {
-  // @@protoc_insertion_point(field_get:gridfs.WriteAck.block_id)
+  // @@protoc_insertion_point(field_get:proto.WriteAck.block_id)
   return _internal_block_id();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2502,11 +2502,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void WriteAck::set_block_id(ArgT0&& arg0, ArgT... args) {
  
  _impl_.block_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.WriteAck.block_id)
+  // @@protoc_insertion_point(field_set:proto.WriteAck.block_id)
 }
 inline std::string* WriteAck::mutable_block_id() {
   std::string* _s = _internal_mutable_block_id();
-  // @@protoc_insertion_point(field_mutable:gridfs.WriteAck.block_id)
+  // @@protoc_insertion_point(field_mutable:proto.WriteAck.block_id)
   return _s;
 }
 inline const std::string& WriteAck::_internal_block_id() const {
@@ -2521,7 +2521,7 @@ inline std::string* WriteAck::_internal_mutable_block_id() {
   return _impl_.block_id_.Mutable(GetArenaForAllocation());
 }
 inline std::string* WriteAck::release_block_id() {
-  // @@protoc_insertion_point(field_release:gridfs.WriteAck.block_id)
+  // @@protoc_insertion_point(field_release:proto.WriteAck.block_id)
   return _impl_.block_id_.Release();
 }
 inline void WriteAck::set_allocated_block_id(std::string* block_id) {
@@ -2536,7 +2536,7 @@ inline void WriteAck::set_allocated_block_id(std::string* block_id) {
     _impl_.block_id_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.WriteAck.block_id)
+  // @@protoc_insertion_point(field_set_allocated:proto.WriteAck.block_id)
 }
 
 // int64 bytes_received = 2;
@@ -2547,7 +2547,7 @@ inline int64_t WriteAck::_internal_bytes_received() const {
   return _impl_.bytes_received_;
 }
 inline int64_t WriteAck::bytes_received() const {
-  // @@protoc_insertion_point(field_get:gridfs.WriteAck.bytes_received)
+  // @@protoc_insertion_point(field_get:proto.WriteAck.bytes_received)
   return _internal_bytes_received();
 }
 inline void WriteAck::_internal_set_bytes_received(int64_t value) {
@@ -2556,7 +2556,7 @@ inline void WriteAck::_internal_set_bytes_received(int64_t value) {
 }
 inline void WriteAck::set_bytes_received(int64_t value) {
   _internal_set_bytes_received(value);
-  // @@protoc_insertion_point(field_set:gridfs.WriteAck.bytes_received)
+  // @@protoc_insertion_point(field_set:proto.WriteAck.bytes_received)
 }
 
 // string checksum = 3;
@@ -2564,7 +2564,7 @@ inline void WriteAck::clear_checksum() {
   _impl_.checksum_.ClearToEmpty();
 }
 inline const std::string& WriteAck::checksum() const {
-  // @@protoc_insertion_point(field_get:gridfs.WriteAck.checksum)
+  // @@protoc_insertion_point(field_get:proto.WriteAck.checksum)
   return _internal_checksum();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2572,11 +2572,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void WriteAck::set_checksum(ArgT0&& arg0, ArgT... args) {
  
  _impl_.checksum_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.WriteAck.checksum)
+  // @@protoc_insertion_point(field_set:proto.WriteAck.checksum)
 }
 inline std::string* WriteAck::mutable_checksum() {
   std::string* _s = _internal_mutable_checksum();
-  // @@protoc_insertion_point(field_mutable:gridfs.WriteAck.checksum)
+  // @@protoc_insertion_point(field_mutable:proto.WriteAck.checksum)
   return _s;
 }
 inline const std::string& WriteAck::_internal_checksum() const {
@@ -2591,7 +2591,7 @@ inline std::string* WriteAck::_internal_mutable_checksum() {
   return _impl_.checksum_.Mutable(GetArenaForAllocation());
 }
 inline std::string* WriteAck::release_checksum() {
-  // @@protoc_insertion_point(field_release:gridfs.WriteAck.checksum)
+  // @@protoc_insertion_point(field_release:proto.WriteAck.checksum)
   return _impl_.checksum_.Release();
 }
 inline void WriteAck::set_allocated_checksum(std::string* checksum) {
@@ -2606,7 +2606,7 @@ inline void WriteAck::set_allocated_checksum(std::string* checksum) {
     _impl_.checksum_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.WriteAck.checksum)
+  // @@protoc_insertion_point(field_set_allocated:proto.WriteAck.checksum)
 }
 
 // bool ok = 4;
@@ -2617,7 +2617,7 @@ inline bool WriteAck::_internal_ok() const {
   return _impl_.ok_;
 }
 inline bool WriteAck::ok() const {
-  // @@protoc_insertion_point(field_get:gridfs.WriteAck.ok)
+  // @@protoc_insertion_point(field_get:proto.WriteAck.ok)
   return _internal_ok();
 }
 inline void WriteAck::_internal_set_ok(bool value) {
@@ -2626,7 +2626,7 @@ inline void WriteAck::_internal_set_ok(bool value) {
 }
 inline void WriteAck::set_ok(bool value) {
   _internal_set_ok(value);
-  // @@protoc_insertion_point(field_set:gridfs.WriteAck.ok)
+  // @@protoc_insertion_point(field_set:proto.WriteAck.ok)
 }
 
 // string message = 5;
@@ -2634,7 +2634,7 @@ inline void WriteAck::clear_message() {
   _impl_.message_.ClearToEmpty();
 }
 inline const std::string& WriteAck::message() const {
-  // @@protoc_insertion_point(field_get:gridfs.WriteAck.message)
+  // @@protoc_insertion_point(field_get:proto.WriteAck.message)
   return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2642,11 +2642,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void WriteAck::set_message(ArgT0&& arg0, ArgT... args) {
  
  _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.WriteAck.message)
+  // @@protoc_insertion_point(field_set:proto.WriteAck.message)
 }
 inline std::string* WriteAck::mutable_message() {
   std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:gridfs.WriteAck.message)
+  // @@protoc_insertion_point(field_mutable:proto.WriteAck.message)
   return _s;
 }
 inline const std::string& WriteAck::_internal_message() const {
@@ -2661,7 +2661,7 @@ inline std::string* WriteAck::_internal_mutable_message() {
   return _impl_.message_.Mutable(GetArenaForAllocation());
 }
 inline std::string* WriteAck::release_message() {
-  // @@protoc_insertion_point(field_release:gridfs.WriteAck.message)
+  // @@protoc_insertion_point(field_release:proto.WriteAck.message)
   return _impl_.message_.Release();
 }
 inline void WriteAck::set_allocated_message(std::string* message) {
@@ -2676,7 +2676,7 @@ inline void WriteAck::set_allocated_message(std::string* message) {
     _impl_.message_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.WriteAck.message)
+  // @@protoc_insertion_point(field_set_allocated:proto.WriteAck.message)
 }
 
 // -------------------------------------------------------------------
@@ -2688,7 +2688,7 @@ inline void BlockId::clear_block_id() {
   _impl_.block_id_.ClearToEmpty();
 }
 inline const std::string& BlockId::block_id() const {
-  // @@protoc_insertion_point(field_get:gridfs.BlockId.block_id)
+  // @@protoc_insertion_point(field_get:proto.BlockId.block_id)
   return _internal_block_id();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2696,11 +2696,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BlockId::set_block_id(ArgT0&& arg0, ArgT... args) {
  
  _impl_.block_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.BlockId.block_id)
+  // @@protoc_insertion_point(field_set:proto.BlockId.block_id)
 }
 inline std::string* BlockId::mutable_block_id() {
   std::string* _s = _internal_mutable_block_id();
-  // @@protoc_insertion_point(field_mutable:gridfs.BlockId.block_id)
+  // @@protoc_insertion_point(field_mutable:proto.BlockId.block_id)
   return _s;
 }
 inline const std::string& BlockId::_internal_block_id() const {
@@ -2715,7 +2715,7 @@ inline std::string* BlockId::_internal_mutable_block_id() {
   return _impl_.block_id_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BlockId::release_block_id() {
-  // @@protoc_insertion_point(field_release:gridfs.BlockId.block_id)
+  // @@protoc_insertion_point(field_release:proto.BlockId.block_id)
   return _impl_.block_id_.Release();
 }
 inline void BlockId::set_allocated_block_id(std::string* block_id) {
@@ -2730,7 +2730,7 @@ inline void BlockId::set_allocated_block_id(std::string* block_id) {
     _impl_.block_id_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.BlockId.block_id)
+  // @@protoc_insertion_point(field_set_allocated:proto.BlockId.block_id)
 }
 
 // -------------------------------------------------------------------
@@ -2742,7 +2742,7 @@ inline void HeartbeatKv::clear_node_id() {
   _impl_.node_id_.ClearToEmpty();
 }
 inline const std::string& HeartbeatKv::node_id() const {
-  // @@protoc_insertion_point(field_get:gridfs.HeartbeatKv.node_id)
+  // @@protoc_insertion_point(field_get:proto.HeartbeatKv.node_id)
   return _internal_node_id();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2750,11 +2750,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void HeartbeatKv::set_node_id(ArgT0&& arg0, ArgT... args) {
  
  _impl_.node_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.HeartbeatKv.node_id)
+  // @@protoc_insertion_point(field_set:proto.HeartbeatKv.node_id)
 }
 inline std::string* HeartbeatKv::mutable_node_id() {
   std::string* _s = _internal_mutable_node_id();
-  // @@protoc_insertion_point(field_mutable:gridfs.HeartbeatKv.node_id)
+  // @@protoc_insertion_point(field_mutable:proto.HeartbeatKv.node_id)
   return _s;
 }
 inline const std::string& HeartbeatKv::_internal_node_id() const {
@@ -2769,7 +2769,7 @@ inline std::string* HeartbeatKv::_internal_mutable_node_id() {
   return _impl_.node_id_.Mutable(GetArenaForAllocation());
 }
 inline std::string* HeartbeatKv::release_node_id() {
-  // @@protoc_insertion_point(field_release:gridfs.HeartbeatKv.node_id)
+  // @@protoc_insertion_point(field_release:proto.HeartbeatKv.node_id)
   return _impl_.node_id_.Release();
 }
 inline void HeartbeatKv::set_allocated_node_id(std::string* node_id) {
@@ -2784,7 +2784,7 @@ inline void HeartbeatKv::set_allocated_node_id(std::string* node_id) {
     _impl_.node_id_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.HeartbeatKv.node_id)
+  // @@protoc_insertion_point(field_set_allocated:proto.HeartbeatKv.node_id)
 }
 
 // string key = 2;
@@ -2792,7 +2792,7 @@ inline void HeartbeatKv::clear_key() {
   _impl_.key_.ClearToEmpty();
 }
 inline const std::string& HeartbeatKv::key() const {
-  // @@protoc_insertion_point(field_get:gridfs.HeartbeatKv.key)
+  // @@protoc_insertion_point(field_get:proto.HeartbeatKv.key)
   return _internal_key();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2800,11 +2800,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void HeartbeatKv::set_key(ArgT0&& arg0, ArgT... args) {
  
  _impl_.key_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.HeartbeatKv.key)
+  // @@protoc_insertion_point(field_set:proto.HeartbeatKv.key)
 }
 inline std::string* HeartbeatKv::mutable_key() {
   std::string* _s = _internal_mutable_key();
-  // @@protoc_insertion_point(field_mutable:gridfs.HeartbeatKv.key)
+  // @@protoc_insertion_point(field_mutable:proto.HeartbeatKv.key)
   return _s;
 }
 inline const std::string& HeartbeatKv::_internal_key() const {
@@ -2819,7 +2819,7 @@ inline std::string* HeartbeatKv::_internal_mutable_key() {
   return _impl_.key_.Mutable(GetArenaForAllocation());
 }
 inline std::string* HeartbeatKv::release_key() {
-  // @@protoc_insertion_point(field_release:gridfs.HeartbeatKv.key)
+  // @@protoc_insertion_point(field_release:proto.HeartbeatKv.key)
   return _impl_.key_.Release();
 }
 inline void HeartbeatKv::set_allocated_key(std::string* key) {
@@ -2834,7 +2834,7 @@ inline void HeartbeatKv::set_allocated_key(std::string* key) {
     _impl_.key_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.HeartbeatKv.key)
+  // @@protoc_insertion_point(field_set_allocated:proto.HeartbeatKv.key)
 }
 
 // string value = 3;
@@ -2842,7 +2842,7 @@ inline void HeartbeatKv::clear_value() {
   _impl_.value_.ClearToEmpty();
 }
 inline const std::string& HeartbeatKv::value() const {
-  // @@protoc_insertion_point(field_get:gridfs.HeartbeatKv.value)
+  // @@protoc_insertion_point(field_get:proto.HeartbeatKv.value)
   return _internal_value();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2850,11 +2850,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void HeartbeatKv::set_value(ArgT0&& arg0, ArgT... args) {
  
  _impl_.value_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.HeartbeatKv.value)
+  // @@protoc_insertion_point(field_set:proto.HeartbeatKv.value)
 }
 inline std::string* HeartbeatKv::mutable_value() {
   std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:gridfs.HeartbeatKv.value)
+  // @@protoc_insertion_point(field_mutable:proto.HeartbeatKv.value)
   return _s;
 }
 inline const std::string& HeartbeatKv::_internal_value() const {
@@ -2869,7 +2869,7 @@ inline std::string* HeartbeatKv::_internal_mutable_value() {
   return _impl_.value_.Mutable(GetArenaForAllocation());
 }
 inline std::string* HeartbeatKv::release_value() {
-  // @@protoc_insertion_point(field_release:gridfs.HeartbeatKv.value)
+  // @@protoc_insertion_point(field_release:proto.HeartbeatKv.value)
   return _impl_.value_.Release();
 }
 inline void HeartbeatKv::set_allocated_value(std::string* value) {
@@ -2884,7 +2884,7 @@ inline void HeartbeatKv::set_allocated_value(std::string* value) {
     _impl_.value_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.HeartbeatKv.value)
+  // @@protoc_insertion_point(field_set_allocated:proto.HeartbeatKv.value)
 }
 
 // int64 ts_unix_ms = 4;
@@ -2895,7 +2895,7 @@ inline int64_t HeartbeatKv::_internal_ts_unix_ms() const {
   return _impl_.ts_unix_ms_;
 }
 inline int64_t HeartbeatKv::ts_unix_ms() const {
-  // @@protoc_insertion_point(field_get:gridfs.HeartbeatKv.ts_unix_ms)
+  // @@protoc_insertion_point(field_get:proto.HeartbeatKv.ts_unix_ms)
   return _internal_ts_unix_ms();
 }
 inline void HeartbeatKv::_internal_set_ts_unix_ms(int64_t value) {
@@ -2904,7 +2904,7 @@ inline void HeartbeatKv::_internal_set_ts_unix_ms(int64_t value) {
 }
 inline void HeartbeatKv::set_ts_unix_ms(int64_t value) {
   _internal_set_ts_unix_ms(value);
-  // @@protoc_insertion_point(field_set:gridfs.HeartbeatKv.ts_unix_ms)
+  // @@protoc_insertion_point(field_set:proto.HeartbeatKv.ts_unix_ms)
 }
 
 // -------------------------------------------------------------------
@@ -2919,7 +2919,7 @@ inline bool HeartbeatAck::_internal_ok() const {
   return _impl_.ok_;
 }
 inline bool HeartbeatAck::ok() const {
-  // @@protoc_insertion_point(field_get:gridfs.HeartbeatAck.ok)
+  // @@protoc_insertion_point(field_get:proto.HeartbeatAck.ok)
   return _internal_ok();
 }
 inline void HeartbeatAck::_internal_set_ok(bool value) {
@@ -2928,7 +2928,7 @@ inline void HeartbeatAck::_internal_set_ok(bool value) {
 }
 inline void HeartbeatAck::set_ok(bool value) {
   _internal_set_ok(value);
-  // @@protoc_insertion_point(field_set:gridfs.HeartbeatAck.ok)
+  // @@protoc_insertion_point(field_set:proto.HeartbeatAck.ok)
 }
 
 // string message = 2;
@@ -2936,7 +2936,7 @@ inline void HeartbeatAck::clear_message() {
   _impl_.message_.ClearToEmpty();
 }
 inline const std::string& HeartbeatAck::message() const {
-  // @@protoc_insertion_point(field_get:gridfs.HeartbeatAck.message)
+  // @@protoc_insertion_point(field_get:proto.HeartbeatAck.message)
   return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2944,11 +2944,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void HeartbeatAck::set_message(ArgT0&& arg0, ArgT... args) {
  
  _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.HeartbeatAck.message)
+  // @@protoc_insertion_point(field_set:proto.HeartbeatAck.message)
 }
 inline std::string* HeartbeatAck::mutable_message() {
   std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:gridfs.HeartbeatAck.message)
+  // @@protoc_insertion_point(field_mutable:proto.HeartbeatAck.message)
   return _s;
 }
 inline const std::string& HeartbeatAck::_internal_message() const {
@@ -2963,7 +2963,7 @@ inline std::string* HeartbeatAck::_internal_mutable_message() {
   return _impl_.message_.Mutable(GetArenaForAllocation());
 }
 inline std::string* HeartbeatAck::release_message() {
-  // @@protoc_insertion_point(field_release:gridfs.HeartbeatAck.message)
+  // @@protoc_insertion_point(field_release:proto.HeartbeatAck.message)
   return _impl_.message_.Release();
 }
 inline void HeartbeatAck::set_allocated_message(std::string* message) {
@@ -2978,31 +2978,31 @@ inline void HeartbeatAck::set_allocated_message(std::string* message) {
     _impl_.message_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.HeartbeatAck.message)
+  // @@protoc_insertion_point(field_set_allocated:proto.HeartbeatAck.message)
 }
 
 // -------------------------------------------------------------------
 
 // FsOpRequest
 
-// .gridfs.FsOpRequest.Op op = 1;
+// .proto.FsOpRequest.Op op = 1;
 inline void FsOpRequest::clear_op() {
   _impl_.op_ = 0;
 }
-inline ::gridfs::FsOpRequest_Op FsOpRequest::_internal_op() const {
-  return static_cast< ::gridfs::FsOpRequest_Op >(_impl_.op_);
+inline ::proto::FsOpRequest_Op FsOpRequest::_internal_op() const {
+  return static_cast< ::proto::FsOpRequest_Op >(_impl_.op_);
 }
-inline ::gridfs::FsOpRequest_Op FsOpRequest::op() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsOpRequest.op)
+inline ::proto::FsOpRequest_Op FsOpRequest::op() const {
+  // @@protoc_insertion_point(field_get:proto.FsOpRequest.op)
   return _internal_op();
 }
-inline void FsOpRequest::_internal_set_op(::gridfs::FsOpRequest_Op value) {
+inline void FsOpRequest::_internal_set_op(::proto::FsOpRequest_Op value) {
   
   _impl_.op_ = value;
 }
-inline void FsOpRequest::set_op(::gridfs::FsOpRequest_Op value) {
+inline void FsOpRequest::set_op(::proto::FsOpRequest_Op value) {
   _internal_set_op(value);
-  // @@protoc_insertion_point(field_set:gridfs.FsOpRequest.op)
+  // @@protoc_insertion_point(field_set:proto.FsOpRequest.op)
 }
 
 // string path = 2;
@@ -3010,7 +3010,7 @@ inline void FsOpRequest::clear_path() {
   _impl_.path_.ClearToEmpty();
 }
 inline const std::string& FsOpRequest::path() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsOpRequest.path)
+  // @@protoc_insertion_point(field_get:proto.FsOpRequest.path)
   return _internal_path();
 }
 template <typename ArgT0, typename... ArgT>
@@ -3018,11 +3018,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void FsOpRequest::set_path(ArgT0&& arg0, ArgT... args) {
  
  _impl_.path_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.FsOpRequest.path)
+  // @@protoc_insertion_point(field_set:proto.FsOpRequest.path)
 }
 inline std::string* FsOpRequest::mutable_path() {
   std::string* _s = _internal_mutable_path();
-  // @@protoc_insertion_point(field_mutable:gridfs.FsOpRequest.path)
+  // @@protoc_insertion_point(field_mutable:proto.FsOpRequest.path)
   return _s;
 }
 inline const std::string& FsOpRequest::_internal_path() const {
@@ -3037,7 +3037,7 @@ inline std::string* FsOpRequest::_internal_mutable_path() {
   return _impl_.path_.Mutable(GetArenaForAllocation());
 }
 inline std::string* FsOpRequest::release_path() {
-  // @@protoc_insertion_point(field_release:gridfs.FsOpRequest.path)
+  // @@protoc_insertion_point(field_release:proto.FsOpRequest.path)
   return _impl_.path_.Release();
 }
 inline void FsOpRequest::set_allocated_path(std::string* path) {
@@ -3052,7 +3052,7 @@ inline void FsOpRequest::set_allocated_path(std::string* path) {
     _impl_.path_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.FsOpRequest.path)
+  // @@protoc_insertion_point(field_set_allocated:proto.FsOpRequest.path)
 }
 
 // -------------------------------------------------------------------
@@ -3064,7 +3064,7 @@ inline void FsEntry::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
 inline const std::string& FsEntry::name() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsEntry.name)
+  // @@protoc_insertion_point(field_get:proto.FsEntry.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
@@ -3072,11 +3072,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void FsEntry::set_name(ArgT0&& arg0, ArgT... args) {
  
  _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.FsEntry.name)
+  // @@protoc_insertion_point(field_set:proto.FsEntry.name)
 }
 inline std::string* FsEntry::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:gridfs.FsEntry.name)
+  // @@protoc_insertion_point(field_mutable:proto.FsEntry.name)
   return _s;
 }
 inline const std::string& FsEntry::_internal_name() const {
@@ -3091,7 +3091,7 @@ inline std::string* FsEntry::_internal_mutable_name() {
   return _impl_.name_.Mutable(GetArenaForAllocation());
 }
 inline std::string* FsEntry::release_name() {
-  // @@protoc_insertion_point(field_release:gridfs.FsEntry.name)
+  // @@protoc_insertion_point(field_release:proto.FsEntry.name)
   return _impl_.name_.Release();
 }
 inline void FsEntry::set_allocated_name(std::string* name) {
@@ -3106,7 +3106,7 @@ inline void FsEntry::set_allocated_name(std::string* name) {
     _impl_.name_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.FsEntry.name)
+  // @@protoc_insertion_point(field_set_allocated:proto.FsEntry.name)
 }
 
 // bool is_dir = 2;
@@ -3117,7 +3117,7 @@ inline bool FsEntry::_internal_is_dir() const {
   return _impl_.is_dir_;
 }
 inline bool FsEntry::is_dir() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsEntry.is_dir)
+  // @@protoc_insertion_point(field_get:proto.FsEntry.is_dir)
   return _internal_is_dir();
 }
 inline void FsEntry::_internal_set_is_dir(bool value) {
@@ -3126,7 +3126,7 @@ inline void FsEntry::_internal_set_is_dir(bool value) {
 }
 inline void FsEntry::set_is_dir(bool value) {
   _internal_set_is_dir(value);
-  // @@protoc_insertion_point(field_set:gridfs.FsEntry.is_dir)
+  // @@protoc_insertion_point(field_set:proto.FsEntry.is_dir)
 }
 
 // int64 size = 3;
@@ -3137,7 +3137,7 @@ inline int64_t FsEntry::_internal_size() const {
   return _impl_.size_;
 }
 inline int64_t FsEntry::size() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsEntry.size)
+  // @@protoc_insertion_point(field_get:proto.FsEntry.size)
   return _internal_size();
 }
 inline void FsEntry::_internal_set_size(int64_t value) {
@@ -3146,7 +3146,7 @@ inline void FsEntry::_internal_set_size(int64_t value) {
 }
 inline void FsEntry::set_size(int64_t value) {
   _internal_set_size(value);
-  // @@protoc_insertion_point(field_set:gridfs.FsEntry.size)
+  // @@protoc_insertion_point(field_set:proto.FsEntry.size)
 }
 
 // -------------------------------------------------------------------
@@ -3161,7 +3161,7 @@ inline bool FsOpResponse::_internal_ok() const {
   return _impl_.ok_;
 }
 inline bool FsOpResponse::ok() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsOpResponse.ok)
+  // @@protoc_insertion_point(field_get:proto.FsOpResponse.ok)
   return _internal_ok();
 }
 inline void FsOpResponse::_internal_set_ok(bool value) {
@@ -3170,7 +3170,7 @@ inline void FsOpResponse::_internal_set_ok(bool value) {
 }
 inline void FsOpResponse::set_ok(bool value) {
   _internal_set_ok(value);
-  // @@protoc_insertion_point(field_set:gridfs.FsOpResponse.ok)
+  // @@protoc_insertion_point(field_set:proto.FsOpResponse.ok)
 }
 
 // string message = 2;
@@ -3178,7 +3178,7 @@ inline void FsOpResponse::clear_message() {
   _impl_.message_.ClearToEmpty();
 }
 inline const std::string& FsOpResponse::message() const {
-  // @@protoc_insertion_point(field_get:gridfs.FsOpResponse.message)
+  // @@protoc_insertion_point(field_get:proto.FsOpResponse.message)
   return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
@@ -3186,11 +3186,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void FsOpResponse::set_message(ArgT0&& arg0, ArgT... args) {
  
  _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:gridfs.FsOpResponse.message)
+  // @@protoc_insertion_point(field_set:proto.FsOpResponse.message)
 }
 inline std::string* FsOpResponse::mutable_message() {
   std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:gridfs.FsOpResponse.message)
+  // @@protoc_insertion_point(field_mutable:proto.FsOpResponse.message)
   return _s;
 }
 inline const std::string& FsOpResponse::_internal_message() const {
@@ -3205,7 +3205,7 @@ inline std::string* FsOpResponse::_internal_mutable_message() {
   return _impl_.message_.Mutable(GetArenaForAllocation());
 }
 inline std::string* FsOpResponse::release_message() {
-  // @@protoc_insertion_point(field_release:gridfs.FsOpResponse.message)
+  // @@protoc_insertion_point(field_release:proto.FsOpResponse.message)
   return _impl_.message_.Release();
 }
 inline void FsOpResponse::set_allocated_message(std::string* message) {
@@ -3220,10 +3220,10 @@ inline void FsOpResponse::set_allocated_message(std::string* message) {
     _impl_.message_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:gridfs.FsOpResponse.message)
+  // @@protoc_insertion_point(field_set_allocated:proto.FsOpResponse.message)
 }
 
-// repeated .gridfs.FsEntry entries = 3;
+// repeated .proto.FsEntry entries = 3;
 inline int FsOpResponse::_internal_entries_size() const {
   return _impl_.entries_.size();
 }
@@ -3233,33 +3233,33 @@ inline int FsOpResponse::entries_size() const {
 inline void FsOpResponse::clear_entries() {
   _impl_.entries_.Clear();
 }
-inline ::gridfs::FsEntry* FsOpResponse::mutable_entries(int index) {
-  // @@protoc_insertion_point(field_mutable:gridfs.FsOpResponse.entries)
+inline ::proto::FsEntry* FsOpResponse::mutable_entries(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.FsOpResponse.entries)
   return _impl_.entries_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::gridfs::FsEntry >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::FsEntry >*
 FsOpResponse::mutable_entries() {
-  // @@protoc_insertion_point(field_mutable_list:gridfs.FsOpResponse.entries)
+  // @@protoc_insertion_point(field_mutable_list:proto.FsOpResponse.entries)
   return &_impl_.entries_;
 }
-inline const ::gridfs::FsEntry& FsOpResponse::_internal_entries(int index) const {
+inline const ::proto::FsEntry& FsOpResponse::_internal_entries(int index) const {
   return _impl_.entries_.Get(index);
 }
-inline const ::gridfs::FsEntry& FsOpResponse::entries(int index) const {
-  // @@protoc_insertion_point(field_get:gridfs.FsOpResponse.entries)
+inline const ::proto::FsEntry& FsOpResponse::entries(int index) const {
+  // @@protoc_insertion_point(field_get:proto.FsOpResponse.entries)
   return _internal_entries(index);
 }
-inline ::gridfs::FsEntry* FsOpResponse::_internal_add_entries() {
+inline ::proto::FsEntry* FsOpResponse::_internal_add_entries() {
   return _impl_.entries_.Add();
 }
-inline ::gridfs::FsEntry* FsOpResponse::add_entries() {
-  ::gridfs::FsEntry* _add = _internal_add_entries();
-  // @@protoc_insertion_point(field_add:gridfs.FsOpResponse.entries)
+inline ::proto::FsEntry* FsOpResponse::add_entries() {
+  ::proto::FsEntry* _add = _internal_add_entries();
+  // @@protoc_insertion_point(field_add:proto.FsOpResponse.entries)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::gridfs::FsEntry >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::FsEntry >&
 FsOpResponse::entries() const {
-  // @@protoc_insertion_point(field_list:gridfs.FsOpResponse.entries)
+  // @@protoc_insertion_point(field_list:proto.FsOpResponse.entries)
   return _impl_.entries_;
 }
 
@@ -3287,14 +3287,14 @@ FsOpResponse::entries() const {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace gridfs
+}  // namespace proto
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::gridfs::FsOpRequest_Op> : ::std::true_type {};
+template <> struct is_proto_enum< ::proto::FsOpRequest_Op> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::gridfs::FsOpRequest_Op>() {
-  return ::gridfs::FsOpRequest_Op_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::proto::FsOpRequest_Op>() {
+  return ::proto::FsOpRequest_Op_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

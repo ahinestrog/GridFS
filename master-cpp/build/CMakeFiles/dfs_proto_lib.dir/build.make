@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alejo/dev/GridFS/master-cpp
+CMAKE_SOURCE_DIR = /home/alejo/dev/topicosTelematica/GridFS/master-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alejo/dev/GridFS/master-cpp/build
+CMAKE_BINARY_DIR = /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dfs_proto_lib.dir/depend.make
@@ -69,62 +69,62 @@ include CMakeFiles/dfs_proto_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/dfs_proto_lib.dir/flags.make
 
-admin.pb.h: /home/alejo/dev/GridFS/proto/admin.proto
+admin.pb.h: /home/alejo/dev/topicosTelematica/GridFS/proto/admin.proto
 admin.pb.h: /usr/bin/protoc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running cpp protocol buffer compiler on /home/alejo/dev/GridFS/master-cpp/../proto/admin.proto"
-	/usr/bin/protoc --cpp_out :/home/alejo/dev/GridFS/master-cpp/build -I /home/alejo/dev/GridFS/proto /home/alejo/dev/GridFS/proto/admin.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running cpp protocol buffer compiler on /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/admin.proto"
+	/usr/bin/protoc --cpp_out :/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build -I /home/alejo/dev/topicosTelematica/GridFS/proto /home/alejo/dev/topicosTelematica/GridFS/proto/admin.proto
 
 admin.pb.cc: admin.pb.h
 	@$(CMAKE_COMMAND) -E touch_nocreate admin.pb.cc
 
-common.pb.h: /home/alejo/dev/GridFS/proto/common.proto
+common.pb.h: /home/alejo/dev/topicosTelematica/GridFS/proto/common.proto
 common.pb.h: /usr/bin/protoc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Running cpp protocol buffer compiler on /home/alejo/dev/GridFS/master-cpp/../proto/common.proto"
-	/usr/bin/protoc --cpp_out :/home/alejo/dev/GridFS/master-cpp/build -I /home/alejo/dev/GridFS/proto /home/alejo/dev/GridFS/proto/common.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Running cpp protocol buffer compiler on /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/common.proto"
+	/usr/bin/protoc --cpp_out :/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build -I /home/alejo/dev/topicosTelematica/GridFS/proto /home/alejo/dev/topicosTelematica/GridFS/proto/common.proto
 
 common.pb.cc: common.pb.h
 	@$(CMAKE_COMMAND) -E touch_nocreate common.pb.cc
 
-datanode.pb.h: /home/alejo/dev/GridFS/proto/datanode.proto
+datanode.pb.h: /home/alejo/dev/topicosTelematica/GridFS/proto/datanode.proto
 datanode.pb.h: /usr/bin/protoc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running cpp protocol buffer compiler on /home/alejo/dev/GridFS/master-cpp/../proto/datanode.proto"
-	/usr/bin/protoc --cpp_out :/home/alejo/dev/GridFS/master-cpp/build -I /home/alejo/dev/GridFS/proto /home/alejo/dev/GridFS/proto/datanode.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Running cpp protocol buffer compiler on /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/datanode.proto"
+	/usr/bin/protoc --cpp_out :/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build -I /home/alejo/dev/topicosTelematica/GridFS/proto /home/alejo/dev/topicosTelematica/GridFS/proto/datanode.proto
 
 datanode.pb.cc: datanode.pb.h
 	@$(CMAKE_COMMAND) -E touch_nocreate datanode.pb.cc
 
-master.pb.h: /home/alejo/dev/GridFS/proto/master.proto
+master.pb.h: /home/alejo/dev/topicosTelematica/GridFS/proto/master.proto
 master.pb.h: /usr/bin/protoc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Running cpp protocol buffer compiler on /home/alejo/dev/GridFS/master-cpp/../proto/master.proto"
-	/usr/bin/protoc --cpp_out :/home/alejo/dev/GridFS/master-cpp/build -I /home/alejo/dev/GridFS/proto /home/alejo/dev/GridFS/proto/master.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Running cpp protocol buffer compiler on /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/master.proto"
+	/usr/bin/protoc --cpp_out :/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build -I /home/alejo/dev/topicosTelematica/GridFS/proto /home/alejo/dev/topicosTelematica/GridFS/proto/master.proto
 
 master.pb.cc: master.pb.h
 	@$(CMAKE_COMMAND) -E touch_nocreate master.pb.cc
 
-admin.grpc.pb.cc: /home/alejo/dev/GridFS/proto/admin.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "gRPC C++ desde /home/alejo/dev/GridFS/master-cpp/../proto/admin.proto"
-	/usr/bin/protoc --grpc_out /home/alejo/dev/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/GridFS/master-cpp/../proto /home/alejo/dev/GridFS/master-cpp/../proto/admin.proto
+admin.grpc.pb.cc: /home/alejo/dev/topicosTelematica/GridFS/proto/admin.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "gRPC C++ desde /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/admin.proto"
+	/usr/bin/protoc --grpc_out /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/admin.proto
 
 admin.grpc.pb.h: admin.grpc.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate admin.grpc.pb.h
 
-common.grpc.pb.cc: /home/alejo/dev/GridFS/proto/common.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "gRPC C++ desde /home/alejo/dev/GridFS/master-cpp/../proto/common.proto"
-	/usr/bin/protoc --grpc_out /home/alejo/dev/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/GridFS/master-cpp/../proto /home/alejo/dev/GridFS/master-cpp/../proto/common.proto
+common.grpc.pb.cc: /home/alejo/dev/topicosTelematica/GridFS/proto/common.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "gRPC C++ desde /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/common.proto"
+	/usr/bin/protoc --grpc_out /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/common.proto
 
 common.grpc.pb.h: common.grpc.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate common.grpc.pb.h
 
-datanode.grpc.pb.cc: /home/alejo/dev/GridFS/proto/datanode.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "gRPC C++ desde /home/alejo/dev/GridFS/master-cpp/../proto/datanode.proto"
-	/usr/bin/protoc --grpc_out /home/alejo/dev/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/GridFS/master-cpp/../proto /home/alejo/dev/GridFS/master-cpp/../proto/datanode.proto
+datanode.grpc.pb.cc: /home/alejo/dev/topicosTelematica/GridFS/proto/datanode.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "gRPC C++ desde /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/datanode.proto"
+	/usr/bin/protoc --grpc_out /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/datanode.proto
 
 datanode.grpc.pb.h: datanode.grpc.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate datanode.grpc.pb.h
 
-master.grpc.pb.cc: /home/alejo/dev/GridFS/proto/master.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "gRPC C++ desde /home/alejo/dev/GridFS/master-cpp/../proto/master.proto"
-	/usr/bin/protoc --grpc_out /home/alejo/dev/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/GridFS/master-cpp/../proto /home/alejo/dev/GridFS/master-cpp/../proto/master.proto
+master.grpc.pb.cc: /home/alejo/dev/topicosTelematica/GridFS/proto/master.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "gRPC C++ desde /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/master.proto"
+	/usr/bin/protoc --grpc_out /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin -I /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto /home/alejo/dev/topicosTelematica/GridFS/master-cpp/../proto/master.proto
 
 master.grpc.pb.h: master.grpc.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate master.grpc.pb.h
@@ -132,114 +132,114 @@ master.grpc.pb.h: master.grpc.pb.cc
 CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o: admin.pb.cc
 CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/admin.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/admin.pb.cc > CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.pb.cc > CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/admin.pb.cc -o CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.pb.cc -o CMakeFiles/dfs_proto_lib.dir/admin.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o: common.pb.cc
 CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/common.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/common.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/common.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/common.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/common.pb.cc > CMakeFiles/dfs_proto_lib.dir/common.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.pb.cc > CMakeFiles/dfs_proto_lib.dir/common.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/common.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/common.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/common.pb.cc -o CMakeFiles/dfs_proto_lib.dir/common.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.pb.cc -o CMakeFiles/dfs_proto_lib.dir/common.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o: datanode.pb.cc
 CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/datanode.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/datanode.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/datanode.pb.cc > CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/datanode.pb.cc > CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/datanode.pb.cc -o CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/datanode.pb.cc -o CMakeFiles/dfs_proto_lib.dir/datanode.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o: master.pb.cc
 CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/master.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/master.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/master.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/master.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/master.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/master.pb.cc > CMakeFiles/dfs_proto_lib.dir/master.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/master.pb.cc > CMakeFiles/dfs_proto_lib.dir/master.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/master.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/master.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/master.pb.cc -o CMakeFiles/dfs_proto_lib.dir/master.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/master.pb.cc -o CMakeFiles/dfs_proto_lib.dir/master.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o: admin.grpc.pb.cc
 CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/admin.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.grpc.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/admin.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/admin.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/admin.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/admin.grpc.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o: common.grpc.pb.cc
 CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/common.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.grpc.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/common.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/common.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/common.grpc.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o: datanode.grpc.pb.cc
 CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/datanode.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/datanode.grpc.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/datanode.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/datanode.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/datanode.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/datanode.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.s
 
 CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/flags.make
 CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o: master.grpc.pb.cc
 CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o: CMakeFiles/dfs_proto_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o -c /home/alejo/dev/GridFS/master-cpp/build/master.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o -MF CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o.d -o CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o -c /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/master.grpc.pb.cc
 
 CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/GridFS/master-cpp/build/master.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/master.grpc.pb.cc > CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.i
 
 CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/GridFS/master-cpp/build/master.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/master.grpc.pb.cc -o CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.s
 
 # Object files for target dfs_proto_lib
 dfs_proto_lib_OBJECTS = \
@@ -265,7 +265,7 @@ libdfs_proto_lib.a: CMakeFiles/dfs_proto_lib.dir/datanode.grpc.pb.cc.o
 libdfs_proto_lib.a: CMakeFiles/dfs_proto_lib.dir/master.grpc.pb.cc.o
 libdfs_proto_lib.a: CMakeFiles/dfs_proto_lib.dir/build.make
 libdfs_proto_lib.a: CMakeFiles/dfs_proto_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libdfs_proto_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libdfs_proto_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/dfs_proto_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dfs_proto_lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -293,6 +293,6 @@ CMakeFiles/dfs_proto_lib.dir/depend: master.grpc.pb.cc
 CMakeFiles/dfs_proto_lib.dir/depend: master.grpc.pb.h
 CMakeFiles/dfs_proto_lib.dir/depend: master.pb.cc
 CMakeFiles/dfs_proto_lib.dir/depend: master.pb.h
-	cd /home/alejo/dev/GridFS/master-cpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alejo/dev/GridFS/master-cpp /home/alejo/dev/GridFS/master-cpp /home/alejo/dev/GridFS/master-cpp/build /home/alejo/dev/GridFS/master-cpp/build /home/alejo/dev/GridFS/master-cpp/build/CMakeFiles/dfs_proto_lib.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alejo/dev/topicosTelematica/GridFS/master-cpp /home/alejo/dev/topicosTelematica/GridFS/master-cpp /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles/dfs_proto_lib.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/dfs_proto_lib.dir/depend
 

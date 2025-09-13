@@ -19,12 +19,12 @@
 #include <grpcpp/server_context.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/support/sync_stream.h>
-namespace gridfs {
+namespace proto {
 
 static const char* DataNodeIO_method_names[] = {
-  "/gridfs.DataNodeIO/WriteBlock",
-  "/gridfs.DataNodeIO/ReadBlock",
-  "/gridfs.DataNodeIO/FsOp",
+  "/proto.DataNodeIO/WriteBlock",
+  "/proto.DataNodeIO/ReadBlock",
+  "/proto.DataNodeIO/FsOp",
 };
 
 std::unique_ptr< DataNodeIO::Stub> DataNodeIO::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -39,55 +39,55 @@ DataNodeIO::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_FsOp_(DataNodeIO_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::ClientWriter< ::gridfs::BlockChunk>* DataNodeIO::Stub::WriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response) {
-  return ::grpc::internal::ClientWriterFactory< ::gridfs::BlockChunk>::Create(channel_.get(), rpcmethod_WriteBlock_, context, response);
+::grpc::ClientWriter< ::proto::BlockChunk>* DataNodeIO::Stub::WriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response) {
+  return ::grpc::internal::ClientWriterFactory< ::proto::BlockChunk>::Create(channel_.get(), rpcmethod_WriteBlock_, context, response);
 }
 
-void DataNodeIO::Stub::async::WriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::ClientWriteReactor< ::gridfs::BlockChunk>* reactor) {
-  ::grpc::internal::ClientCallbackWriterFactory< ::gridfs::BlockChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_WriteBlock_, context, response, reactor);
+void DataNodeIO::Stub::async::WriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::ClientWriteReactor< ::proto::BlockChunk>* reactor) {
+  ::grpc::internal::ClientCallbackWriterFactory< ::proto::BlockChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_WriteBlock_, context, response, reactor);
 }
 
-::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* DataNodeIO::Stub::AsyncWriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncWriterFactory< ::gridfs::BlockChunk>::Create(channel_.get(), cq, rpcmethod_WriteBlock_, context, response, true, tag);
+::grpc::ClientAsyncWriter< ::proto::BlockChunk>* DataNodeIO::Stub::AsyncWriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::proto::BlockChunk>::Create(channel_.get(), cq, rpcmethod_WriteBlock_, context, response, true, tag);
 }
 
-::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* DataNodeIO::Stub::PrepareAsyncWriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncWriterFactory< ::gridfs::BlockChunk>::Create(channel_.get(), cq, rpcmethod_WriteBlock_, context, response, false, nullptr);
+::grpc::ClientAsyncWriter< ::proto::BlockChunk>* DataNodeIO::Stub::PrepareAsyncWriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::proto::BlockChunk>::Create(channel_.get(), cq, rpcmethod_WriteBlock_, context, response, false, nullptr);
 }
 
-::grpc::ClientReader< ::gridfs::BlockChunk>* DataNodeIO::Stub::ReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request) {
-  return ::grpc::internal::ClientReaderFactory< ::gridfs::BlockChunk>::Create(channel_.get(), rpcmethod_ReadBlock_, context, request);
+::grpc::ClientReader< ::proto::BlockChunk>* DataNodeIO::Stub::ReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request) {
+  return ::grpc::internal::ClientReaderFactory< ::proto::BlockChunk>::Create(channel_.get(), rpcmethod_ReadBlock_, context, request);
 }
 
-void DataNodeIO::Stub::async::ReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId* request, ::grpc::ClientReadReactor< ::gridfs::BlockChunk>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::gridfs::BlockChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_ReadBlock_, context, request, reactor);
+void DataNodeIO::Stub::async::ReadBlock(::grpc::ClientContext* context, const ::proto::BlockId* request, ::grpc::ClientReadReactor< ::proto::BlockChunk>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::proto::BlockChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_ReadBlock_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::gridfs::BlockChunk>* DataNodeIO::Stub::AsyncReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::gridfs::BlockChunk>::Create(channel_.get(), cq, rpcmethod_ReadBlock_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::proto::BlockChunk>* DataNodeIO::Stub::AsyncReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::proto::BlockChunk>::Create(channel_.get(), cq, rpcmethod_ReadBlock_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::gridfs::BlockChunk>* DataNodeIO::Stub::PrepareAsyncReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::gridfs::BlockChunk>::Create(channel_.get(), cq, rpcmethod_ReadBlock_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::proto::BlockChunk>* DataNodeIO::Stub::PrepareAsyncReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::proto::BlockChunk>::Create(channel_.get(), cq, rpcmethod_ReadBlock_, context, request, false, nullptr);
 }
 
-::grpc::Status DataNodeIO::Stub::FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::gridfs::FsOpResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::gridfs::FsOpRequest, ::gridfs::FsOpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_FsOp_, context, request, response);
+::grpc::Status DataNodeIO::Stub::FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::proto::FsOpResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::proto::FsOpRequest, ::proto::FsOpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_FsOp_, context, request, response);
 }
 
-void DataNodeIO::Stub::async::FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::gridfs::FsOpRequest, ::gridfs::FsOpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FsOp_, context, request, response, std::move(f));
+void DataNodeIO::Stub::async::FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::proto::FsOpRequest, ::proto::FsOpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FsOp_, context, request, response, std::move(f));
 }
 
-void DataNodeIO::Stub::async::FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void DataNodeIO::Stub::async::FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FsOp_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>* DataNodeIO::Stub::PrepareAsyncFsOpRaw(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::gridfs::FsOpResponse, ::gridfs::FsOpRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_FsOp_, context, request);
+::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>* DataNodeIO::Stub::PrepareAsyncFsOpRaw(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::proto::FsOpResponse, ::proto::FsOpRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_FsOp_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>* DataNodeIO::Stub::AsyncFsOpRaw(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>* DataNodeIO::Stub::AsyncFsOpRaw(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncFsOpRaw(context, request, cq);
   result->StartCall();
@@ -98,31 +98,31 @@ DataNodeIO::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataNodeIO_method_names[0],
       ::grpc::internal::RpcMethod::CLIENT_STREAMING,
-      new ::grpc::internal::ClientStreamingHandler< DataNodeIO::Service, ::gridfs::BlockChunk, ::gridfs::WriteAck>(
+      new ::grpc::internal::ClientStreamingHandler< DataNodeIO::Service, ::proto::BlockChunk, ::proto::WriteAck>(
           [](DataNodeIO::Service* service,
              ::grpc::ServerContext* ctx,
-             ::grpc::ServerReader<::gridfs::BlockChunk>* reader,
-             ::gridfs::WriteAck* resp) {
+             ::grpc::ServerReader<::proto::BlockChunk>* reader,
+             ::proto::WriteAck* resp) {
                return service->WriteBlock(ctx, reader, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataNodeIO_method_names[1],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< DataNodeIO::Service, ::gridfs::BlockId, ::gridfs::BlockChunk>(
+      new ::grpc::internal::ServerStreamingHandler< DataNodeIO::Service, ::proto::BlockId, ::proto::BlockChunk>(
           [](DataNodeIO::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::gridfs::BlockId* req,
-             ::grpc::ServerWriter<::gridfs::BlockChunk>* writer) {
+             const ::proto::BlockId* req,
+             ::grpc::ServerWriter<::proto::BlockChunk>* writer) {
                return service->ReadBlock(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataNodeIO_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< DataNodeIO::Service, ::gridfs::FsOpRequest, ::gridfs::FsOpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< DataNodeIO::Service, ::proto::FsOpRequest, ::proto::FsOpResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](DataNodeIO::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::gridfs::FsOpRequest* req,
-             ::gridfs::FsOpResponse* resp) {
+             const ::proto::FsOpRequest* req,
+             ::proto::FsOpResponse* resp) {
                return service->FsOp(ctx, req, resp);
              }, this)));
 }
@@ -130,21 +130,21 @@ DataNodeIO::Service::Service() {
 DataNodeIO::Service::~Service() {
 }
 
-::grpc::Status DataNodeIO::Service::WriteBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::gridfs::BlockChunk>* reader, ::gridfs::WriteAck* response) {
+::grpc::Status DataNodeIO::Service::WriteBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::proto::BlockChunk>* reader, ::proto::WriteAck* response) {
   (void) context;
   (void) reader;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status DataNodeIO::Service::ReadBlock(::grpc::ServerContext* context, const ::gridfs::BlockId* request, ::grpc::ServerWriter< ::gridfs::BlockChunk>* writer) {
+::grpc::Status DataNodeIO::Service::ReadBlock(::grpc::ServerContext* context, const ::proto::BlockId* request, ::grpc::ServerWriter< ::proto::BlockChunk>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status DataNodeIO::Service::FsOp(::grpc::ServerContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response) {
+::grpc::Status DataNodeIO::Service::FsOp(::grpc::ServerContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -153,7 +153,7 @@ DataNodeIO::Service::~Service() {
 
 
 static const char* ReplicationService_method_names[] = {
-  "/gridfs.ReplicationService/PushBlock",
+  "/proto.ReplicationService/PushBlock",
 };
 
 std::unique_ptr< ReplicationService::Stub> ReplicationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -166,31 +166,31 @@ ReplicationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   : channel_(channel), rpcmethod_PushBlock_(ReplicationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::CLIENT_STREAMING, channel)
   {}
 
-::grpc::ClientWriter< ::gridfs::BlockChunk>* ReplicationService::Stub::PushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response) {
-  return ::grpc::internal::ClientWriterFactory< ::gridfs::BlockChunk>::Create(channel_.get(), rpcmethod_PushBlock_, context, response);
+::grpc::ClientWriter< ::proto::BlockChunk>* ReplicationService::Stub::PushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response) {
+  return ::grpc::internal::ClientWriterFactory< ::proto::BlockChunk>::Create(channel_.get(), rpcmethod_PushBlock_, context, response);
 }
 
-void ReplicationService::Stub::async::PushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::ClientWriteReactor< ::gridfs::BlockChunk>* reactor) {
-  ::grpc::internal::ClientCallbackWriterFactory< ::gridfs::BlockChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_PushBlock_, context, response, reactor);
+void ReplicationService::Stub::async::PushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::ClientWriteReactor< ::proto::BlockChunk>* reactor) {
+  ::grpc::internal::ClientCallbackWriterFactory< ::proto::BlockChunk>::Create(stub_->channel_.get(), stub_->rpcmethod_PushBlock_, context, response, reactor);
 }
 
-::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* ReplicationService::Stub::AsyncPushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncWriterFactory< ::gridfs::BlockChunk>::Create(channel_.get(), cq, rpcmethod_PushBlock_, context, response, true, tag);
+::grpc::ClientAsyncWriter< ::proto::BlockChunk>* ReplicationService::Stub::AsyncPushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::proto::BlockChunk>::Create(channel_.get(), cq, rpcmethod_PushBlock_, context, response, true, tag);
 }
 
-::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* ReplicationService::Stub::PrepareAsyncPushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncWriterFactory< ::gridfs::BlockChunk>::Create(channel_.get(), cq, rpcmethod_PushBlock_, context, response, false, nullptr);
+::grpc::ClientAsyncWriter< ::proto::BlockChunk>* ReplicationService::Stub::PrepareAsyncPushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncWriterFactory< ::proto::BlockChunk>::Create(channel_.get(), cq, rpcmethod_PushBlock_, context, response, false, nullptr);
 }
 
 ReplicationService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ReplicationService_method_names[0],
       ::grpc::internal::RpcMethod::CLIENT_STREAMING,
-      new ::grpc::internal::ClientStreamingHandler< ReplicationService::Service, ::gridfs::BlockChunk, ::gridfs::WriteAck>(
+      new ::grpc::internal::ClientStreamingHandler< ReplicationService::Service, ::proto::BlockChunk, ::proto::WriteAck>(
           [](ReplicationService::Service* service,
              ::grpc::ServerContext* ctx,
-             ::grpc::ServerReader<::gridfs::BlockChunk>* reader,
-             ::gridfs::WriteAck* resp) {
+             ::grpc::ServerReader<::proto::BlockChunk>* reader,
+             ::proto::WriteAck* resp) {
                return service->PushBlock(ctx, reader, resp);
              }, this)));
 }
@@ -198,7 +198,7 @@ ReplicationService::Service::Service() {
 ReplicationService::Service::~Service() {
 }
 
-::grpc::Status ReplicationService::Service::PushBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::gridfs::BlockChunk>* reader, ::gridfs::WriteAck* response) {
+::grpc::Status ReplicationService::Service::PushBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::proto::BlockChunk>* reader, ::proto::WriteAck* response) {
   (void) context;
   (void) reader;
   (void) response;
@@ -206,5 +206,5 @@ ReplicationService::Service::~Service() {
 }
 
 
-}  // namespace gridfs
+}  // namespace proto
 

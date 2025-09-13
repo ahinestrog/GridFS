@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface DeleteBlockCmdOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.DeleteBlockCmd)
+    // @@protoc_insertion_point(interface_extends:proto.DeleteBlockCmd)
     com.google.protobuf.MessageOrBuilder {
 
   /**

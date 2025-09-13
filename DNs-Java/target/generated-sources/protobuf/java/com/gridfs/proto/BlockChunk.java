@@ -4,11 +4,11 @@
 package com.gridfs.proto;
 
 /**
- * Protobuf type {@code gridfs.BlockChunk}
+ * Protobuf type {@code proto.BlockChunk}
  */
 public final class BlockChunk extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.BlockChunk)
+    // @@protoc_insertion_point(message_implements:proto.BlockChunk)
     BlockChunkOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use BlockChunk.newBuilder() to construct.
@@ -27,15 +27,20 @@ private static final long serialVersionUID = 0L;
     return new BlockChunk();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_BlockChunk_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_BlockChunk_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_BlockChunk_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_BlockChunk_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.BlockChunk.class, com.gridfs.proto.BlockChunk.Builder.class);
   }
@@ -82,10 +87,6 @@ private static final long serialVersionUID = 0L;
   public static final int SEQ_FIELD_NUMBER = 2;
   private long seq_ = 0L;
   /**
-   * <pre>
-   * 0..N
-   * </pre>
-   *
    * <code>int64 seq = 2;</code>
    * @return The seq.
    */
@@ -97,10 +98,6 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
-   * <pre>
-   * &lt;= block_size
-   * </pre>
-   *
    * <code>bytes data = 3;</code>
    * @return The data.
    */
@@ -112,10 +109,6 @@ private static final long serialVersionUID = 0L;
   public static final int EOF_FIELD_NUMBER = 4;
   private boolean eof_ = false;
   /**
-   * <pre>
-   * último chunk del bloque
-   * </pre>
-   *
    * <code>bool eof = 4;</code>
    * @return The eof.
    */
@@ -267,13 +260,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.BlockChunk parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.BlockChunk parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -316,21 +307,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code gridfs.BlockChunk}
+   * Protobuf type {@code proto.BlockChunk}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.BlockChunk)
+      // @@protoc_insertion_point(builder_implements:proto.BlockChunk)
       com.gridfs.proto.BlockChunkOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_BlockChunk_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_BlockChunk_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_BlockChunk_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_BlockChunk_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.BlockChunk.class, com.gridfs.proto.BlockChunk.Builder.class);
     }
@@ -359,7 +350,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_BlockChunk_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_BlockChunk_descriptor;
     }
 
     @java.lang.Override
@@ -595,10 +586,6 @@ private static final long serialVersionUID = 0L;
 
     private long seq_ ;
     /**
-     * <pre>
-     * 0..N
-     * </pre>
-     *
      * <code>int64 seq = 2;</code>
      * @return The seq.
      */
@@ -607,26 +594,18 @@ private static final long serialVersionUID = 0L;
       return seq_;
     }
     /**
-     * <pre>
-     * 0..N
-     * </pre>
-     *
      * <code>int64 seq = 2;</code>
      * @param value The seq to set.
      * @return This builder for chaining.
      */
     public Builder setSeq(long value) {
-
+      
       seq_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 0..N
-     * </pre>
-     *
      * <code>int64 seq = 2;</code>
      * @return This builder for chaining.
      */
@@ -639,10 +618,6 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <pre>
-     * &lt;= block_size
-     * </pre>
-     *
      * <code>bytes data = 3;</code>
      * @return The data.
      */
@@ -651,10 +626,6 @@ private static final long serialVersionUID = 0L;
       return data_;
     }
     /**
-     * <pre>
-     * &lt;= block_size
-     * </pre>
-     *
      * <code>bytes data = 3;</code>
      * @param value The data to set.
      * @return This builder for chaining.
@@ -667,10 +638,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * &lt;= block_size
-     * </pre>
-     *
      * <code>bytes data = 3;</code>
      * @return This builder for chaining.
      */
@@ -683,10 +650,6 @@ private static final long serialVersionUID = 0L;
 
     private boolean eof_ ;
     /**
-     * <pre>
-     * último chunk del bloque
-     * </pre>
-     *
      * <code>bool eof = 4;</code>
      * @return The eof.
      */
@@ -695,26 +658,18 @@ private static final long serialVersionUID = 0L;
       return eof_;
     }
     /**
-     * <pre>
-     * último chunk del bloque
-     * </pre>
-     *
      * <code>bool eof = 4;</code>
      * @param value The eof to set.
      * @return This builder for chaining.
      */
     public Builder setEof(boolean value) {
-
+      
       eof_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * último chunk del bloque
-     * </pre>
-     *
      * <code>bool eof = 4;</code>
      * @return This builder for chaining.
      */
@@ -737,10 +692,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.BlockChunk)
+    // @@protoc_insertion_point(builder_scope:proto.BlockChunk)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.BlockChunk)
+  // @@protoc_insertion_point(class_scope:proto.BlockChunk)
   private static final com.gridfs.proto.BlockChunk DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.BlockChunk();

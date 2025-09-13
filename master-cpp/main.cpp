@@ -9,8 +9,8 @@
 #include "metastore.h"
 
 // Implementadas en tus .cpp correspondientes:
-std::unique_ptr<com::gridfs::proto::MasterService::Service>   MakeMasterService(MetaStore*);
-std::unique_ptr<com::gridfs::proto::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore*);
+std::unique_ptr<proto::MasterService::Service>   MakeMasterService(MetaStore*);
+std::unique_ptr<proto::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore*);
 
 int main(int argc, char** argv) {
   const std::string addr = "0.0.0.0:50051";

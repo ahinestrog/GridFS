@@ -7,7 +7,7 @@ struct FileBlockRow { std::string filename; int64_t idx{}; std::string block_id;
 class MetaStore {
 public:
 	explicit MetaStore(const std::string& db_path); ~MetaStore();
-	void SavePutPlan(const std::string& filename, const std::vector<com::gridfs::proto::BlockAssignment>& asgs, const std::string& owner);
+	void SavePutPlan(const std::string& filename, const std::vector<proto::BlockAssignment>& asgs, const std::string& owner);
 	std::vector<FileBlockRow> GetFileLayout(const std::string& filename, const std::string& owner);
 	std::vector<std::string> ListFiles(const std::string& owner);
 	std::vector<std::string> ListDirs(const std::string& owner);

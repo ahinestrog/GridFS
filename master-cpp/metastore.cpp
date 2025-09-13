@@ -11,7 +11,7 @@ static const char* kCreateUser = "CREATE TABLE IF NOT EXISTS users (user TEXT PR
 MetaStore::MetaStore(const std::string& db){ if(sqlite3_open(db.c_str(),&db_)!=SQLITE_OK) throw std::runtime_error("No metadb"); InitSchema(); }
 MetaStore::~MetaStore(){ if(db_) sqlite3_close(db_);}
 void MetaStore::InitSchema(){ char* err=nullptr; if(sqlite3_exec(db_,kCreate,nullptr,nullptr,&err)!=SQLITE_OK){ std::string m=err?err:"err"; sqlite3_free(err); throw std::runtime_error(m);} if(sqlite3_exec(db_,kCreateDir,nullptr,nullptr,&err)!=SQLITE_OK){ std::string m=err?err:"err"; sqlite3_free(err); throw std::runtime_error(m);} if(sqlite3_exec(db_, kCreateUser, nullptr, nullptr, &err) != SQLITE_OK){ std::string m=err?err:"err"; sqlite3_free(err); throw std::runtime_error(m);} }
-void MetaStore::SavePutPlan(const std::string& fn, const std::vector<com::gridfs::proto::BlockAssignment>& asgs, const std::string& owner) {
+void MetaStore::SavePutPlan(const std::string& fn, const std::vector<proto::BlockAssignment>& asgs, const std::string& owner) {
     sqlite3_exec(db_, "BEGIN;", nullptr, nullptr, nullptr);
     sqlite3_stmt* s = nullptr;
     sqlite3_prepare_v2(db_, kInsert, -1, &s, nullptr);

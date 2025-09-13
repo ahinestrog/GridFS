@@ -15,25 +15,25 @@ public final class Admin {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_ReplicateCmd_descriptor;
+    internal_static_proto_ReplicateCmd_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_ReplicateCmd_fieldAccessorTable;
+      internal_static_proto_ReplicateCmd_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_DeleteBlockCmd_descriptor;
+    internal_static_proto_DeleteBlockCmd_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_DeleteBlockCmd_fieldAccessorTable;
+      internal_static_proto_DeleteBlockCmd_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_AdminOrderRequest_descriptor;
+    internal_static_proto_AdminOrderRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_AdminOrderRequest_fieldAccessorTable;
+      internal_static_proto_AdminOrderRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gridfs_AdminOrderResponse_descriptor;
+    internal_static_proto_AdminOrderResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gridfs_AdminOrderResponse_fieldAccessorTable;
+      internal_static_proto_AdminOrderResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,45 +43,45 @@ public final class Admin {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013admin.proto\022\006gridfs\"3\n\014ReplicateCmd\022\020\n" +
-      "\010block_id\030\001 \001(\t\022\021\n\ttarget_dn\030\002 \001(\t\"\"\n\016De" +
-      "leteBlockCmd\022\020\n\010block_id\030\001 \001(\t\"\210\001\n\021Admin" +
-      "OrderRequest\022\017\n\007node_id\030\001 \001(\t\022)\n\treplica" +
-      "te\030\002 \001(\0132\024.gridfs.ReplicateCmdH\000\022.\n\014dele" +
-      "te_block\030\003 \001(\0132\026.gridfs.DeleteBlockCmdH\000" +
-      "B\007\n\005order\"1\n\022AdminOrderResponse\022\n\n\002ok\030\001 " +
-      "\001(\010\022\017\n\007message\030\002 \001(\t2T\n\rDataNodeAdmin\022C\n" +
-      "\nAdminOrder\022\031.gridfs.AdminOrderRequest\032\032" +
-      ".gridfs.AdminOrderResponseB\024\n\020com.gridfs" +
-      ".protoP\001b\006proto3"
+      "\n\013admin.proto\022\005proto\"3\n\014ReplicateCmd\022\020\n\010" +
+      "block_id\030\001 \001(\t\022\021\n\ttarget_dn\030\002 \001(\t\"\"\n\016Del" +
+      "eteBlockCmd\022\020\n\010block_id\030\001 \001(\t\"\206\001\n\021AdminO" +
+      "rderRequest\022\017\n\007node_id\030\001 \001(\t\022(\n\treplicat" +
+      "e\030\002 \001(\0132\023.proto.ReplicateCmdH\000\022-\n\014delete" +
+      "_block\030\003 \001(\0132\025.proto.DeleteBlockCmdH\000B\007\n" +
+      "\005order\"1\n\022AdminOrderResponse\022\n\n\002ok\030\001 \001(\010" +
+      "\022\017\n\007message\030\002 \001(\t2R\n\rDataNodeAdmin\022A\n\nAd" +
+      "minOrder\022\030.proto.AdminOrderRequest\032\031.pro" +
+      "to.AdminOrderResponseB\024\n\020com.gridfs.prot" +
+      "oP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_gridfs_ReplicateCmd_descriptor =
+    internal_static_proto_ReplicateCmd_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_gridfs_ReplicateCmd_fieldAccessorTable = new
+    internal_static_proto_ReplicateCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_ReplicateCmd_descriptor,
+        internal_static_proto_ReplicateCmd_descriptor,
         new java.lang.String[] { "BlockId", "TargetDn", });
-    internal_static_gridfs_DeleteBlockCmd_descriptor =
+    internal_static_proto_DeleteBlockCmd_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_gridfs_DeleteBlockCmd_fieldAccessorTable = new
+    internal_static_proto_DeleteBlockCmd_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_DeleteBlockCmd_descriptor,
+        internal_static_proto_DeleteBlockCmd_descriptor,
         new java.lang.String[] { "BlockId", });
-    internal_static_gridfs_AdminOrderRequest_descriptor =
+    internal_static_proto_AdminOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_gridfs_AdminOrderRequest_fieldAccessorTable = new
+    internal_static_proto_AdminOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_AdminOrderRequest_descriptor,
+        internal_static_proto_AdminOrderRequest_descriptor,
         new java.lang.String[] { "NodeId", "Replicate", "DeleteBlock", "Order", });
-    internal_static_gridfs_AdminOrderResponse_descriptor =
+    internal_static_proto_AdminOrderResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_gridfs_AdminOrderResponse_fieldAccessorTable = new
+    internal_static_proto_AdminOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gridfs_AdminOrderResponse_descriptor,
+        internal_static_proto_AdminOrderResponse_descriptor,
         new java.lang.String[] { "Ok", "Message", });
   }
 

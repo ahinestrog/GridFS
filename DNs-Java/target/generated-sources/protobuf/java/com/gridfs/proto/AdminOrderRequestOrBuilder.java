@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface AdminOrderRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.AdminOrderRequest)
+    // @@protoc_insertion_point(interface_extends:proto.AdminOrderRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -20,34 +20,34 @@ public interface AdminOrderRequestOrBuilder extends
       getNodeIdBytes();
 
   /**
-   * <code>.gridfs.ReplicateCmd replicate = 2;</code>
+   * <code>.proto.ReplicateCmd replicate = 2;</code>
    * @return Whether the replicate field is set.
    */
   boolean hasReplicate();
   /**
-   * <code>.gridfs.ReplicateCmd replicate = 2;</code>
+   * <code>.proto.ReplicateCmd replicate = 2;</code>
    * @return The replicate.
    */
   com.gridfs.proto.ReplicateCmd getReplicate();
   /**
-   * <code>.gridfs.ReplicateCmd replicate = 2;</code>
+   * <code>.proto.ReplicateCmd replicate = 2;</code>
    */
   com.gridfs.proto.ReplicateCmdOrBuilder getReplicateOrBuilder();
 
   /**
-   * <code>.gridfs.DeleteBlockCmd delete_block = 3;</code>
+   * <code>.proto.DeleteBlockCmd delete_block = 3;</code>
    * @return Whether the deleteBlock field is set.
    */
   boolean hasDeleteBlock();
   /**
-   * <code>.gridfs.DeleteBlockCmd delete_block = 3;</code>
+   * <code>.proto.DeleteBlockCmd delete_block = 3;</code>
    * @return The deleteBlock.
    */
   com.gridfs.proto.DeleteBlockCmd getDeleteBlock();
   /**
-   * <code>.gridfs.DeleteBlockCmd delete_block = 3;</code>
+   * <code>.proto.DeleteBlockCmd delete_block = 3;</code>
    */
   com.gridfs.proto.DeleteBlockCmdOrBuilder getDeleteBlockOrBuilder();
 
-  com.gridfs.proto.AdminOrderRequest.OrderCase getOrderCase();
+  public com.gridfs.proto.AdminOrderRequest.OrderCase getOrderCase();
 }

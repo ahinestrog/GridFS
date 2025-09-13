@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface HeartbeatKvOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.HeartbeatKv)
+    // @@protoc_insertion_point(interface_extends:proto.HeartbeatKv)
     com.google.protobuf.MessageOrBuilder {
 
   /**

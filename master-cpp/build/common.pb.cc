@@ -20,7 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
-namespace gridfs {
+namespace proto {
 PROTOBUF_CONSTEXPR BlockAssignment::BlockAssignment(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.replica_dns_)*/{}
@@ -171,154 +171,154 @@ struct FsOpResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FsOpResponseDefaultTypeInternal _FsOpResponse_default_instance_;
-}  // namespace gridfs
+}  // namespace proto
 static ::_pb::Metadata file_level_metadata_common_2eproto[10];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_common_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_common_2eproto = nullptr;
 
 const uint32_t TableStruct_common_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockAssignment, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockAssignment, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockAssignment, _impl_.block_id_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockAssignment, _impl_.primary_dn_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockAssignment, _impl_.replica_dns_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockAssignment, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockAssignment, _impl_.primary_dn_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockAssignment, _impl_.replica_dns_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockLocation, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockLocation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockLocation, _impl_.block_id_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockLocation, _impl_.primary_dn_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockLocation, _impl_.replica_dns_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockLocation, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockLocation, _impl_.primary_dn_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockLocation, _impl_.replica_dns_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockChunk, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockChunk, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockChunk, _impl_.block_id_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockChunk, _impl_.seq_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockChunk, _impl_.data_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockChunk, _impl_.eof_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockChunk, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockChunk, _impl_.seq_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockChunk, _impl_.data_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockChunk, _impl_.eof_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::WriteAck, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::WriteAck, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::WriteAck, _impl_.block_id_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::WriteAck, _impl_.bytes_received_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::WriteAck, _impl_.checksum_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::WriteAck, _impl_.ok_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::WriteAck, _impl_.message_),
+  PROTOBUF_FIELD_OFFSET(::proto::WriteAck, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::WriteAck, _impl_.bytes_received_),
+  PROTOBUF_FIELD_OFFSET(::proto::WriteAck, _impl_.checksum_),
+  PROTOBUF_FIELD_OFFSET(::proto::WriteAck, _impl_.ok_),
+  PROTOBUF_FIELD_OFFSET(::proto::WriteAck, _impl_.message_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockId, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockId, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::BlockId, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::BlockId, _impl_.block_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatKv, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatKv, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatKv, _impl_.node_id_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatKv, _impl_.key_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatKv, _impl_.value_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatKv, _impl_.ts_unix_ms_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatKv, _impl_.node_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatKv, _impl_.key_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatKv, _impl_.value_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatKv, _impl_.ts_unix_ms_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatAck, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatAck, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatAck, _impl_.ok_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::HeartbeatAck, _impl_.message_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatAck, _impl_.ok_),
+  PROTOBUF_FIELD_OFFSET(::proto::HeartbeatAck, _impl_.message_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpRequest, _impl_.op_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpRequest, _impl_.path_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpRequest, _impl_.op_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpRequest, _impl_.path_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsEntry, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsEntry, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsEntry, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsEntry, _impl_.is_dir_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsEntry, _impl_.size_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsEntry, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsEntry, _impl_.is_dir_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsEntry, _impl_.size_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpResponse, _impl_.ok_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpResponse, _impl_.message_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::FsOpResponse, _impl_.entries_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpResponse, _impl_.ok_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpResponse, _impl_.message_),
+  PROTOBUF_FIELD_OFFSET(::proto::FsOpResponse, _impl_.entries_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::gridfs::BlockAssignment)},
-  { 9, -1, -1, sizeof(::gridfs::BlockLocation)},
-  { 18, -1, -1, sizeof(::gridfs::BlockChunk)},
-  { 28, -1, -1, sizeof(::gridfs::WriteAck)},
-  { 39, -1, -1, sizeof(::gridfs::BlockId)},
-  { 46, -1, -1, sizeof(::gridfs::HeartbeatKv)},
-  { 56, -1, -1, sizeof(::gridfs::HeartbeatAck)},
-  { 64, -1, -1, sizeof(::gridfs::FsOpRequest)},
-  { 72, -1, -1, sizeof(::gridfs::FsEntry)},
-  { 81, -1, -1, sizeof(::gridfs::FsOpResponse)},
+  { 0, -1, -1, sizeof(::proto::BlockAssignment)},
+  { 9, -1, -1, sizeof(::proto::BlockLocation)},
+  { 18, -1, -1, sizeof(::proto::BlockChunk)},
+  { 28, -1, -1, sizeof(::proto::WriteAck)},
+  { 39, -1, -1, sizeof(::proto::BlockId)},
+  { 46, -1, -1, sizeof(::proto::HeartbeatKv)},
+  { 56, -1, -1, sizeof(::proto::HeartbeatAck)},
+  { 64, -1, -1, sizeof(::proto::FsOpRequest)},
+  { 72, -1, -1, sizeof(::proto::FsEntry)},
+  { 81, -1, -1, sizeof(::proto::FsOpResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::gridfs::_BlockAssignment_default_instance_._instance,
-  &::gridfs::_BlockLocation_default_instance_._instance,
-  &::gridfs::_BlockChunk_default_instance_._instance,
-  &::gridfs::_WriteAck_default_instance_._instance,
-  &::gridfs::_BlockId_default_instance_._instance,
-  &::gridfs::_HeartbeatKv_default_instance_._instance,
-  &::gridfs::_HeartbeatAck_default_instance_._instance,
-  &::gridfs::_FsOpRequest_default_instance_._instance,
-  &::gridfs::_FsEntry_default_instance_._instance,
-  &::gridfs::_FsOpResponse_default_instance_._instance,
+  &::proto::_BlockAssignment_default_instance_._instance,
+  &::proto::_BlockLocation_default_instance_._instance,
+  &::proto::_BlockChunk_default_instance_._instance,
+  &::proto::_WriteAck_default_instance_._instance,
+  &::proto::_BlockId_default_instance_._instance,
+  &::proto::_HeartbeatKv_default_instance_._instance,
+  &::proto::_HeartbeatAck_default_instance_._instance,
+  &::proto::_FsOpRequest_default_instance_._instance,
+  &::proto::_FsEntry_default_instance_._instance,
+  &::proto::_FsOpResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_common_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\014common.proto\022\006gridfs\"L\n\017BlockAssignmen"
-  "t\022\020\n\010block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022"
-  "\023\n\013replica_dns\030\003 \003(\t\"J\n\rBlockLocation\022\020\n"
-  "\010block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022\023\n\013r"
-  "eplica_dns\030\003 \003(\t\"F\n\nBlockChunk\022\020\n\010block_"
-  "id\030\001 \001(\t\022\013\n\003seq\030\002 \001(\003\022\014\n\004data\030\003 \001(\014\022\013\n\003e"
-  "of\030\004 \001(\010\"c\n\010WriteAck\022\020\n\010block_id\030\001 \001(\t\022\026"
-  "\n\016bytes_received\030\002 \001(\003\022\020\n\010checksum\030\003 \001(\t"
-  "\022\n\n\002ok\030\004 \001(\010\022\017\n\007message\030\005 \001(\t\"\033\n\007BlockId"
-  "\022\020\n\010block_id\030\001 \001(\t\"N\n\013HeartbeatKv\022\017\n\007nod"
-  "e_id\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\022"
-  "\n\nts_unix_ms\030\004 \001(\003\"+\n\014HeartbeatAck\022\n\n\002ok"
-  "\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"k\n\013FsOpRequest\022\""
-  "\n\002op\030\001 \001(\0162\026.gridfs.FsOpRequest.Op\022\014\n\004pa"
-  "th\030\002 \001(\t\"*\n\002Op\022\006\n\002LS\020\000\022\006\n\002RM\020\001\022\t\n\005MKDIR\020"
-  "\002\022\t\n\005RMDIR\020\003\"5\n\007FsEntry\022\014\n\004name\030\001 \001(\t\022\016\n"
-  "\006is_dir\030\002 \001(\010\022\014\n\004size\030\003 \001(\003\"M\n\014FsOpRespo"
-  "nse\022\n\n\002ok\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022 \n\007entr"
-  "ies\030\003 \003(\0132\017.gridfs.FsEntryB\024\n\020com.gridfs"
-  ".protoP\001b\006proto3"
+  "\n\014common.proto\022\005proto\"L\n\017BlockAssignment"
+  "\022\020\n\010block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022\023"
+  "\n\013replica_dns\030\003 \003(\t\"J\n\rBlockLocation\022\020\n\010"
+  "block_id\030\001 \001(\t\022\022\n\nprimary_dn\030\002 \001(\t\022\023\n\013re"
+  "plica_dns\030\003 \003(\t\"F\n\nBlockChunk\022\020\n\010block_i"
+  "d\030\001 \001(\t\022\013\n\003seq\030\002 \001(\003\022\014\n\004data\030\003 \001(\014\022\013\n\003eo"
+  "f\030\004 \001(\010\"c\n\010WriteAck\022\020\n\010block_id\030\001 \001(\t\022\026\n"
+  "\016bytes_received\030\002 \001(\003\022\020\n\010checksum\030\003 \001(\t\022"
+  "\n\n\002ok\030\004 \001(\010\022\017\n\007message\030\005 \001(\t\"\033\n\007BlockId\022"
+  "\020\n\010block_id\030\001 \001(\t\"N\n\013HeartbeatKv\022\017\n\007node"
+  "_id\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\022\022\n"
+  "\nts_unix_ms\030\004 \001(\003\"+\n\014HeartbeatAck\022\n\n\002ok\030"
+  "\001 \001(\010\022\017\n\007message\030\002 \001(\t\"j\n\013FsOpRequest\022!\n"
+  "\002op\030\001 \001(\0162\025.proto.FsOpRequest.Op\022\014\n\004path"
+  "\030\002 \001(\t\"*\n\002Op\022\006\n\002LS\020\000\022\006\n\002RM\020\001\022\t\n\005MKDIR\020\002\022"
+  "\t\n\005RMDIR\020\003\"5\n\007FsEntry\022\014\n\004name\030\001 \001(\t\022\016\n\006i"
+  "s_dir\030\002 \001(\010\022\014\n\004size\030\003 \001(\003\"L\n\014FsOpRespons"
+  "e\022\n\n\002ok\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\037\n\007entrie"
+  "s\030\003 \003(\0132\016.proto.FsEntryB\024\n\020com.gridfs.pr"
+  "otoP\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_common_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_common_2eproto = {
-    false, false, 776, descriptor_table_protodef_common_2eproto,
+    false, false, 773, descriptor_table_protodef_common_2eproto,
     "common.proto",
     &descriptor_table_common_2eproto_once, nullptr, 0, 10,
     schemas, file_default_instances, TableStruct_common_2eproto::offsets,
@@ -331,7 +331,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_common_2
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_common_2eproto(&descriptor_table_common_2eproto);
-namespace gridfs {
+namespace proto {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* FsOpRequest_Op_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_common_2eproto);
   return file_level_enum_descriptors_common_2eproto[0];
@@ -368,7 +368,7 @@ BlockAssignment::BlockAssignment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(arena_constructor:proto.BlockAssignment)
 }
 BlockAssignment::BlockAssignment(const BlockAssignment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -396,7 +396,7 @@ BlockAssignment::BlockAssignment(const BlockAssignment& from)
     _this->_impl_.primary_dn_.Set(from._internal_primary_dn(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(copy_constructor:proto.BlockAssignment)
 }
 
 inline void BlockAssignment::SharedCtor(
@@ -420,7 +420,7 @@ inline void BlockAssignment::SharedCtor(
 }
 
 BlockAssignment::~BlockAssignment() {
-  // @@protoc_insertion_point(destructor:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(destructor:proto.BlockAssignment)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -440,7 +440,7 @@ void BlockAssignment::SetCachedSize(int size) const {
 }
 
 void BlockAssignment::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.BlockAssignment)
+// @@protoc_insertion_point(message_clear_start:proto.BlockAssignment)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -463,7 +463,7 @@ const char* BlockAssignment::_InternalParse(const char* ptr, ::_pbi::ParseContex
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockAssignment.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.BlockAssignment.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -473,7 +473,7 @@ const char* BlockAssignment::_InternalParse(const char* ptr, ::_pbi::ParseContex
           auto str = _internal_mutable_primary_dn();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockAssignment.primary_dn"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.BlockAssignment.primary_dn"));
         } else
           goto handle_unusual;
         continue;
@@ -486,7 +486,7 @@ const char* BlockAssignment::_InternalParse(const char* ptr, ::_pbi::ParseContex
             auto str = _internal_add_replica_dns();
             ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockAssignment.replica_dns"));
+            CHK_(::_pbi::VerifyUTF8(str, "proto.BlockAssignment.replica_dns"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
@@ -517,7 +517,7 @@ failure:
 
 uint8_t* BlockAssignment::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.BlockAssignment)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -526,7 +526,7 @@ uint8_t* BlockAssignment::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockAssignment.block_id");
+      "proto.BlockAssignment.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -536,7 +536,7 @@ uint8_t* BlockAssignment::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_primary_dn().data(), static_cast<int>(this->_internal_primary_dn().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockAssignment.primary_dn");
+      "proto.BlockAssignment.primary_dn");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_primary_dn(), target);
   }
@@ -547,7 +547,7 @@ uint8_t* BlockAssignment::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockAssignment.replica_dns");
+      "proto.BlockAssignment.replica_dns");
     target = stream->WriteString(3, s, target);
   }
 
@@ -555,12 +555,12 @@ uint8_t* BlockAssignment::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.BlockAssignment)
   return target;
 }
 
 size_t BlockAssignment::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.BlockAssignment)
+// @@protoc_insertion_point(message_byte_size_start:proto.BlockAssignment)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -602,7 +602,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BlockAssignment::GetClassData(
 void BlockAssignment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BlockAssignment*>(&to_msg);
   auto& from = static_cast<const BlockAssignment&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.BlockAssignment)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.BlockAssignment)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -618,7 +618,7 @@ void BlockAssignment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
 }
 
 void BlockAssignment::CopyFrom(const BlockAssignment& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.BlockAssignment)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.BlockAssignment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -660,7 +660,7 @@ BlockLocation::BlockLocation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.BlockLocation)
+  // @@protoc_insertion_point(arena_constructor:proto.BlockLocation)
 }
 BlockLocation::BlockLocation(const BlockLocation& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -688,7 +688,7 @@ BlockLocation::BlockLocation(const BlockLocation& from)
     _this->_impl_.primary_dn_.Set(from._internal_primary_dn(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:gridfs.BlockLocation)
+  // @@protoc_insertion_point(copy_constructor:proto.BlockLocation)
 }
 
 inline void BlockLocation::SharedCtor(
@@ -712,7 +712,7 @@ inline void BlockLocation::SharedCtor(
 }
 
 BlockLocation::~BlockLocation() {
-  // @@protoc_insertion_point(destructor:gridfs.BlockLocation)
+  // @@protoc_insertion_point(destructor:proto.BlockLocation)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -732,7 +732,7 @@ void BlockLocation::SetCachedSize(int size) const {
 }
 
 void BlockLocation::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.BlockLocation)
+// @@protoc_insertion_point(message_clear_start:proto.BlockLocation)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -755,7 +755,7 @@ const char* BlockLocation::_InternalParse(const char* ptr, ::_pbi::ParseContext*
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockLocation.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.BlockLocation.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -765,7 +765,7 @@ const char* BlockLocation::_InternalParse(const char* ptr, ::_pbi::ParseContext*
           auto str = _internal_mutable_primary_dn();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockLocation.primary_dn"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.BlockLocation.primary_dn"));
         } else
           goto handle_unusual;
         continue;
@@ -778,7 +778,7 @@ const char* BlockLocation::_InternalParse(const char* ptr, ::_pbi::ParseContext*
             auto str = _internal_add_replica_dns();
             ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
-            CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockLocation.replica_dns"));
+            CHK_(::_pbi::VerifyUTF8(str, "proto.BlockLocation.replica_dns"));
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
@@ -809,7 +809,7 @@ failure:
 
 uint8_t* BlockLocation::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.BlockLocation)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.BlockLocation)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -818,7 +818,7 @@ uint8_t* BlockLocation::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockLocation.block_id");
+      "proto.BlockLocation.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -828,7 +828,7 @@ uint8_t* BlockLocation::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_primary_dn().data(), static_cast<int>(this->_internal_primary_dn().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockLocation.primary_dn");
+      "proto.BlockLocation.primary_dn");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_primary_dn(), target);
   }
@@ -839,7 +839,7 @@ uint8_t* BlockLocation::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockLocation.replica_dns");
+      "proto.BlockLocation.replica_dns");
     target = stream->WriteString(3, s, target);
   }
 
@@ -847,12 +847,12 @@ uint8_t* BlockLocation::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.BlockLocation)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.BlockLocation)
   return target;
 }
 
 size_t BlockLocation::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.BlockLocation)
+// @@protoc_insertion_point(message_byte_size_start:proto.BlockLocation)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -894,7 +894,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BlockLocation::GetClassData() 
 void BlockLocation::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BlockLocation*>(&to_msg);
   auto& from = static_cast<const BlockLocation&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.BlockLocation)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.BlockLocation)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -910,7 +910,7 @@ void BlockLocation::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
 }
 
 void BlockLocation::CopyFrom(const BlockLocation& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.BlockLocation)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.BlockLocation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -952,7 +952,7 @@ BlockChunk::BlockChunk(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.BlockChunk)
+  // @@protoc_insertion_point(arena_constructor:proto.BlockChunk)
 }
 BlockChunk::BlockChunk(const BlockChunk& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -984,7 +984,7 @@ BlockChunk::BlockChunk(const BlockChunk& from)
   ::memcpy(&_impl_.seq_, &from._impl_.seq_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.eof_) -
     reinterpret_cast<char*>(&_impl_.seq_)) + sizeof(_impl_.eof_));
-  // @@protoc_insertion_point(copy_constructor:gridfs.BlockChunk)
+  // @@protoc_insertion_point(copy_constructor:proto.BlockChunk)
 }
 
 inline void BlockChunk::SharedCtor(
@@ -1009,7 +1009,7 @@ inline void BlockChunk::SharedCtor(
 }
 
 BlockChunk::~BlockChunk() {
-  // @@protoc_insertion_point(destructor:gridfs.BlockChunk)
+  // @@protoc_insertion_point(destructor:proto.BlockChunk)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1028,7 +1028,7 @@ void BlockChunk::SetCachedSize(int size) const {
 }
 
 void BlockChunk::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.BlockChunk)
+// @@protoc_insertion_point(message_clear_start:proto.BlockChunk)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1053,7 +1053,7 @@ const char* BlockChunk::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockChunk.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.BlockChunk.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -1107,7 +1107,7 @@ failure:
 
 uint8_t* BlockChunk::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.BlockChunk)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.BlockChunk)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1116,7 +1116,7 @@ uint8_t* BlockChunk::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockChunk.block_id");
+      "proto.BlockChunk.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -1143,12 +1143,12 @@ uint8_t* BlockChunk::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.BlockChunk)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.BlockChunk)
   return target;
 }
 
 size_t BlockChunk::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.BlockChunk)
+// @@protoc_insertion_point(message_byte_size_start:proto.BlockChunk)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1192,7 +1192,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BlockChunk::GetClassData() con
 void BlockChunk::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BlockChunk*>(&to_msg);
   auto& from = static_cast<const BlockChunk&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.BlockChunk)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.BlockChunk)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1213,7 +1213,7 @@ void BlockChunk::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PRO
 }
 
 void BlockChunk::CopyFrom(const BlockChunk& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.BlockChunk)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.BlockChunk)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1260,7 +1260,7 @@ WriteAck::WriteAck(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.WriteAck)
+  // @@protoc_insertion_point(arena_constructor:proto.WriteAck)
 }
 WriteAck::WriteAck(const WriteAck& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -1301,7 +1301,7 @@ WriteAck::WriteAck(const WriteAck& from)
   ::memcpy(&_impl_.bytes_received_, &from._impl_.bytes_received_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.ok_) -
     reinterpret_cast<char*>(&_impl_.bytes_received_)) + sizeof(_impl_.ok_));
-  // @@protoc_insertion_point(copy_constructor:gridfs.WriteAck)
+  // @@protoc_insertion_point(copy_constructor:proto.WriteAck)
 }
 
 inline void WriteAck::SharedCtor(
@@ -1331,7 +1331,7 @@ inline void WriteAck::SharedCtor(
 }
 
 WriteAck::~WriteAck() {
-  // @@protoc_insertion_point(destructor:gridfs.WriteAck)
+  // @@protoc_insertion_point(destructor:proto.WriteAck)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1351,7 +1351,7 @@ void WriteAck::SetCachedSize(int size) const {
 }
 
 void WriteAck::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.WriteAck)
+// @@protoc_insertion_point(message_clear_start:proto.WriteAck)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1377,7 +1377,7 @@ const char* WriteAck::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.WriteAck.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.WriteAck.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -1395,7 +1395,7 @@ const char* WriteAck::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
           auto str = _internal_mutable_checksum();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.WriteAck.checksum"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.WriteAck.checksum"));
         } else
           goto handle_unusual;
         continue;
@@ -1413,7 +1413,7 @@ const char* WriteAck::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.WriteAck.message"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.WriteAck.message"));
         } else
           goto handle_unusual;
         continue;
@@ -1442,7 +1442,7 @@ failure:
 
 uint8_t* WriteAck::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.WriteAck)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.WriteAck)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1451,7 +1451,7 @@ uint8_t* WriteAck::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.WriteAck.block_id");
+      "proto.WriteAck.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -1467,7 +1467,7 @@ uint8_t* WriteAck::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_checksum().data(), static_cast<int>(this->_internal_checksum().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.WriteAck.checksum");
+      "proto.WriteAck.checksum");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_checksum(), target);
   }
@@ -1483,7 +1483,7 @@ uint8_t* WriteAck::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.WriteAck.message");
+      "proto.WriteAck.message");
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_message(), target);
   }
@@ -1492,12 +1492,12 @@ uint8_t* WriteAck::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.WriteAck)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.WriteAck)
   return target;
 }
 
 size_t WriteAck::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.WriteAck)
+// @@protoc_insertion_point(message_byte_size_start:proto.WriteAck)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1548,7 +1548,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*WriteAck::GetClassData() const
 void WriteAck::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<WriteAck*>(&to_msg);
   auto& from = static_cast<const WriteAck&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.WriteAck)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.WriteAck)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1572,7 +1572,7 @@ void WriteAck::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
 }
 
 void WriteAck::CopyFrom(const WriteAck& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.WriteAck)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.WriteAck)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1623,7 +1623,7 @@ BlockId::BlockId(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.BlockId)
+  // @@protoc_insertion_point(arena_constructor:proto.BlockId)
 }
 BlockId::BlockId(const BlockId& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -1641,7 +1641,7 @@ BlockId::BlockId(const BlockId& from)
     _this->_impl_.block_id_.Set(from._internal_block_id(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:gridfs.BlockId)
+  // @@protoc_insertion_point(copy_constructor:proto.BlockId)
 }
 
 inline void BlockId::SharedCtor(
@@ -1659,7 +1659,7 @@ inline void BlockId::SharedCtor(
 }
 
 BlockId::~BlockId() {
-  // @@protoc_insertion_point(destructor:gridfs.BlockId)
+  // @@protoc_insertion_point(destructor:proto.BlockId)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1677,7 +1677,7 @@ void BlockId::SetCachedSize(int size) const {
 }
 
 void BlockId::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.BlockId)
+// @@protoc_insertion_point(message_clear_start:proto.BlockId)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1698,7 +1698,7 @@ const char* BlockId::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.BlockId.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.BlockId.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -1727,7 +1727,7 @@ failure:
 
 uint8_t* BlockId::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.BlockId)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.BlockId)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1736,7 +1736,7 @@ uint8_t* BlockId::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.BlockId.block_id");
+      "proto.BlockId.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -1745,12 +1745,12 @@ uint8_t* BlockId::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.BlockId)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.BlockId)
   return target;
 }
 
 size_t BlockId::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.BlockId)
+// @@protoc_insertion_point(message_byte_size_start:proto.BlockId)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1777,7 +1777,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BlockId::GetClassData() const 
 void BlockId::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BlockId*>(&to_msg);
   auto& from = static_cast<const BlockId&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.BlockId)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.BlockId)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1789,7 +1789,7 @@ void BlockId::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
 }
 
 void BlockId::CopyFrom(const BlockId& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.BlockId)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.BlockId)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1826,7 +1826,7 @@ HeartbeatKv::HeartbeatKv(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(arena_constructor:proto.HeartbeatKv)
 }
 HeartbeatKv::HeartbeatKv(const HeartbeatKv& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -1864,7 +1864,7 @@ HeartbeatKv::HeartbeatKv(const HeartbeatKv& from)
       _this->GetArenaForAllocation());
   }
   _this->_impl_.ts_unix_ms_ = from._impl_.ts_unix_ms_;
-  // @@protoc_insertion_point(copy_constructor:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(copy_constructor:proto.HeartbeatKv)
 }
 
 inline void HeartbeatKv::SharedCtor(
@@ -1893,7 +1893,7 @@ inline void HeartbeatKv::SharedCtor(
 }
 
 HeartbeatKv::~HeartbeatKv() {
-  // @@protoc_insertion_point(destructor:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(destructor:proto.HeartbeatKv)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1913,7 +1913,7 @@ void HeartbeatKv::SetCachedSize(int size) const {
 }
 
 void HeartbeatKv::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.HeartbeatKv)
+// @@protoc_insertion_point(message_clear_start:proto.HeartbeatKv)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1937,7 +1937,7 @@ const char* HeartbeatKv::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_node_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.HeartbeatKv.node_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.HeartbeatKv.node_id"));
         } else
           goto handle_unusual;
         continue;
@@ -1947,7 +1947,7 @@ const char* HeartbeatKv::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_key();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.HeartbeatKv.key"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.HeartbeatKv.key"));
         } else
           goto handle_unusual;
         continue;
@@ -1957,7 +1957,7 @@ const char* HeartbeatKv::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_value();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.HeartbeatKv.value"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.HeartbeatKv.value"));
         } else
           goto handle_unusual;
         continue;
@@ -1994,7 +1994,7 @@ failure:
 
 uint8_t* HeartbeatKv::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.HeartbeatKv)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2003,7 +2003,7 @@ uint8_t* HeartbeatKv::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_node_id().data(), static_cast<int>(this->_internal_node_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.HeartbeatKv.node_id");
+      "proto.HeartbeatKv.node_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_node_id(), target);
   }
@@ -2013,7 +2013,7 @@ uint8_t* HeartbeatKv::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_key().data(), static_cast<int>(this->_internal_key().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.HeartbeatKv.key");
+      "proto.HeartbeatKv.key");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_key(), target);
   }
@@ -2023,7 +2023,7 @@ uint8_t* HeartbeatKv::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.HeartbeatKv.value");
+      "proto.HeartbeatKv.value");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_value(), target);
   }
@@ -2038,12 +2038,12 @@ uint8_t* HeartbeatKv::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.HeartbeatKv)
   return target;
 }
 
 size_t HeartbeatKv::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.HeartbeatKv)
+// @@protoc_insertion_point(message_byte_size_start:proto.HeartbeatKv)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2089,7 +2089,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HeartbeatKv::GetClassData() co
 void HeartbeatKv::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<HeartbeatKv*>(&to_msg);
   auto& from = static_cast<const HeartbeatKv&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.HeartbeatKv)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2110,7 +2110,7 @@ void HeartbeatKv::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
 }
 
 void HeartbeatKv::CopyFrom(const HeartbeatKv& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.HeartbeatKv)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.HeartbeatKv)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2156,7 +2156,7 @@ HeartbeatAck::HeartbeatAck(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(arena_constructor:proto.HeartbeatAck)
 }
 HeartbeatAck::HeartbeatAck(const HeartbeatAck& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2176,7 +2176,7 @@ HeartbeatAck::HeartbeatAck(const HeartbeatAck& from)
       _this->GetArenaForAllocation());
   }
   _this->_impl_.ok_ = from._impl_.ok_;
-  // @@protoc_insertion_point(copy_constructor:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(copy_constructor:proto.HeartbeatAck)
 }
 
 inline void HeartbeatAck::SharedCtor(
@@ -2195,7 +2195,7 @@ inline void HeartbeatAck::SharedCtor(
 }
 
 HeartbeatAck::~HeartbeatAck() {
-  // @@protoc_insertion_point(destructor:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(destructor:proto.HeartbeatAck)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2213,7 +2213,7 @@ void HeartbeatAck::SetCachedSize(int size) const {
 }
 
 void HeartbeatAck::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.HeartbeatAck)
+// @@protoc_insertion_point(message_clear_start:proto.HeartbeatAck)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2243,7 +2243,7 @@ const char* HeartbeatAck::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.HeartbeatAck.message"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.HeartbeatAck.message"));
         } else
           goto handle_unusual;
         continue;
@@ -2272,7 +2272,7 @@ failure:
 
 uint8_t* HeartbeatAck::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.HeartbeatAck)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2287,7 +2287,7 @@ uint8_t* HeartbeatAck::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.HeartbeatAck.message");
+      "proto.HeartbeatAck.message");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_message(), target);
   }
@@ -2296,12 +2296,12 @@ uint8_t* HeartbeatAck::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.HeartbeatAck)
   return target;
 }
 
 size_t HeartbeatAck::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.HeartbeatAck)
+// @@protoc_insertion_point(message_byte_size_start:proto.HeartbeatAck)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2333,7 +2333,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HeartbeatAck::GetClassData() c
 void HeartbeatAck::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<HeartbeatAck*>(&to_msg);
   auto& from = static_cast<const HeartbeatAck&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.HeartbeatAck)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.HeartbeatAck)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2348,7 +2348,7 @@ void HeartbeatAck::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void HeartbeatAck::CopyFrom(const HeartbeatAck& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.HeartbeatAck)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.HeartbeatAck)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2386,7 +2386,7 @@ FsOpRequest::FsOpRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(arena_constructor:proto.FsOpRequest)
 }
 FsOpRequest::FsOpRequest(const FsOpRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2406,7 +2406,7 @@ FsOpRequest::FsOpRequest(const FsOpRequest& from)
       _this->GetArenaForAllocation());
   }
   _this->_impl_.op_ = from._impl_.op_;
-  // @@protoc_insertion_point(copy_constructor:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(copy_constructor:proto.FsOpRequest)
 }
 
 inline void FsOpRequest::SharedCtor(
@@ -2425,7 +2425,7 @@ inline void FsOpRequest::SharedCtor(
 }
 
 FsOpRequest::~FsOpRequest() {
-  // @@protoc_insertion_point(destructor:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(destructor:proto.FsOpRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2443,7 +2443,7 @@ void FsOpRequest::SetCachedSize(int size) const {
 }
 
 void FsOpRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.FsOpRequest)
+// @@protoc_insertion_point(message_clear_start:proto.FsOpRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2459,12 +2459,12 @@ const char* FsOpRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .gridfs.FsOpRequest.Op op = 1;
+      // .proto.FsOpRequest.Op op = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_op(static_cast<::gridfs::FsOpRequest_Op>(val));
+          _internal_set_op(static_cast<::proto::FsOpRequest_Op>(val));
         } else
           goto handle_unusual;
         continue;
@@ -2474,7 +2474,7 @@ const char* FsOpRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_path();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.FsOpRequest.path"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.FsOpRequest.path"));
         } else
           goto handle_unusual;
         continue;
@@ -2503,11 +2503,11 @@ failure:
 
 uint8_t* FsOpRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.FsOpRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .gridfs.FsOpRequest.Op op = 1;
+  // .proto.FsOpRequest.Op op = 1;
   if (this->_internal_op() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -2519,7 +2519,7 @@ uint8_t* FsOpRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_path().data(), static_cast<int>(this->_internal_path().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.FsOpRequest.path");
+      "proto.FsOpRequest.path");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_path(), target);
   }
@@ -2528,12 +2528,12 @@ uint8_t* FsOpRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.FsOpRequest)
   return target;
 }
 
 size_t FsOpRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.FsOpRequest)
+// @@protoc_insertion_point(message_byte_size_start:proto.FsOpRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2547,7 +2547,7 @@ size_t FsOpRequest::ByteSizeLong() const {
         this->_internal_path());
   }
 
-  // .gridfs.FsOpRequest.Op op = 1;
+  // .proto.FsOpRequest.Op op = 1;
   if (this->_internal_op() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_op());
@@ -2566,7 +2566,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FsOpRequest::GetClassData() co
 void FsOpRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<FsOpRequest*>(&to_msg);
   auto& from = static_cast<const FsOpRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.FsOpRequest)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.FsOpRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2581,7 +2581,7 @@ void FsOpRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
 }
 
 void FsOpRequest::CopyFrom(const FsOpRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.FsOpRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.FsOpRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2619,7 +2619,7 @@ FsEntry::FsEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.FsEntry)
+  // @@protoc_insertion_point(arena_constructor:proto.FsEntry)
 }
 FsEntry::FsEntry(const FsEntry& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2642,7 +2642,7 @@ FsEntry::FsEntry(const FsEntry& from)
   ::memcpy(&_impl_.size_, &from._impl_.size_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.is_dir_) -
     reinterpret_cast<char*>(&_impl_.size_)) + sizeof(_impl_.is_dir_));
-  // @@protoc_insertion_point(copy_constructor:gridfs.FsEntry)
+  // @@protoc_insertion_point(copy_constructor:proto.FsEntry)
 }
 
 inline void FsEntry::SharedCtor(
@@ -2662,7 +2662,7 @@ inline void FsEntry::SharedCtor(
 }
 
 FsEntry::~FsEntry() {
-  // @@protoc_insertion_point(destructor:gridfs.FsEntry)
+  // @@protoc_insertion_point(destructor:proto.FsEntry)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2680,7 +2680,7 @@ void FsEntry::SetCachedSize(int size) const {
 }
 
 void FsEntry::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.FsEntry)
+// @@protoc_insertion_point(message_clear_start:proto.FsEntry)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2704,7 +2704,7 @@ const char* FsEntry::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
           auto str = _internal_mutable_name();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.FsEntry.name"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.FsEntry.name"));
         } else
           goto handle_unusual;
         continue;
@@ -2749,7 +2749,7 @@ failure:
 
 uint8_t* FsEntry::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.FsEntry)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.FsEntry)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2758,7 +2758,7 @@ uint8_t* FsEntry::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.FsEntry.name");
+      "proto.FsEntry.name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
@@ -2779,12 +2779,12 @@ uint8_t* FsEntry::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.FsEntry)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.FsEntry)
   return target;
 }
 
 size_t FsEntry::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.FsEntry)
+// @@protoc_insertion_point(message_byte_size_start:proto.FsEntry)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2821,7 +2821,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FsEntry::GetClassData() const 
 void FsEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<FsEntry*>(&to_msg);
   auto& from = static_cast<const FsEntry&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.FsEntry)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.FsEntry)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2839,7 +2839,7 @@ void FsEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
 }
 
 void FsEntry::CopyFrom(const FsEntry& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.FsEntry)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.FsEntry)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2882,7 +2882,7 @@ FsOpResponse::FsOpResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(arena_constructor:proto.FsOpResponse)
 }
 FsOpResponse::FsOpResponse(const FsOpResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2903,7 +2903,7 @@ FsOpResponse::FsOpResponse(const FsOpResponse& from)
       _this->GetArenaForAllocation());
   }
   _this->_impl_.ok_ = from._impl_.ok_;
-  // @@protoc_insertion_point(copy_constructor:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(copy_constructor:proto.FsOpResponse)
 }
 
 inline void FsOpResponse::SharedCtor(
@@ -2923,7 +2923,7 @@ inline void FsOpResponse::SharedCtor(
 }
 
 FsOpResponse::~FsOpResponse() {
-  // @@protoc_insertion_point(destructor:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(destructor:proto.FsOpResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2942,7 +2942,7 @@ void FsOpResponse::SetCachedSize(int size) const {
 }
 
 void FsOpResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.FsOpResponse)
+// @@protoc_insertion_point(message_clear_start:proto.FsOpResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2973,11 +2973,11 @@ const char* FsOpResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.FsOpResponse.message"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.FsOpResponse.message"));
         } else
           goto handle_unusual;
         continue;
-      // repeated .gridfs.FsEntry entries = 3;
+      // repeated .proto.FsEntry entries = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
@@ -3015,7 +3015,7 @@ failure:
 
 uint8_t* FsOpResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.FsOpResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3030,12 +3030,12 @@ uint8_t* FsOpResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.FsOpResponse.message");
+      "proto.FsOpResponse.message");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_message(), target);
   }
 
-  // repeated .gridfs.FsEntry entries = 3;
+  // repeated .proto.FsEntry entries = 3;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_entries_size()); i < n; i++) {
     const auto& repfield = this->_internal_entries(i);
@@ -3047,19 +3047,19 @@ uint8_t* FsOpResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.FsOpResponse)
   return target;
 }
 
 size_t FsOpResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.FsOpResponse)
+// @@protoc_insertion_point(message_byte_size_start:proto.FsOpResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .gridfs.FsEntry entries = 3;
+  // repeated .proto.FsEntry entries = 3;
   total_size += 1UL * this->_internal_entries_size();
   for (const auto& msg : this->_impl_.entries_) {
     total_size +=
@@ -3091,7 +3091,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FsOpResponse::GetClassData() c
 void FsOpResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<FsOpResponse*>(&to_msg);
   auto& from = static_cast<const FsOpResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.FsOpResponse)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.FsOpResponse)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -3107,7 +3107,7 @@ void FsOpResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void FsOpResponse::CopyFrom(const FsOpResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.FsOpResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.FsOpResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3137,47 +3137,47 @@ void FsOpResponse::InternalSwap(FsOpResponse* other) {
 }
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace gridfs
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::gridfs::BlockAssignment*
-Arena::CreateMaybeMessage< ::gridfs::BlockAssignment >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::BlockAssignment >(arena);
+template<> PROTOBUF_NOINLINE ::proto::BlockAssignment*
+Arena::CreateMaybeMessage< ::proto::BlockAssignment >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::BlockAssignment >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::BlockLocation*
-Arena::CreateMaybeMessage< ::gridfs::BlockLocation >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::BlockLocation >(arena);
+template<> PROTOBUF_NOINLINE ::proto::BlockLocation*
+Arena::CreateMaybeMessage< ::proto::BlockLocation >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::BlockLocation >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::BlockChunk*
-Arena::CreateMaybeMessage< ::gridfs::BlockChunk >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::BlockChunk >(arena);
+template<> PROTOBUF_NOINLINE ::proto::BlockChunk*
+Arena::CreateMaybeMessage< ::proto::BlockChunk >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::BlockChunk >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::WriteAck*
-Arena::CreateMaybeMessage< ::gridfs::WriteAck >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::WriteAck >(arena);
+template<> PROTOBUF_NOINLINE ::proto::WriteAck*
+Arena::CreateMaybeMessage< ::proto::WriteAck >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::WriteAck >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::BlockId*
-Arena::CreateMaybeMessage< ::gridfs::BlockId >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::BlockId >(arena);
+template<> PROTOBUF_NOINLINE ::proto::BlockId*
+Arena::CreateMaybeMessage< ::proto::BlockId >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::BlockId >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::HeartbeatKv*
-Arena::CreateMaybeMessage< ::gridfs::HeartbeatKv >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::HeartbeatKv >(arena);
+template<> PROTOBUF_NOINLINE ::proto::HeartbeatKv*
+Arena::CreateMaybeMessage< ::proto::HeartbeatKv >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::HeartbeatKv >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::HeartbeatAck*
-Arena::CreateMaybeMessage< ::gridfs::HeartbeatAck >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::HeartbeatAck >(arena);
+template<> PROTOBUF_NOINLINE ::proto::HeartbeatAck*
+Arena::CreateMaybeMessage< ::proto::HeartbeatAck >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::HeartbeatAck >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::FsOpRequest*
-Arena::CreateMaybeMessage< ::gridfs::FsOpRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::FsOpRequest >(arena);
+template<> PROTOBUF_NOINLINE ::proto::FsOpRequest*
+Arena::CreateMaybeMessage< ::proto::FsOpRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::FsOpRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::FsEntry*
-Arena::CreateMaybeMessage< ::gridfs::FsEntry >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::FsEntry >(arena);
+template<> PROTOBUF_NOINLINE ::proto::FsEntry*
+Arena::CreateMaybeMessage< ::proto::FsEntry >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::FsEntry >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::FsOpResponse*
-Arena::CreateMaybeMessage< ::gridfs::FsOpResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::FsOpResponse >(arena);
+template<> PROTOBUF_NOINLINE ::proto::FsOpResponse*
+Arena::CreateMaybeMessage< ::proto::FsOpResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::FsOpResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

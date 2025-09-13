@@ -25,98 +25,98 @@
 #include <grpcpp/support/stub_options.h>
 #include <grpcpp/support/sync_stream.h>
 
-namespace gridfs {
+namespace proto {
 
 // Cliente <-> DataNode
 class DataNodeIO final {
  public:
   static constexpr char const* service_full_name() {
-    return "gridfs.DataNodeIO";
+    return "proto.DataNodeIO";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    std::unique_ptr< ::grpc::ClientWriterInterface< ::gridfs::BlockChunk>> WriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response) {
-      return std::unique_ptr< ::grpc::ClientWriterInterface< ::gridfs::BlockChunk>>(WriteBlockRaw(context, response));
+    std::unique_ptr< ::grpc::ClientWriterInterface< ::proto::BlockChunk>> WriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response) {
+      return std::unique_ptr< ::grpc::ClientWriterInterface< ::proto::BlockChunk>>(WriteBlockRaw(context, response));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>> AsyncWriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>>(AsyncWriteBlockRaw(context, response, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>> AsyncWriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>>(AsyncWriteBlockRaw(context, response, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>> PrepareAsyncWriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>>(PrepareAsyncWriteBlockRaw(context, response, cq));
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>> PrepareAsyncWriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>>(PrepareAsyncWriteBlockRaw(context, response, cq));
     }
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::gridfs::BlockChunk>> ReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::gridfs::BlockChunk>>(ReadBlockRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::proto::BlockChunk>> ReadBlock(::grpc::ClientContext* context, const ::proto::BlockId& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::proto::BlockChunk>>(ReadBlockRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::gridfs::BlockChunk>> AsyncReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::gridfs::BlockChunk>>(AsyncReadBlockRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::proto::BlockChunk>> AsyncReadBlock(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::proto::BlockChunk>>(AsyncReadBlockRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::gridfs::BlockChunk>> PrepareAsyncReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::gridfs::BlockChunk>>(PrepareAsyncReadBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::proto::BlockChunk>> PrepareAsyncReadBlock(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::proto::BlockChunk>>(PrepareAsyncReadBlockRaw(context, request, cq));
     }
-    virtual ::grpc::Status FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::gridfs::FsOpResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::FsOpResponse>> AsyncFsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::FsOpResponse>>(AsyncFsOpRaw(context, request, cq));
+    virtual ::grpc::Status FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::proto::FsOpResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::FsOpResponse>> AsyncFsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::FsOpResponse>>(AsyncFsOpRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::FsOpResponse>> PrepareAsyncFsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::FsOpResponse>>(PrepareAsyncFsOpRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::FsOpResponse>> PrepareAsyncFsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::proto::FsOpResponse>>(PrepareAsyncFsOpRaw(context, request, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void WriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::ClientWriteReactor< ::gridfs::BlockChunk>* reactor) = 0;
-      virtual void ReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId* request, ::grpc::ClientReadReactor< ::gridfs::BlockChunk>* reactor) = 0;
-      virtual void FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void WriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::ClientWriteReactor< ::proto::BlockChunk>* reactor) = 0;
+      virtual void ReadBlock(::grpc::ClientContext* context, const ::proto::BlockId* request, ::grpc::ClientReadReactor< ::proto::BlockChunk>* reactor) = 0;
+      virtual void FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientWriterInterface< ::gridfs::BlockChunk>* WriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response) = 0;
-    virtual ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>* AsyncWriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>* PrepareAsyncWriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::gridfs::BlockChunk>* ReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::gridfs::BlockChunk>* AsyncReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::gridfs::BlockChunk>* PrepareAsyncReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::FsOpResponse>* AsyncFsOpRaw(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::gridfs::FsOpResponse>* PrepareAsyncFsOpRaw(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientWriterInterface< ::proto::BlockChunk>* WriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>* AsyncWriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>* PrepareAsyncWriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::proto::BlockChunk>* ReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::proto::BlockChunk>* AsyncReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::proto::BlockChunk>* PrepareAsyncReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::FsOpResponse>* AsyncFsOpRaw(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::proto::FsOpResponse>* PrepareAsyncFsOpRaw(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    std::unique_ptr< ::grpc::ClientWriter< ::gridfs::BlockChunk>> WriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response) {
-      return std::unique_ptr< ::grpc::ClientWriter< ::gridfs::BlockChunk>>(WriteBlockRaw(context, response));
+    std::unique_ptr< ::grpc::ClientWriter< ::proto::BlockChunk>> WriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response) {
+      return std::unique_ptr< ::grpc::ClientWriter< ::proto::BlockChunk>>(WriteBlockRaw(context, response));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>> AsyncWriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>>(AsyncWriteBlockRaw(context, response, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>> AsyncWriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>>(AsyncWriteBlockRaw(context, response, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>> PrepareAsyncWriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>>(PrepareAsyncWriteBlockRaw(context, response, cq));
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>> PrepareAsyncWriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>>(PrepareAsyncWriteBlockRaw(context, response, cq));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::gridfs::BlockChunk>> ReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::gridfs::BlockChunk>>(ReadBlockRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReader< ::proto::BlockChunk>> ReadBlock(::grpc::ClientContext* context, const ::proto::BlockId& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::proto::BlockChunk>>(ReadBlockRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::gridfs::BlockChunk>> AsyncReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::gridfs::BlockChunk>>(AsyncReadBlockRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::proto::BlockChunk>> AsyncReadBlock(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::proto::BlockChunk>>(AsyncReadBlockRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::gridfs::BlockChunk>> PrepareAsyncReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::gridfs::BlockChunk>>(PrepareAsyncReadBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::proto::BlockChunk>> PrepareAsyncReadBlock(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::proto::BlockChunk>>(PrepareAsyncReadBlockRaw(context, request, cq));
     }
-    ::grpc::Status FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::gridfs::FsOpResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>> AsyncFsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>>(AsyncFsOpRaw(context, request, cq));
+    ::grpc::Status FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::proto::FsOpResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>> AsyncFsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>>(AsyncFsOpRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>> PrepareAsyncFsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>>(PrepareAsyncFsOpRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>> PrepareAsyncFsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>>(PrepareAsyncFsOpRaw(context, request, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void WriteBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::ClientWriteReactor< ::gridfs::BlockChunk>* reactor) override;
-      void ReadBlock(::grpc::ClientContext* context, const ::gridfs::BlockId* request, ::grpc::ClientReadReactor< ::gridfs::BlockChunk>* reactor) override;
-      void FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response, std::function<void(::grpc::Status)>) override;
-      void FsOp(::grpc::ClientContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void WriteBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::ClientWriteReactor< ::proto::BlockChunk>* reactor) override;
+      void ReadBlock(::grpc::ClientContext* context, const ::proto::BlockId* request, ::grpc::ClientReadReactor< ::proto::BlockChunk>* reactor) override;
+      void FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response, std::function<void(::grpc::Status)>) override;
+      void FsOp(::grpc::ClientContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -128,14 +128,14 @@ class DataNodeIO final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientWriter< ::gridfs::BlockChunk>* WriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response) override;
-    ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* AsyncWriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* PrepareAsyncWriteBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::gridfs::BlockChunk>* ReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request) override;
-    ::grpc::ClientAsyncReader< ::gridfs::BlockChunk>* AsyncReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::gridfs::BlockChunk>* PrepareAsyncReadBlockRaw(::grpc::ClientContext* context, const ::gridfs::BlockId& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>* AsyncFsOpRaw(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::gridfs::FsOpResponse>* PrepareAsyncFsOpRaw(::grpc::ClientContext* context, const ::gridfs::FsOpRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientWriter< ::proto::BlockChunk>* WriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response) override;
+    ::grpc::ClientAsyncWriter< ::proto::BlockChunk>* AsyncWriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncWriter< ::proto::BlockChunk>* PrepareAsyncWriteBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::proto::BlockChunk>* ReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request) override;
+    ::grpc::ClientAsyncReader< ::proto::BlockChunk>* AsyncReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::proto::BlockChunk>* PrepareAsyncReadBlockRaw(::grpc::ClientContext* context, const ::proto::BlockId& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>* AsyncFsOpRaw(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::proto::FsOpResponse>* PrepareAsyncFsOpRaw(::grpc::ClientContext* context, const ::proto::FsOpRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_WriteBlock_;
     const ::grpc::internal::RpcMethod rpcmethod_ReadBlock_;
     const ::grpc::internal::RpcMethod rpcmethod_FsOp_;
@@ -146,9 +146,9 @@ class DataNodeIO final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status WriteBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::gridfs::BlockChunk>* reader, ::gridfs::WriteAck* response);
-    virtual ::grpc::Status ReadBlock(::grpc::ServerContext* context, const ::gridfs::BlockId* request, ::grpc::ServerWriter< ::gridfs::BlockChunk>* writer);
-    virtual ::grpc::Status FsOp(::grpc::ServerContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response);
+    virtual ::grpc::Status WriteBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::proto::BlockChunk>* reader, ::proto::WriteAck* response);
+    virtual ::grpc::Status ReadBlock(::grpc::ServerContext* context, const ::proto::BlockId* request, ::grpc::ServerWriter< ::proto::BlockChunk>* writer);
+    virtual ::grpc::Status FsOp(::grpc::ServerContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_WriteBlock : public BaseClass {
@@ -162,11 +162,11 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWriteBlock(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::gridfs::WriteAck, ::gridfs::BlockChunk>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestWriteBlock(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::proto::WriteAck, ::proto::BlockChunk>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncClientStreaming(0, context, reader, new_call_cq, notification_cq, tag);
     }
   };
@@ -182,11 +182,11 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::gridfs::BlockId* /*request*/, ::grpc::ServerWriter< ::gridfs::BlockChunk>* /*writer*/) override {
+    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::proto::BlockId* /*request*/, ::grpc::ServerWriter< ::proto::BlockChunk>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestReadBlock(::grpc::ServerContext* context, ::gridfs::BlockId* request, ::grpc::ServerAsyncWriter< ::gridfs::BlockChunk>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestReadBlock(::grpc::ServerContext* context, ::proto::BlockId* request, ::grpc::ServerAsyncWriter< ::proto::BlockChunk>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(1, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
@@ -202,11 +202,11 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/) override {
+    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFsOp(::grpc::ServerContext* context, ::gridfs::FsOpRequest* request, ::grpc::ServerAsyncResponseWriter< ::gridfs::FsOpResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFsOp(::grpc::ServerContext* context, ::proto::FsOpRequest* request, ::grpc::ServerAsyncResponseWriter< ::proto::FsOpResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -218,20 +218,20 @@ class DataNodeIO final {
    public:
     WithCallbackMethod_WriteBlock() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackClientStreamingHandler< ::gridfs::BlockChunk, ::gridfs::WriteAck>(
+          new ::grpc::internal::CallbackClientStreamingHandler< ::proto::BlockChunk, ::proto::WriteAck>(
             [this](
-                   ::grpc::CallbackServerContext* context, ::gridfs::WriteAck* response) { return this->WriteBlock(context, response); }));
+                   ::grpc::CallbackServerContext* context, ::proto::WriteAck* response) { return this->WriteBlock(context, response); }));
     }
     ~WithCallbackMethod_WriteBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerReadReactor< ::gridfs::BlockChunk>* WriteBlock(
-      ::grpc::CallbackServerContext* /*context*/, ::gridfs::WriteAck* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerReadReactor< ::proto::BlockChunk>* WriteBlock(
+      ::grpc::CallbackServerContext* /*context*/, ::proto::WriteAck* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_ReadBlock : public BaseClass {
@@ -240,20 +240,20 @@ class DataNodeIO final {
    public:
     WithCallbackMethod_ReadBlock() {
       ::grpc::Service::MarkMethodCallback(1,
-          new ::grpc::internal::CallbackServerStreamingHandler< ::gridfs::BlockId, ::gridfs::BlockChunk>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::proto::BlockId, ::proto::BlockChunk>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::gridfs::BlockId* request) { return this->ReadBlock(context, request); }));
+                   ::grpc::CallbackServerContext* context, const ::proto::BlockId* request) { return this->ReadBlock(context, request); }));
     }
     ~WithCallbackMethod_ReadBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::gridfs::BlockId* /*request*/, ::grpc::ServerWriter< ::gridfs::BlockChunk>* /*writer*/) override {
+    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::proto::BlockId* /*request*/, ::grpc::ServerWriter< ::proto::BlockChunk>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerWriteReactor< ::gridfs::BlockChunk>* ReadBlock(
-      ::grpc::CallbackServerContext* /*context*/, const ::gridfs::BlockId* /*request*/)  { return nullptr; }
+    virtual ::grpc::ServerWriteReactor< ::proto::BlockChunk>* ReadBlock(
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::BlockId* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_FsOp : public BaseClass {
@@ -262,25 +262,25 @@ class DataNodeIO final {
    public:
     WithCallbackMethod_FsOp() {
       ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::gridfs::FsOpRequest, ::gridfs::FsOpResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::proto::FsOpRequest, ::proto::FsOpResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::gridfs::FsOpRequest* request, ::gridfs::FsOpResponse* response) { return this->FsOp(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::proto::FsOpRequest* request, ::proto::FsOpResponse* response) { return this->FsOp(context, request, response); }));}
     void SetMessageAllocatorFor_FsOp(
-        ::grpc::MessageAllocator< ::gridfs::FsOpRequest, ::gridfs::FsOpResponse>* allocator) {
+        ::grpc::MessageAllocator< ::proto::FsOpRequest, ::proto::FsOpResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::gridfs::FsOpRequest, ::gridfs::FsOpResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::proto::FsOpRequest, ::proto::FsOpResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~WithCallbackMethod_FsOp() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/) override {
+    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* FsOp(
-      ::grpc::CallbackServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/)  { return nullptr; }
   };
   typedef WithCallbackMethod_WriteBlock<WithCallbackMethod_ReadBlock<WithCallbackMethod_FsOp<Service > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
@@ -296,7 +296,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -313,7 +313,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::gridfs::BlockId* /*request*/, ::grpc::ServerWriter< ::gridfs::BlockChunk>* /*writer*/) override {
+    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::proto::BlockId* /*request*/, ::grpc::ServerWriter< ::proto::BlockChunk>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -330,7 +330,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/) override {
+    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -347,7 +347,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -367,7 +367,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::gridfs::BlockId* /*request*/, ::grpc::ServerWriter< ::gridfs::BlockChunk>* /*writer*/) override {
+    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::proto::BlockId* /*request*/, ::grpc::ServerWriter< ::proto::BlockChunk>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -387,7 +387,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/) override {
+    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -410,7 +410,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status WriteBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -432,7 +432,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::gridfs::BlockId* /*request*/, ::grpc::ServerWriter< ::gridfs::BlockChunk>* /*writer*/) override {
+    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::proto::BlockId* /*request*/, ::grpc::ServerWriter< ::proto::BlockChunk>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -454,7 +454,7 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/) override {
+    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -469,10 +469,10 @@ class DataNodeIO final {
     WithStreamedUnaryMethod_FsOp() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::gridfs::FsOpRequest, ::gridfs::FsOpResponse>(
+          ::proto::FsOpRequest, ::proto::FsOpResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::gridfs::FsOpRequest, ::gridfs::FsOpResponse>* streamer) {
+                     ::proto::FsOpRequest, ::proto::FsOpResponse>* streamer) {
                        return this->StreamedFsOp(context,
                          streamer);
                   }));
@@ -481,12 +481,12 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::gridfs::FsOpRequest* /*request*/, ::gridfs::FsOpResponse* /*response*/) override {
+    ::grpc::Status FsOp(::grpc::ServerContext* /*context*/, const ::proto::FsOpRequest* /*request*/, ::proto::FsOpResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedFsOp(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::gridfs::FsOpRequest,::gridfs::FsOpResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedFsOp(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::proto::FsOpRequest,::proto::FsOpResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_FsOp<Service > StreamedUnaryService;
   template <class BaseClass>
@@ -497,10 +497,10 @@ class DataNodeIO final {
     WithSplitStreamingMethod_ReadBlock() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::gridfs::BlockId, ::gridfs::BlockChunk>(
+          ::proto::BlockId, ::proto::BlockChunk>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerSplitStreamer<
-                     ::gridfs::BlockId, ::gridfs::BlockChunk>* streamer) {
+                     ::proto::BlockId, ::proto::BlockChunk>* streamer) {
                        return this->StreamedReadBlock(context,
                          streamer);
                   }));
@@ -509,12 +509,12 @@ class DataNodeIO final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::gridfs::BlockId* /*request*/, ::grpc::ServerWriter< ::gridfs::BlockChunk>* /*writer*/) override {
+    ::grpc::Status ReadBlock(::grpc::ServerContext* /*context*/, const ::proto::BlockId* /*request*/, ::grpc::ServerWriter< ::proto::BlockChunk>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedReadBlock(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::gridfs::BlockId,::gridfs::BlockChunk>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedReadBlock(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::proto::BlockId,::proto::BlockChunk>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_ReadBlock<Service > SplitStreamedService;
   typedef WithSplitStreamingMethod_ReadBlock<WithStreamedUnaryMethod_FsOp<Service > > StreamedService;
@@ -524,49 +524,49 @@ class DataNodeIO final {
 class ReplicationService final {
  public:
   static constexpr char const* service_full_name() {
-    return "gridfs.ReplicationService";
+    return "proto.ReplicationService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    std::unique_ptr< ::grpc::ClientWriterInterface< ::gridfs::BlockChunk>> PushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response) {
-      return std::unique_ptr< ::grpc::ClientWriterInterface< ::gridfs::BlockChunk>>(PushBlockRaw(context, response));
+    std::unique_ptr< ::grpc::ClientWriterInterface< ::proto::BlockChunk>> PushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response) {
+      return std::unique_ptr< ::grpc::ClientWriterInterface< ::proto::BlockChunk>>(PushBlockRaw(context, response));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>> AsyncPushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>>(AsyncPushBlockRaw(context, response, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>> AsyncPushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>>(AsyncPushBlockRaw(context, response, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>> PrepareAsyncPushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>>(PrepareAsyncPushBlockRaw(context, response, cq));
+    std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>> PrepareAsyncPushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>>(PrepareAsyncPushBlockRaw(context, response, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void PushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::ClientWriteReactor< ::gridfs::BlockChunk>* reactor) = 0;
+      virtual void PushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::ClientWriteReactor< ::proto::BlockChunk>* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientWriterInterface< ::gridfs::BlockChunk>* PushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response) = 0;
-    virtual ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>* AsyncPushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncWriterInterface< ::gridfs::BlockChunk>* PrepareAsyncPushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientWriterInterface< ::proto::BlockChunk>* PushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>* AsyncPushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncWriterInterface< ::proto::BlockChunk>* PrepareAsyncPushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    std::unique_ptr< ::grpc::ClientWriter< ::gridfs::BlockChunk>> PushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response) {
-      return std::unique_ptr< ::grpc::ClientWriter< ::gridfs::BlockChunk>>(PushBlockRaw(context, response));
+    std::unique_ptr< ::grpc::ClientWriter< ::proto::BlockChunk>> PushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response) {
+      return std::unique_ptr< ::grpc::ClientWriter< ::proto::BlockChunk>>(PushBlockRaw(context, response));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>> AsyncPushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>>(AsyncPushBlockRaw(context, response, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>> AsyncPushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>>(AsyncPushBlockRaw(context, response, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>> PrepareAsyncPushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>>(PrepareAsyncPushBlockRaw(context, response, cq));
+    std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>> PrepareAsyncPushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncWriter< ::proto::BlockChunk>>(PrepareAsyncPushBlockRaw(context, response, cq));
     }
     class async final :
       public StubInterface::async_interface {
      public:
-      void PushBlock(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::ClientWriteReactor< ::gridfs::BlockChunk>* reactor) override;
+      void PushBlock(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::ClientWriteReactor< ::proto::BlockChunk>* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -578,9 +578,9 @@ class ReplicationService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientWriter< ::gridfs::BlockChunk>* PushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response) override;
-    ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* AsyncPushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncWriter< ::gridfs::BlockChunk>* PrepareAsyncPushBlockRaw(::grpc::ClientContext* context, ::gridfs::WriteAck* response, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientWriter< ::proto::BlockChunk>* PushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response) override;
+    ::grpc::ClientAsyncWriter< ::proto::BlockChunk>* AsyncPushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncWriter< ::proto::BlockChunk>* PrepareAsyncPushBlockRaw(::grpc::ClientContext* context, ::proto::WriteAck* response, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_PushBlock_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -589,7 +589,7 @@ class ReplicationService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status PushBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::gridfs::BlockChunk>* reader, ::gridfs::WriteAck* response);
+    virtual ::grpc::Status PushBlock(::grpc::ServerContext* context, ::grpc::ServerReader< ::proto::BlockChunk>* reader, ::proto::WriteAck* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_PushBlock : public BaseClass {
@@ -603,11 +603,11 @@ class ReplicationService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestPushBlock(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::gridfs::WriteAck, ::gridfs::BlockChunk>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestPushBlock(::grpc::ServerContext* context, ::grpc::ServerAsyncReader< ::proto::WriteAck, ::proto::BlockChunk>* reader, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncClientStreaming(0, context, reader, new_call_cq, notification_cq, tag);
     }
   };
@@ -619,20 +619,20 @@ class ReplicationService final {
    public:
     WithCallbackMethod_PushBlock() {
       ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackClientStreamingHandler< ::gridfs::BlockChunk, ::gridfs::WriteAck>(
+          new ::grpc::internal::CallbackClientStreamingHandler< ::proto::BlockChunk, ::proto::WriteAck>(
             [this](
-                   ::grpc::CallbackServerContext* context, ::gridfs::WriteAck* response) { return this->PushBlock(context, response); }));
+                   ::grpc::CallbackServerContext* context, ::proto::WriteAck* response) { return this->PushBlock(context, response); }));
     }
     ~WithCallbackMethod_PushBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerReadReactor< ::gridfs::BlockChunk>* PushBlock(
-      ::grpc::CallbackServerContext* /*context*/, ::gridfs::WriteAck* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerReadReactor< ::proto::BlockChunk>* PushBlock(
+      ::grpc::CallbackServerContext* /*context*/, ::proto::WriteAck* /*response*/)  { return nullptr; }
   };
   typedef WithCallbackMethod_PushBlock<Service > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
@@ -648,7 +648,7 @@ class ReplicationService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -665,7 +665,7 @@ class ReplicationService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -688,7 +688,7 @@ class ReplicationService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::gridfs::BlockChunk>* /*reader*/, ::gridfs::WriteAck* /*response*/) override {
+    ::grpc::Status PushBlock(::grpc::ServerContext* /*context*/, ::grpc::ServerReader< ::proto::BlockChunk>* /*reader*/, ::proto::WriteAck* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -700,7 +700,7 @@ class ReplicationService final {
   typedef Service StreamedService;
 };
 
-}  // namespace gridfs
+}  // namespace proto
 
 
 #endif  // GRPC_datanode_2eproto__INCLUDED

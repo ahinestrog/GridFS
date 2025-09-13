@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface GetPlanRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.GetPlanRequest)
+    // @@protoc_insertion_point(interface_extends:proto.GetPlanRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -18,4 +18,19 @@ public interface GetPlanRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFilenameBytes();
+
+  /**
+   * <code>.proto.Auth auth = 2;</code>
+   * @return Whether the auth field is set.
+   */
+  boolean hasAuth();
+  /**
+   * <code>.proto.Auth auth = 2;</code>
+   * @return The auth.
+   */
+  com.gridfs.proto.Auth getAuth();
+  /**
+   * <code>.proto.Auth auth = 2;</code>
+   */
+  com.gridfs.proto.AuthOrBuilder getAuthOrBuilder();
 }

@@ -3,15 +3,15 @@
 cmake_policy(SET CMP0009 NEW)
 
 # MASTER_SOURCES at CMakeLists.txt:102 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/alejo/dev/GridFS/master-cpp/*.cpp")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/*.cpp")
 set(OLD_GLOB
-  "/home/alejo/dev/GridFS/master-cpp/heartbeat_service.cpp"
-  "/home/alejo/dev/GridFS/master-cpp/heartbeat_store.cpp"
-  "/home/alejo/dev/GridFS/master-cpp/main.cpp"
-  "/home/alejo/dev/GridFS/master-cpp/master_service.cpp"
-  "/home/alejo/dev/GridFS/master-cpp/metastore.cpp"
+  "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/heartbeat_service.cpp"
+  "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/heartbeat_store.cpp"
+  "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/main.cpp"
+  "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/master_service.cpp"
+  "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/metastore.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/alejo/dev/GridFS/master-cpp/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/CMakeFiles/cmake.verify_globs")
 endif()

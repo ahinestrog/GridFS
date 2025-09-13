@@ -1,23 +1,62 @@
 syntax = "proto3";
-package gridfs;
+package proto;
 
+import "common.proto";
 option java_multiple_files = true;
 option java_package = "com.gridfs.proto";
 
-import "common.proto";
-
-// Cliente <-> Master (unary)
-message PutPlanRequest  { string filename = 1; int64 filesize = 2; int32 block_size = 3; int32 replication = 4; }
-message PutPlanResponse { repeated BlockAssignment assignments = 1; }
-message GetPlanRequest  { string filename = 1; }
-message GetPlanResponse { repeated BlockLocation  locations   = 1; }
-
-service MasterService {
-  rpc PutPlan (PutPlanRequest) returns (PutPlanResponse);
-  rpc GetPlan (GetPlanRequest) returns (GetPlanResponse);
+message RegisterUserRequest {
+    string user = 1;
+    string pass = 2;
+}
+message RegisterUserResponse {
+    bool ok = 1;
+    string error = 2;
 }
 
-// Master <-> DataNode (bidi) para heartbeats/estado
+// Cliente <-> Master (unary)
+message PutPlanRequest {
+    string filename = 1;
+    int64 filesize = 2;
+    int32 block_size = 3;
+    int32 replication = 4;
+    Auth auth = 5;
+}
+message PutPlanResponse { repeated BlockAssignment assignments = 1; }
+message GetPlanRequest {
+    string filename = 1;
+    Auth auth = 2;
+}
+message GetPlanResponse { repeated BlockLocation locations = 1; }
+
+message Auth {
+    string user = 1;
+    string pass = 2;
+}
+
+message LsRequest { Auth auth = 1; string path = 2; }
+message LsResponse { repeated string entries = 1; }
+
+message RmRequest { Auth auth = 1; string path = 2; }
+message RmResponse { bool ok = 1; string error = 2; }
+
+message MkdirRequest { Auth auth = 1; string path = 2; }
+message MkdirResponse { bool ok = 1; string error = 2; }
+
+message RmdirRequest { Auth auth = 1; string path = 2; }
+message RmdirResponse { bool ok = 1; string error = 2; }
+
+service MasterService {
+    rpc PutPlan(PutPlanRequest) returns (PutPlanResponse);
+    rpc GetPlan(GetPlanRequest) returns (GetPlanResponse);
+    rpc Ls(LsRequest) returns (LsResponse);
+    rpc Rm(RmRequest) returns (RmResponse);
+    rpc Mkdir(MkdirRequest) returns (MkdirResponse);
+    rpc Rmdir(RmdirRequest) returns (RmdirResponse);
+    rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
+}
+
+// Master <-> DataNode (bidi) para heartbeats
 service MasterHeartbeat {
-  rpc StreamStatus (stream HeartbeatKv) returns (stream HeartbeatAck);
+    rpc StreamStatus(stream HeartbeatKv) returns (stream HeartbeatAck);
 }

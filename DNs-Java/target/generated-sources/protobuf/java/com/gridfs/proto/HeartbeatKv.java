@@ -5,14 +5,14 @@ package com.gridfs.proto;
 
 /**
  * <pre>
- * Heartbeats (clave/valor)
+ * Heartbeats (key=value)
  * </pre>
  *
- * Protobuf type {@code gridfs.HeartbeatKv}
+ * Protobuf type {@code proto.HeartbeatKv}
  */
 public final class HeartbeatKv extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.HeartbeatKv)
+    // @@protoc_insertion_point(message_implements:proto.HeartbeatKv)
     HeartbeatKvOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use HeartbeatKv.newBuilder() to construct.
@@ -32,15 +32,20 @@ private static final long serialVersionUID = 0L;
     return new HeartbeatKv();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatKv_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_HeartbeatKv_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatKv_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_HeartbeatKv_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.HeartbeatKv.class, com.gridfs.proto.HeartbeatKv.Builder.class);
   }
@@ -313,13 +318,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.HeartbeatKv parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.HeartbeatKv parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -363,24 +366,24 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Heartbeats (clave/valor)
+   * Heartbeats (key=value)
    * </pre>
    *
-   * Protobuf type {@code gridfs.HeartbeatKv}
+   * Protobuf type {@code proto.HeartbeatKv}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.HeartbeatKv)
+      // @@protoc_insertion_point(builder_implements:proto.HeartbeatKv)
       com.gridfs.proto.HeartbeatKvOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatKv_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_HeartbeatKv_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatKv_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_HeartbeatKv_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.HeartbeatKv.class, com.gridfs.proto.HeartbeatKv.Builder.class);
     }
@@ -409,7 +412,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_HeartbeatKv_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_HeartbeatKv_descriptor;
     }
 
     @java.lang.Override
@@ -806,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTsUnixMs(long value) {
-
+      
       tsUnixMs_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -835,10 +838,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.HeartbeatKv)
+    // @@protoc_insertion_point(builder_scope:proto.HeartbeatKv)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.HeartbeatKv)
+  // @@protoc_insertion_point(class_scope:proto.HeartbeatKv)
   private static final com.gridfs.proto.HeartbeatKv DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.HeartbeatKv();

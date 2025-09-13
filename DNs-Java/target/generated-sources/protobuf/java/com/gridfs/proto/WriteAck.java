@@ -4,11 +4,11 @@
 package com.gridfs.proto;
 
 /**
- * Protobuf type {@code gridfs.WriteAck}
+ * Protobuf type {@code proto.WriteAck}
  */
 public final class WriteAck extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.WriteAck)
+    // @@protoc_insertion_point(message_implements:proto.WriteAck)
     WriteAckOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use WriteAck.newBuilder() to construct.
@@ -28,15 +28,20 @@ private static final long serialVersionUID = 0L;
     return new WriteAck();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Common.internal_static_gridfs_WriteAck_descriptor;
+    return com.gridfs.proto.Common.internal_static_proto_WriteAck_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Common.internal_static_gridfs_WriteAck_fieldAccessorTable
+    return com.gridfs.proto.Common.internal_static_proto_WriteAck_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.WriteAck.class, com.gridfs.proto.WriteAck.Builder.class);
   }
@@ -95,10 +100,6 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object checksum_ = "";
   /**
-   * <pre>
-   * SHA-256 del bloque
-   * </pre>
-   *
    * <code>string checksum = 3;</code>
    * @return The checksum.
    */
@@ -116,10 +117,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * SHA-256 del bloque
-   * </pre>
-   *
    * <code>string checksum = 3;</code>
    * @return The bytes for checksum.
    */
@@ -340,13 +337,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.WriteAck parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.WriteAck parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -389,21 +384,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code gridfs.WriteAck}
+   * Protobuf type {@code proto.WriteAck}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.WriteAck)
+      // @@protoc_insertion_point(builder_implements:proto.WriteAck)
       com.gridfs.proto.WriteAckOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Common.internal_static_gridfs_WriteAck_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_WriteAck_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Common.internal_static_gridfs_WriteAck_fieldAccessorTable
+      return com.gridfs.proto.Common.internal_static_proto_WriteAck_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.WriteAck.class, com.gridfs.proto.WriteAck.Builder.class);
     }
@@ -433,7 +428,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Common.internal_static_gridfs_WriteAck_descriptor;
+      return com.gridfs.proto.Common.internal_static_proto_WriteAck_descriptor;
     }
 
     @java.lang.Override
@@ -697,7 +692,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setBytesReceived(long value) {
-
+      
       bytesReceived_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
@@ -716,10 +711,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object checksum_ = "";
     /**
-     * <pre>
-     * SHA-256 del bloque
-     * </pre>
-     *
      * <code>string checksum = 3;</code>
      * @return The checksum.
      */
@@ -736,10 +727,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * SHA-256 del bloque
-     * </pre>
-     *
      * <code>string checksum = 3;</code>
      * @return The bytes for checksum.
      */
@@ -757,10 +744,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * SHA-256 del bloque
-     * </pre>
-     *
      * <code>string checksum = 3;</code>
      * @param value The checksum to set.
      * @return This builder for chaining.
@@ -774,10 +757,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * SHA-256 del bloque
-     * </pre>
-     *
      * <code>string checksum = 3;</code>
      * @return This builder for chaining.
      */
@@ -788,10 +767,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * SHA-256 del bloque
-     * </pre>
-     *
      * <code>string checksum = 3;</code>
      * @param value The bytes for checksum to set.
      * @return This builder for chaining.
@@ -821,7 +796,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setOk(boolean value) {
-
+      
       ok_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -922,10 +897,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.WriteAck)
+    // @@protoc_insertion_point(builder_scope:proto.WriteAck)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.WriteAck)
+  // @@protoc_insertion_point(class_scope:proto.WriteAck)
   private static final com.gridfs.proto.WriteAck DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.WriteAck();

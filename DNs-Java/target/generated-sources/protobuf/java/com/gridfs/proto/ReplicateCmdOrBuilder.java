@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface ReplicateCmdOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.ReplicateCmd)
+    // @@protoc_insertion_point(interface_extends:proto.ReplicateCmd)
     com.google.protobuf.MessageOrBuilder {
 
   /**

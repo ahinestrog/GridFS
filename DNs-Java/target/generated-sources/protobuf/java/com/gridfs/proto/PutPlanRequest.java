@@ -8,11 +8,11 @@ package com.gridfs.proto;
  * Cliente &lt;-&gt; Master (unary)
  * </pre>
  *
- * Protobuf type {@code gridfs.PutPlanRequest}
+ * Protobuf type {@code proto.PutPlanRequest}
  */
 public final class PutPlanRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:gridfs.PutPlanRequest)
+    // @@protoc_insertion_point(message_implements:proto.PutPlanRequest)
     PutPlanRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use PutPlanRequest.newBuilder() to construct.
@@ -30,15 +30,20 @@ private static final long serialVersionUID = 0L;
     return new PutPlanRequest();
   }
 
+  @java.lang.Override
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
+    return this.unknownFields;
+  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.gridfs.proto.Master.internal_static_gridfs_PutPlanRequest_descriptor;
+    return com.gridfs.proto.Master.internal_static_proto_PutPlanRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.gridfs.proto.Master.internal_static_gridfs_PutPlanRequest_fieldAccessorTable
+    return com.gridfs.proto.Master.internal_static_proto_PutPlanRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.gridfs.proto.PutPlanRequest.class, com.gridfs.proto.PutPlanRequest.Builder.class);
   }
@@ -115,6 +120,32 @@ private static final long serialVersionUID = 0L;
     return replication_;
   }
 
+  public static final int AUTH_FIELD_NUMBER = 5;
+  private com.gridfs.proto.Auth auth_;
+  /**
+   * <code>.proto.Auth auth = 5;</code>
+   * @return Whether the auth field is set.
+   */
+  @java.lang.Override
+  public boolean hasAuth() {
+    return auth_ != null;
+  }
+  /**
+   * <code>.proto.Auth auth = 5;</code>
+   * @return The auth.
+   */
+  @java.lang.Override
+  public com.gridfs.proto.Auth getAuth() {
+    return auth_ == null ? com.gridfs.proto.Auth.getDefaultInstance() : auth_;
+  }
+  /**
+   * <code>.proto.Auth auth = 5;</code>
+   */
+  @java.lang.Override
+  public com.gridfs.proto.AuthOrBuilder getAuthOrBuilder() {
+    return auth_ == null ? com.gridfs.proto.Auth.getDefaultInstance() : auth_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -141,6 +172,9 @@ private static final long serialVersionUID = 0L;
     if (replication_ != 0) {
       output.writeInt32(4, replication_);
     }
+    if (auth_ != null) {
+      output.writeMessage(5, getAuth());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -165,6 +199,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, replication_);
     }
+    if (auth_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getAuth());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -188,6 +226,11 @@ private static final long serialVersionUID = 0L;
         != other.getBlockSize()) return false;
     if (getReplication()
         != other.getReplication()) return false;
+    if (hasAuth() != other.hasAuth()) return false;
+    if (hasAuth()) {
+      if (!getAuth()
+          .equals(other.getAuth())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -208,6 +251,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBlockSize();
     hash = (37 * hash) + REPLICATION_FIELD_NUMBER;
     hash = (53 * hash) + getReplication();
+    if (hasAuth()) {
+      hash = (37 * hash) + AUTH_FIELD_NUMBER;
+      hash = (53 * hash) + getAuth().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -257,13 +304,11 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static com.gridfs.proto.PutPlanRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static com.gridfs.proto.PutPlanRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -310,21 +355,21 @@ private static final long serialVersionUID = 0L;
    * Cliente &lt;-&gt; Master (unary)
    * </pre>
    *
-   * Protobuf type {@code gridfs.PutPlanRequest}
+   * Protobuf type {@code proto.PutPlanRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:gridfs.PutPlanRequest)
+      // @@protoc_insertion_point(builder_implements:proto.PutPlanRequest)
       com.gridfs.proto.PutPlanRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gridfs.proto.Master.internal_static_gridfs_PutPlanRequest_descriptor;
+      return com.gridfs.proto.Master.internal_static_proto_PutPlanRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gridfs.proto.Master.internal_static_gridfs_PutPlanRequest_fieldAccessorTable
+      return com.gridfs.proto.Master.internal_static_proto_PutPlanRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.gridfs.proto.PutPlanRequest.class, com.gridfs.proto.PutPlanRequest.Builder.class);
     }
@@ -347,13 +392,18 @@ private static final long serialVersionUID = 0L;
       filesize_ = 0L;
       blockSize_ = 0;
       replication_ = 0;
+      auth_ = null;
+      if (authBuilder_ != null) {
+        authBuilder_.dispose();
+        authBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.gridfs.proto.Master.internal_static_gridfs_PutPlanRequest_descriptor;
+      return com.gridfs.proto.Master.internal_static_proto_PutPlanRequest_descriptor;
     }
 
     @java.lang.Override
@@ -391,6 +441,11 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.replication_ = replication_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.auth_ = authBuilder_ == null
+            ? auth_
+            : authBuilder_.build();
       }
     }
 
@@ -452,6 +507,9 @@ private static final long serialVersionUID = 0L;
       if (other.getReplication() != 0) {
         setReplication(other.getReplication());
       }
+      if (other.hasAuth()) {
+        mergeAuth(other.getAuth());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -498,6 +556,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
+            case 42: {
+              input.readMessage(
+                  getAuthFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -602,7 +667,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setFilesize(long value) {
-
+      
       filesize_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
@@ -634,7 +699,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setBlockSize(int value) {
-
+      
       blockSize_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
@@ -666,7 +731,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setReplication(int value) {
-
+      
       replication_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -682,6 +747,125 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private com.gridfs.proto.Auth auth_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.gridfs.proto.Auth, com.gridfs.proto.Auth.Builder, com.gridfs.proto.AuthOrBuilder> authBuilder_;
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     * @return Whether the auth field is set.
+     */
+    public boolean hasAuth() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     * @return The auth.
+     */
+    public com.gridfs.proto.Auth getAuth() {
+      if (authBuilder_ == null) {
+        return auth_ == null ? com.gridfs.proto.Auth.getDefaultInstance() : auth_;
+      } else {
+        return authBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    public Builder setAuth(com.gridfs.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        auth_ = value;
+      } else {
+        authBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    public Builder setAuth(
+        com.gridfs.proto.Auth.Builder builderForValue) {
+      if (authBuilder_ == null) {
+        auth_ = builderForValue.build();
+      } else {
+        authBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    public Builder mergeAuth(com.gridfs.proto.Auth value) {
+      if (authBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          auth_ != null &&
+          auth_ != com.gridfs.proto.Auth.getDefaultInstance()) {
+          getAuthBuilder().mergeFrom(value);
+        } else {
+          auth_ = value;
+        }
+      } else {
+        authBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    public Builder clearAuth() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      auth_ = null;
+      if (authBuilder_ != null) {
+        authBuilder_.dispose();
+        authBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    public com.gridfs.proto.Auth.Builder getAuthBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getAuthFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    public com.gridfs.proto.AuthOrBuilder getAuthOrBuilder() {
+      if (authBuilder_ != null) {
+        return authBuilder_.getMessageOrBuilder();
+      } else {
+        return auth_ == null ?
+            com.gridfs.proto.Auth.getDefaultInstance() : auth_;
+      }
+    }
+    /**
+     * <code>.proto.Auth auth = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.gridfs.proto.Auth, com.gridfs.proto.Auth.Builder, com.gridfs.proto.AuthOrBuilder> 
+        getAuthFieldBuilder() {
+      if (authBuilder_ == null) {
+        authBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.gridfs.proto.Auth, com.gridfs.proto.Auth.Builder, com.gridfs.proto.AuthOrBuilder>(
+                getAuth(),
+                getParentForChildren(),
+                isClean());
+        auth_ = null;
+      }
+      return authBuilder_;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -695,10 +879,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:gridfs.PutPlanRequest)
+    // @@protoc_insertion_point(builder_scope:proto.PutPlanRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:gridfs.PutPlanRequest)
+  // @@protoc_insertion_point(class_scope:proto.PutPlanRequest)
   private static final com.gridfs.proto.PutPlanRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.gridfs.proto.PutPlanRequest();

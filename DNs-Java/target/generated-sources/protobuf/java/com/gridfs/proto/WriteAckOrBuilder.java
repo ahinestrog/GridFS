@@ -4,7 +4,7 @@
 package com.gridfs.proto;
 
 public interface WriteAckOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:gridfs.WriteAck)
+    // @@protoc_insertion_point(interface_extends:proto.WriteAck)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -26,19 +26,11 @@ public interface WriteAckOrBuilder extends
   long getBytesReceived();
 
   /**
-   * <pre>
-   * SHA-256 del bloque
-   * </pre>
-   *
    * <code>string checksum = 3;</code>
    * @return The checksum.
    */
   java.lang.String getChecksum();
   /**
-   * <pre>
-   * SHA-256 del bloque
-   * </pre>
-   *
    * <code>string checksum = 3;</code>
    * @return The bytes for checksum.
    */

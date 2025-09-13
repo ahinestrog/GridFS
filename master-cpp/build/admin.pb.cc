@@ -20,7 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
-namespace gridfs {
+namespace proto {
 PROTOBUF_CONSTEXPR ReplicateCmd::ReplicateCmd(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.block_id_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -77,75 +77,76 @@ struct AdminOrderResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AdminOrderResponseDefaultTypeInternal _AdminOrderResponse_default_instance_;
-}  // namespace gridfs
+}  // namespace proto
 static ::_pb::Metadata file_level_metadata_admin_2eproto[4];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_admin_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_admin_2eproto = nullptr;
 
 const uint32_t TableStruct_admin_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::ReplicateCmd, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::ReplicateCmd, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::ReplicateCmd, _impl_.block_id_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::ReplicateCmd, _impl_.target_dn_),
+  PROTOBUF_FIELD_OFFSET(::proto::ReplicateCmd, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::ReplicateCmd, _impl_.target_dn_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::DeleteBlockCmd, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::DeleteBlockCmd, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::DeleteBlockCmd, _impl_.block_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::DeleteBlockCmd, _impl_.block_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderRequest, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderRequest, _impl_._oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderRequest, _impl_._oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderRequest, _impl_.node_id_),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderRequest, _impl_.node_id_),
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderRequest, _impl_.order_),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderRequest, _impl_.order_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderResponse, _impl_.ok_),
-  PROTOBUF_FIELD_OFFSET(::gridfs::AdminOrderResponse, _impl_.message_),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderResponse, _impl_.ok_),
+  PROTOBUF_FIELD_OFFSET(::proto::AdminOrderResponse, _impl_.message_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::gridfs::ReplicateCmd)},
-  { 8, -1, -1, sizeof(::gridfs::DeleteBlockCmd)},
-  { 15, -1, -1, sizeof(::gridfs::AdminOrderRequest)},
-  { 25, -1, -1, sizeof(::gridfs::AdminOrderResponse)},
+  { 0, -1, -1, sizeof(::proto::ReplicateCmd)},
+  { 8, -1, -1, sizeof(::proto::DeleteBlockCmd)},
+  { 15, -1, -1, sizeof(::proto::AdminOrderRequest)},
+  { 25, -1, -1, sizeof(::proto::AdminOrderResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::gridfs::_ReplicateCmd_default_instance_._instance,
-  &::gridfs::_DeleteBlockCmd_default_instance_._instance,
-  &::gridfs::_AdminOrderRequest_default_instance_._instance,
-  &::gridfs::_AdminOrderResponse_default_instance_._instance,
+  &::proto::_ReplicateCmd_default_instance_._instance,
+  &::proto::_DeleteBlockCmd_default_instance_._instance,
+  &::proto::_AdminOrderRequest_default_instance_._instance,
+  &::proto::_AdminOrderResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_admin_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\013admin.proto\022\006gridfs\"3\n\014ReplicateCmd\022\020\n"
-  "\010block_id\030\001 \001(\t\022\021\n\ttarget_dn\030\002 \001(\t\"\"\n\016De"
-  "leteBlockCmd\022\020\n\010block_id\030\001 \001(\t\"\210\001\n\021Admin"
-  "OrderRequest\022\017\n\007node_id\030\001 \001(\t\022)\n\treplica"
-  "te\030\002 \001(\0132\024.gridfs.ReplicateCmdH\000\022.\n\014dele"
-  "te_block\030\003 \001(\0132\026.gridfs.DeleteBlockCmdH\000"
-  "B\007\n\005order\"1\n\022AdminOrderResponse\022\n\n\002ok\030\001 "
-  "\001(\010\022\017\n\007message\030\002 \001(\t2T\n\rDataNodeAdmin\022C\n"
-  "\nAdminOrder\022\031.gridfs.AdminOrderRequest\032\032"
-  ".gridfs.AdminOrderResponseb\006proto3"
+  "\n\013admin.proto\022\005proto\"3\n\014ReplicateCmd\022\020\n\010"
+  "block_id\030\001 \001(\t\022\021\n\ttarget_dn\030\002 \001(\t\"\"\n\016Del"
+  "eteBlockCmd\022\020\n\010block_id\030\001 \001(\t\"\206\001\n\021AdminO"
+  "rderRequest\022\017\n\007node_id\030\001 \001(\t\022(\n\treplicat"
+  "e\030\002 \001(\0132\023.proto.ReplicateCmdH\000\022-\n\014delete"
+  "_block\030\003 \001(\0132\025.proto.DeleteBlockCmdH\000B\007\n"
+  "\005order\"1\n\022AdminOrderResponse\022\n\n\002ok\030\001 \001(\010"
+  "\022\017\n\007message\030\002 \001(\t2R\n\rDataNodeAdmin\022A\n\nAd"
+  "minOrder\022\030.proto.AdminOrderRequest\032\031.pro"
+  "to.AdminOrderResponseB\024\n\020com.gridfs.prot"
+  "oP\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_admin_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_admin_2eproto = {
-    false, false, 394, descriptor_table_protodef_admin_2eproto,
+    false, false, 411, descriptor_table_protodef_admin_2eproto,
     "admin.proto",
     &descriptor_table_admin_2eproto_once, nullptr, 0, 4,
     schemas, file_default_instances, TableStruct_admin_2eproto::offsets,
@@ -158,7 +159,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_admin_2e
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_admin_2eproto(&descriptor_table_admin_2eproto);
-namespace gridfs {
+namespace proto {
 
 // ===================================================================
 
@@ -170,7 +171,7 @@ ReplicateCmd::ReplicateCmd(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(arena_constructor:proto.ReplicateCmd)
 }
 ReplicateCmd::ReplicateCmd(const ReplicateCmd& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -197,7 +198,7 @@ ReplicateCmd::ReplicateCmd(const ReplicateCmd& from)
     _this->_impl_.target_dn_.Set(from._internal_target_dn(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(copy_constructor:proto.ReplicateCmd)
 }
 
 inline void ReplicateCmd::SharedCtor(
@@ -220,7 +221,7 @@ inline void ReplicateCmd::SharedCtor(
 }
 
 ReplicateCmd::~ReplicateCmd() {
-  // @@protoc_insertion_point(destructor:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(destructor:proto.ReplicateCmd)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -239,7 +240,7 @@ void ReplicateCmd::SetCachedSize(int size) const {
 }
 
 void ReplicateCmd::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.ReplicateCmd)
+// @@protoc_insertion_point(message_clear_start:proto.ReplicateCmd)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -261,7 +262,7 @@ const char* ReplicateCmd::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.ReplicateCmd.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.ReplicateCmd.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -271,7 +272,7 @@ const char* ReplicateCmd::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_target_dn();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.ReplicateCmd.target_dn"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.ReplicateCmd.target_dn"));
         } else
           goto handle_unusual;
         continue;
@@ -300,7 +301,7 @@ failure:
 
 uint8_t* ReplicateCmd::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.ReplicateCmd)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -309,7 +310,7 @@ uint8_t* ReplicateCmd::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.ReplicateCmd.block_id");
+      "proto.ReplicateCmd.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -319,7 +320,7 @@ uint8_t* ReplicateCmd::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_target_dn().data(), static_cast<int>(this->_internal_target_dn().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.ReplicateCmd.target_dn");
+      "proto.ReplicateCmd.target_dn");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_target_dn(), target);
   }
@@ -328,12 +329,12 @@ uint8_t* ReplicateCmd::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.ReplicateCmd)
   return target;
 }
 
 size_t ReplicateCmd::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.ReplicateCmd)
+// @@protoc_insertion_point(message_byte_size_start:proto.ReplicateCmd)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -367,7 +368,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReplicateCmd::GetClassData() c
 void ReplicateCmd::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<ReplicateCmd*>(&to_msg);
   auto& from = static_cast<const ReplicateCmd&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.ReplicateCmd)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.ReplicateCmd)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -382,7 +383,7 @@ void ReplicateCmd::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void ReplicateCmd::CopyFrom(const ReplicateCmd& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.ReplicateCmd)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.ReplicateCmd)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -423,7 +424,7 @@ DeleteBlockCmd::DeleteBlockCmd(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.DeleteBlockCmd)
+  // @@protoc_insertion_point(arena_constructor:proto.DeleteBlockCmd)
 }
 DeleteBlockCmd::DeleteBlockCmd(const DeleteBlockCmd& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -441,7 +442,7 @@ DeleteBlockCmd::DeleteBlockCmd(const DeleteBlockCmd& from)
     _this->_impl_.block_id_.Set(from._internal_block_id(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:gridfs.DeleteBlockCmd)
+  // @@protoc_insertion_point(copy_constructor:proto.DeleteBlockCmd)
 }
 
 inline void DeleteBlockCmd::SharedCtor(
@@ -459,7 +460,7 @@ inline void DeleteBlockCmd::SharedCtor(
 }
 
 DeleteBlockCmd::~DeleteBlockCmd() {
-  // @@protoc_insertion_point(destructor:gridfs.DeleteBlockCmd)
+  // @@protoc_insertion_point(destructor:proto.DeleteBlockCmd)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -477,7 +478,7 @@ void DeleteBlockCmd::SetCachedSize(int size) const {
 }
 
 void DeleteBlockCmd::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.DeleteBlockCmd)
+// @@protoc_insertion_point(message_clear_start:proto.DeleteBlockCmd)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -498,7 +499,7 @@ const char* DeleteBlockCmd::_InternalParse(const char* ptr, ::_pbi::ParseContext
           auto str = _internal_mutable_block_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.DeleteBlockCmd.block_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.DeleteBlockCmd.block_id"));
         } else
           goto handle_unusual;
         continue;
@@ -527,7 +528,7 @@ failure:
 
 uint8_t* DeleteBlockCmd::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.DeleteBlockCmd)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.DeleteBlockCmd)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -536,7 +537,7 @@ uint8_t* DeleteBlockCmd::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_block_id().data(), static_cast<int>(this->_internal_block_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.DeleteBlockCmd.block_id");
+      "proto.DeleteBlockCmd.block_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_block_id(), target);
   }
@@ -545,12 +546,12 @@ uint8_t* DeleteBlockCmd::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.DeleteBlockCmd)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.DeleteBlockCmd)
   return target;
 }
 
 size_t DeleteBlockCmd::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.DeleteBlockCmd)
+// @@protoc_insertion_point(message_byte_size_start:proto.DeleteBlockCmd)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -577,7 +578,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeleteBlockCmd::GetClassData()
 void DeleteBlockCmd::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<DeleteBlockCmd*>(&to_msg);
   auto& from = static_cast<const DeleteBlockCmd&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.DeleteBlockCmd)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.DeleteBlockCmd)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -589,7 +590,7 @@ void DeleteBlockCmd::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
 }
 
 void DeleteBlockCmd::CopyFrom(const DeleteBlockCmd& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.DeleteBlockCmd)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.DeleteBlockCmd)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -620,19 +621,19 @@ void DeleteBlockCmd::InternalSwap(DeleteBlockCmd* other) {
 
 class AdminOrderRequest::_Internal {
  public:
-  static const ::gridfs::ReplicateCmd& replicate(const AdminOrderRequest* msg);
-  static const ::gridfs::DeleteBlockCmd& delete_block(const AdminOrderRequest* msg);
+  static const ::proto::ReplicateCmd& replicate(const AdminOrderRequest* msg);
+  static const ::proto::DeleteBlockCmd& delete_block(const AdminOrderRequest* msg);
 };
 
-const ::gridfs::ReplicateCmd&
+const ::proto::ReplicateCmd&
 AdminOrderRequest::_Internal::replicate(const AdminOrderRequest* msg) {
   return *msg->_impl_.order_.replicate_;
 }
-const ::gridfs::DeleteBlockCmd&
+const ::proto::DeleteBlockCmd&
 AdminOrderRequest::_Internal::delete_block(const AdminOrderRequest* msg) {
   return *msg->_impl_.order_.delete_block_;
 }
-void AdminOrderRequest::set_allocated_replicate(::gridfs::ReplicateCmd* replicate) {
+void AdminOrderRequest::set_allocated_replicate(::proto::ReplicateCmd* replicate) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_order();
   if (replicate) {
@@ -645,9 +646,9 @@ void AdminOrderRequest::set_allocated_replicate(::gridfs::ReplicateCmd* replicat
     set_has_replicate();
     _impl_.order_.replicate_ = replicate;
   }
-  // @@protoc_insertion_point(field_set_allocated:gridfs.AdminOrderRequest.replicate)
+  // @@protoc_insertion_point(field_set_allocated:proto.AdminOrderRequest.replicate)
 }
-void AdminOrderRequest::set_allocated_delete_block(::gridfs::DeleteBlockCmd* delete_block) {
+void AdminOrderRequest::set_allocated_delete_block(::proto::DeleteBlockCmd* delete_block) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_order();
   if (delete_block) {
@@ -660,13 +661,13 @@ void AdminOrderRequest::set_allocated_delete_block(::gridfs::DeleteBlockCmd* del
     set_has_delete_block();
     _impl_.order_.delete_block_ = delete_block;
   }
-  // @@protoc_insertion_point(field_set_allocated:gridfs.AdminOrderRequest.delete_block)
+  // @@protoc_insertion_point(field_set_allocated:proto.AdminOrderRequest.delete_block)
 }
 AdminOrderRequest::AdminOrderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.AdminOrderRequest)
+  // @@protoc_insertion_point(arena_constructor:proto.AdminOrderRequest)
 }
 AdminOrderRequest::AdminOrderRequest(const AdminOrderRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -689,12 +690,12 @@ AdminOrderRequest::AdminOrderRequest(const AdminOrderRequest& from)
   clear_has_order();
   switch (from.order_case()) {
     case kReplicate: {
-      _this->_internal_mutable_replicate()->::gridfs::ReplicateCmd::MergeFrom(
+      _this->_internal_mutable_replicate()->::proto::ReplicateCmd::MergeFrom(
           from._internal_replicate());
       break;
     }
     case kDeleteBlock: {
-      _this->_internal_mutable_delete_block()->::gridfs::DeleteBlockCmd::MergeFrom(
+      _this->_internal_mutable_delete_block()->::proto::DeleteBlockCmd::MergeFrom(
           from._internal_delete_block());
       break;
     }
@@ -702,7 +703,7 @@ AdminOrderRequest::AdminOrderRequest(const AdminOrderRequest& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:gridfs.AdminOrderRequest)
+  // @@protoc_insertion_point(copy_constructor:proto.AdminOrderRequest)
 }
 
 inline void AdminOrderRequest::SharedCtor(
@@ -723,7 +724,7 @@ inline void AdminOrderRequest::SharedCtor(
 }
 
 AdminOrderRequest::~AdminOrderRequest() {
-  // @@protoc_insertion_point(destructor:gridfs.AdminOrderRequest)
+  // @@protoc_insertion_point(destructor:proto.AdminOrderRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -744,7 +745,7 @@ void AdminOrderRequest::SetCachedSize(int size) const {
 }
 
 void AdminOrderRequest::clear_order() {
-// @@protoc_insertion_point(one_of_clear_start:gridfs.AdminOrderRequest)
+// @@protoc_insertion_point(one_of_clear_start:proto.AdminOrderRequest)
   switch (order_case()) {
     case kReplicate: {
       if (GetArenaForAllocation() == nullptr) {
@@ -767,7 +768,7 @@ void AdminOrderRequest::clear_order() {
 
 
 void AdminOrderRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.AdminOrderRequest)
+// @@protoc_insertion_point(message_clear_start:proto.AdminOrderRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -789,11 +790,11 @@ const char* AdminOrderRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
           auto str = _internal_mutable_node_id();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.AdminOrderRequest.node_id"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.AdminOrderRequest.node_id"));
         } else
           goto handle_unusual;
         continue;
-      // .gridfs.ReplicateCmd replicate = 2;
+      // .proto.ReplicateCmd replicate = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_replicate(), ptr);
@@ -801,7 +802,7 @@ const char* AdminOrderRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
         } else
           goto handle_unusual;
         continue;
-      // .gridfs.DeleteBlockCmd delete_block = 3;
+      // .proto.DeleteBlockCmd delete_block = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_delete_block(), ptr);
@@ -834,7 +835,7 @@ failure:
 
 uint8_t* AdminOrderRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.AdminOrderRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.AdminOrderRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -843,19 +844,19 @@ uint8_t* AdminOrderRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_node_id().data(), static_cast<int>(this->_internal_node_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.AdminOrderRequest.node_id");
+      "proto.AdminOrderRequest.node_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_node_id(), target);
   }
 
-  // .gridfs.ReplicateCmd replicate = 2;
+  // .proto.ReplicateCmd replicate = 2;
   if (_internal_has_replicate()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::replicate(this),
         _Internal::replicate(this).GetCachedSize(), target, stream);
   }
 
-  // .gridfs.DeleteBlockCmd delete_block = 3;
+  // .proto.DeleteBlockCmd delete_block = 3;
   if (_internal_has_delete_block()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::delete_block(this),
@@ -866,12 +867,12 @@ uint8_t* AdminOrderRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.AdminOrderRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.AdminOrderRequest)
   return target;
 }
 
 size_t AdminOrderRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.AdminOrderRequest)
+// @@protoc_insertion_point(message_byte_size_start:proto.AdminOrderRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -886,14 +887,14 @@ size_t AdminOrderRequest::ByteSizeLong() const {
   }
 
   switch (order_case()) {
-    // .gridfs.ReplicateCmd replicate = 2;
+    // .proto.ReplicateCmd replicate = 2;
     case kReplicate: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.order_.replicate_);
       break;
     }
-    // .gridfs.DeleteBlockCmd delete_block = 3;
+    // .proto.DeleteBlockCmd delete_block = 3;
     case kDeleteBlock: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -917,7 +918,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AdminOrderRequest::GetClassDat
 void AdminOrderRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AdminOrderRequest*>(&to_msg);
   auto& from = static_cast<const AdminOrderRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.AdminOrderRequest)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.AdminOrderRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -927,12 +928,12 @@ void AdminOrderRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   }
   switch (from.order_case()) {
     case kReplicate: {
-      _this->_internal_mutable_replicate()->::gridfs::ReplicateCmd::MergeFrom(
+      _this->_internal_mutable_replicate()->::proto::ReplicateCmd::MergeFrom(
           from._internal_replicate());
       break;
     }
     case kDeleteBlock: {
-      _this->_internal_mutable_delete_block()->::gridfs::DeleteBlockCmd::MergeFrom(
+      _this->_internal_mutable_delete_block()->::proto::DeleteBlockCmd::MergeFrom(
           from._internal_delete_block());
       break;
     }
@@ -944,7 +945,7 @@ void AdminOrderRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
 }
 
 void AdminOrderRequest::CopyFrom(const AdminOrderRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.AdminOrderRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.AdminOrderRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -983,7 +984,7 @@ AdminOrderResponse::AdminOrderResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:gridfs.AdminOrderResponse)
+  // @@protoc_insertion_point(arena_constructor:proto.AdminOrderResponse)
 }
 AdminOrderResponse::AdminOrderResponse(const AdminOrderResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -1003,7 +1004,7 @@ AdminOrderResponse::AdminOrderResponse(const AdminOrderResponse& from)
       _this->GetArenaForAllocation());
   }
   _this->_impl_.ok_ = from._impl_.ok_;
-  // @@protoc_insertion_point(copy_constructor:gridfs.AdminOrderResponse)
+  // @@protoc_insertion_point(copy_constructor:proto.AdminOrderResponse)
 }
 
 inline void AdminOrderResponse::SharedCtor(
@@ -1022,7 +1023,7 @@ inline void AdminOrderResponse::SharedCtor(
 }
 
 AdminOrderResponse::~AdminOrderResponse() {
-  // @@protoc_insertion_point(destructor:gridfs.AdminOrderResponse)
+  // @@protoc_insertion_point(destructor:proto.AdminOrderResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1040,7 +1041,7 @@ void AdminOrderResponse::SetCachedSize(int size) const {
 }
 
 void AdminOrderResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:gridfs.AdminOrderResponse)
+// @@protoc_insertion_point(message_clear_start:proto.AdminOrderResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1070,7 +1071,7 @@ const char* AdminOrderResponse::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "gridfs.AdminOrderResponse.message"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.AdminOrderResponse.message"));
         } else
           goto handle_unusual;
         continue;
@@ -1099,7 +1100,7 @@ failure:
 
 uint8_t* AdminOrderResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:gridfs.AdminOrderResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.AdminOrderResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1114,7 +1115,7 @@ uint8_t* AdminOrderResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "gridfs.AdminOrderResponse.message");
+      "proto.AdminOrderResponse.message");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_message(), target);
   }
@@ -1123,12 +1124,12 @@ uint8_t* AdminOrderResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:gridfs.AdminOrderResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.AdminOrderResponse)
   return target;
 }
 
 size_t AdminOrderResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:gridfs.AdminOrderResponse)
+// @@protoc_insertion_point(message_byte_size_start:proto.AdminOrderResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1160,7 +1161,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AdminOrderResponse::GetClassDa
 void AdminOrderResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AdminOrderResponse*>(&to_msg);
   auto& from = static_cast<const AdminOrderResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:gridfs.AdminOrderResponse)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.AdminOrderResponse)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1175,7 +1176,7 @@ void AdminOrderResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
 }
 
 void AdminOrderResponse::CopyFrom(const AdminOrderResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gridfs.AdminOrderResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.AdminOrderResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1204,23 +1205,23 @@ void AdminOrderResponse::InternalSwap(AdminOrderResponse* other) {
 }
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace gridfs
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::gridfs::ReplicateCmd*
-Arena::CreateMaybeMessage< ::gridfs::ReplicateCmd >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::ReplicateCmd >(arena);
+template<> PROTOBUF_NOINLINE ::proto::ReplicateCmd*
+Arena::CreateMaybeMessage< ::proto::ReplicateCmd >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::ReplicateCmd >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::DeleteBlockCmd*
-Arena::CreateMaybeMessage< ::gridfs::DeleteBlockCmd >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::DeleteBlockCmd >(arena);
+template<> PROTOBUF_NOINLINE ::proto::DeleteBlockCmd*
+Arena::CreateMaybeMessage< ::proto::DeleteBlockCmd >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::DeleteBlockCmd >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::AdminOrderRequest*
-Arena::CreateMaybeMessage< ::gridfs::AdminOrderRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::AdminOrderRequest >(arena);
+template<> PROTOBUF_NOINLINE ::proto::AdminOrderRequest*
+Arena::CreateMaybeMessage< ::proto::AdminOrderRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::AdminOrderRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::gridfs::AdminOrderResponse*
-Arena::CreateMaybeMessage< ::gridfs::AdminOrderResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::gridfs::AdminOrderResponse >(arena);
+template<> PROTOBUF_NOINLINE ::proto::AdminOrderResponse*
+Arena::CreateMaybeMessage< ::proto::AdminOrderResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::AdminOrderResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
