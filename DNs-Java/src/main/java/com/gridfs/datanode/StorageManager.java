@@ -48,4 +48,31 @@ public class StorageManager {
     public int getChunkSize() {
         return chunkSize;
     }
+
+    public long getFreeSpace() throws IOException {
+        long totalSpace = Files.getFileStore(baseDir).getTotalSpace();
+        long usedSpace = calculateDirectorySize(baseDir);
+        return totalSpace - usedSpace;
+    }
+
+    public long getTotalSpace() throws IOException {
+        return Files.getFileStore(baseDir).getTotalSpace();
+    }
+
+    private long calculateDirectorySize(Path dir) throws IOException {
+        if (!Files.exists(dir)) {
+            return 0;
+        }
+        
+        return Files.walk(dir)
+            .filter(Files::isRegularFile)
+            .mapToLong(p -> {
+                try { 
+                    return Files.size(p); 
+                } catch (IOException e) { 
+                    return 0; 
+                }
+            })
+            .sum();
+    }
 }

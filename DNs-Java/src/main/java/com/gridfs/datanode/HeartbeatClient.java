@@ -23,6 +23,7 @@ public class HeartbeatClient implements AutoCloseable {
     private final ManagedChannel ch;
     private final MasterHeartbeatGrpc.MasterHeartbeatStub stub;
     private StreamObserver<HeartbeatKv> upstream;
+    private final StorageManager storage;
     private final ScheduledExecutorService ses =
             Executors.newSingleThreadScheduledExecutor(r -> {
                 Thread t = new Thread(r, "hb-scheduler");
@@ -30,8 +31,9 @@ public class HeartbeatClient implements AutoCloseable {
                 return t;
             });
 
-    public HeartbeatClient(String nodeId, String masterAddress) {
+    public HeartbeatClient(String nodeId, String masterAddress, StorageManager storage) {
         this.nodeId = Objects.requireNonNull(nodeId, "nodeId");
+        this.storage = Objects.requireNonNull(storage, "storage");
 
         // Parsear dirección del Master de forma segura
         AbstractMap.SimpleEntry<String,Integer> hp = parseHostPortSafe(masterAddress, 50051);
@@ -67,7 +69,11 @@ public class HeartbeatClient implements AutoCloseable {
 
         // Beats periódicos
         ses.scheduleAtFixedRate(() -> {
-            try { send("heartbeat", "1"); }
+            try { 
+                send("heartbeat", "1");
+                // Reportar espacio disponible periódicamente
+                sendSpaceInfo();
+            }
             catch (Exception e) { e.printStackTrace(); }
         }, periodMs, periodMs, TimeUnit.MILLISECONDS);
     }
@@ -82,6 +88,21 @@ public class HeartbeatClient implements AutoCloseable {
                 .setTsUnixMs(Instant.now().toEpochMilli())
                 .build();
         upstream.onNext(hb);
+    }
+
+    /** Envía información de espacio disponible del storage. */
+    private void sendSpaceInfo() {
+        try {
+            long freeSpace = storage.getFreeSpace();
+            long totalSpace = storage.getTotalSpace();
+            long usedSpace = totalSpace - freeSpace;
+            
+            send("free_space_bytes", String.valueOf(freeSpace));
+            send("total_space_bytes", String.valueOf(totalSpace));
+            send("used_space_bytes", String.valueOf(usedSpace));
+        } catch (Exception e) {
+            System.err.println("[HB] Error getting space info: " + e.getMessage());
+        }
     }
 
     @Override

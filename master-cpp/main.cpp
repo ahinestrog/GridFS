@@ -9,7 +9,7 @@
 #include "metastore.h"
 
 // Implementadas en tus .cpp correspondientes:
-std::unique_ptr<proto::MasterService::Service>   MakeMasterService(MetaStore*);
+std::unique_ptr<proto::MasterService::Service>   MakeMasterService(MetaStore*, HeartbeatStore*);
 std::unique_ptr<proto::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore*);
 
 int main(int argc, char** argv) {
@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
 
   grpc::ServerBuilder builder;
   builder.AddListeningPort(addr, grpc::InsecureServerCredentials());
-  builder.RegisterService(MakeMasterService(&ms).release());
+  builder.RegisterService(MakeMasterService(&ms, &hb).release());
   builder.RegisterService(MakeHeartbeatService(&hb).release());
 
   std::unique_ptr<grpc::Server> server = builder.BuildAndStart();

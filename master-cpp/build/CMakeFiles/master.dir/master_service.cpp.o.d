@@ -432,8 +432,9 @@ CMakeFiles/master.dir/master_service.cpp.o: \
  /usr/include/grpcpp/support/stub_options.h \
  /home/alejo/dev/topicosTelematica/GridFS/master-cpp/build/common.pb.h \
  /home/alejo/dev/topicosTelematica/GridFS/master-cpp/metastore.h \
- /usr/include/sqlite3.h /usr/include/c++/13/random \
- /usr/include/c++/13/bits/random.h \
+ /usr/include/sqlite3.h \
+ /home/alejo/dev/topicosTelematica/GridFS/master-cpp/heartbeat_store.h \
+ /usr/include/c++/13/random /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \

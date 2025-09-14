@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 #include <sqlite3.h>
 
 class HeartbeatStore {
@@ -11,6 +12,11 @@ public:
         const std::string& key,
         const std::string& value,
         long long ts_unix_ms);
+
+    // Nuevos métodos para consultar información de espacio
+    std::vector<std::string> GetActiveNodes();
+    long long GetFreeSpace(const std::string& node_id);
+    bool IsNodeActive(const std::string& node_id, long long timeout_ms = 10000);
 
 private:
     void InitSchema(); 

@@ -45,7 +45,7 @@ public class DataNodeServer {
         String normalizedMaster = normalizeTarget(masterAddr);
 
         // Heartbeats al Master (usará el target normalizado)
-        this.hb = new HeartbeatClient(nodeId, normalizedMaster);
+        this.hb = new HeartbeatClient(nodeId, normalizedMaster, storage);
 
         // Servidor de I/O (WriteBlock, ReadBlock, FsOp) + Replicación DN<->DN
         this.ioServer = ServerBuilder.forPort(ioPort)
