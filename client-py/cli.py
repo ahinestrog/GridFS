@@ -1,7 +1,8 @@
 import os, sys, argparse, grpc
 import os
 import sys
-# Añadir la carpeta de stubs generados al PYTHONPATH de forma robusta
+
+# Indicamos la carpeta de los stubs generados generate/py-stubs/
 STUBS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'generated', 'py-stubs'))
 if STUBS_DIR not in sys.path:
     sys.path.insert(0, STUBS_DIR)
@@ -26,7 +27,7 @@ from datanode_pb2_grpc import DataNodeIOStub
 
 
 MASTER_ADDR = os.environ.get("MASTER_ADDR", "127.0.0.1:50051")
-BLOCK_SIZE  = int(os.environ.get("CHUNK_SIZE", 1024*1024))  # tamaño por bloque en el DFS
+BLOCK_SIZE  = int(os.environ.get("CHUNK_SIZE", 1024*1024))  # tamaño por bloque por defecto
 STREAM_CHUNK = 256 * 1024  # tamaño de los fragmentos que se envían por streaming
 
 def _parse_host_port(s: str, default_port: int = 50052):
@@ -60,7 +61,6 @@ def _target_from_assignment(asg):
     """Soporta planes que traen 'primary_dn' (string) o host/port separados."""
     if hasattr(asg, "primary_dn") and asg.primary_dn:
         return _parse_host_port(asg.primary_dn)
-    # nombres alternativos frecuentes
     for h, p in (("host","port"), ("primary_host","primary_port"), ("io_host","io_port")):
         if hasattr(asg, h) and hasattr(asg, p):
             host = getattr(asg, h)
@@ -68,7 +68,6 @@ def _target_from_assignment(asg):
             try: port = int(port)
             except: pass
             return _parse_host_port(f"{host}:{port}")
-    # fallback
     return ("127.0.0.1", 50052)
 
 def put(path: str, replication: int = 2, auth=None):
@@ -110,7 +109,7 @@ def get(remote_name: str, out_path: str | None, auth=None):
             plan = MasterServiceStub(ch).GetPlan(GetPlanRequest(filename=remote_name, auth=auth))
         # Si out_path es un directorio o termina en barra, guarda el archivo ahí con el nombre original
         if out_path:
-            # Normaliza ruta relativa
+            # Normaliza la ruta
             out_path = os.path.expanduser(out_path)
             if out_path.endswith(os.sep) or os.path.isdir(out_path):
                 out_path = os.path.join(out_path, os.path.basename(remote_name))
@@ -141,7 +140,6 @@ def get(remote_name: str, out_path: str | None, auth=None):
         print(f"Error al guardar el archivo: {e}")
 
 def get_auth(args):
-    # Evita conflicto con palabra reservada 'pass' usando setattr
     return Auth(user=args.user, **{"pass": getattr(args, "pass")})
 
 def ls(path: str, auth):
@@ -180,7 +178,6 @@ def rmdir(path: str, auth):
 def register(user, password):
     with grpc.insecure_channel(MASTER_ADDR) as ch:
         stub = MasterServiceStub(ch)
-        # Suponiendo que agregas RegisterUserRequest/RegisterUserResponse en el proto
         resp = stub.RegisterUser(RegisterUserRequest(user=user, **{"pass": password}))
         if resp.ok:
             print("Usuario creado:", user)
@@ -215,7 +212,6 @@ def main():
     ap_rmdir = sub.add_parser("rmdir", help="elimina directorio")
     ap_rmdir.add_argument("path")
 
-    # Agrega login/logout
     sub.add_parser("login", help="iniciar sesión")
     sub.add_parser("logout", help="cerrar sesión")
 
@@ -251,7 +247,7 @@ def main():
     if args.cmd == "login":
         user = input("Usuario: ")
         password = getpass.getpass("Contraseña: ")
-        # Opcional: validar credenciales con una operación segura, por ejemplo ls
+        # Validar credenciales con una operación segura, pidiendo contraseña
         try:
             auth = Auth(user=user, **{"pass": password})
             with grpc.insecure_channel(MASTER_ADDR) as ch:
@@ -269,7 +265,7 @@ def main():
         print("Sesión cerrada.")
         return
 
-    # Para las demás operaciones, usar sesión
+    # Para las demás operaciones, usar sesión, solo se pueden hacer esas operaciones con la sesión iniciada
     auth = get_auth_session()
 
     if args.cmd == "put":

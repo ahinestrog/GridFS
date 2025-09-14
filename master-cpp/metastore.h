@@ -3,7 +3,9 @@
 #include <vector>
 #include <sqlite3.h>
 #include "common.pb.h"
+
 struct FileBlockRow { std::string filename; int64_t idx{}; std::string block_id; std::string primary_dn; std::string replicas_csv; };
+
 class MetaStore {
 public:
 	explicit MetaStore(const std::string& db_path); ~MetaStore();

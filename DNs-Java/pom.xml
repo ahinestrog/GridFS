@@ -12,12 +12,10 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
-    <!-- Versiones centrales, coherentes -->
     <grpc.version>1.66.0</grpc.version>
     <protobuf.version>3.21.12</protobuf.version>
   </properties>
 
-  <!-- BOM de gRPC: fija versiones internas para TODAS las libs io.grpc -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -31,7 +29,6 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- gRPC runtime (SIN versión: la pone el BOM) -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
@@ -52,14 +49,13 @@
       <version>${protobuf.version}</version>
     </dependency>
 
-    <!-- Logging simple (opcional) -->
+    <!-- Logging -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>2.0.13</version>
     </dependency>
 
-    <!-- Anotaciones (usadas por stubs) -->
     <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>javax.annotation-api</artifactId>
@@ -68,7 +64,6 @@
   </dependencies>
 
   <build>
-    <!-- Detecta el classifier del SO para bajar protoc/protoc-gen-grpc-java -->
     <extensions>
       <extension>
         <groupId>kr.motd.maven</groupId>

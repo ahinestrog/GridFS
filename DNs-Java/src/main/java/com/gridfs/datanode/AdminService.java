@@ -21,9 +21,7 @@ import java.util.concurrent.TimeUnit;
  *   - ReplicateCmd  -> empuja un bloque a otro DataNode (DN<->DN)
  *   - DeleteBlock   -> elimina el bloque local
  *
- * NOTA: Se evita ManagedChannelBuilder.forTarget(...) para no depender del
- * esquema por defecto (p.ej. unix://). En su lugar, parseamos host:puerto y
- * usamos forAddress(host, port).
+ * NOTA: Parseamos host:puerto y usamos forAddress(host, port).
  */
 public class AdminService extends DataNodeAdminGrpc.DataNodeAdminImplBase {
 
@@ -99,7 +97,6 @@ public class AdminService extends DataNodeAdminGrpc.DataNodeAdminImplBase {
                             .setData(ByteString.copyFrom(buf, 0, n))
                             .setEof(false).build());
                 }
-                // EOF
                 up.onNext(BlockChunk.newBuilder()
                         .setBlockId(blockId).setSeq(seq).setEof(true).build());
                 up.onCompleted();
@@ -115,8 +112,6 @@ public class AdminService extends DataNodeAdminGrpc.DataNodeAdminImplBase {
         }
     }
 
-    // ---------- helpers ----------
-
     /**
      * Parsea host:puerto (con soporte para dns:/// y IPv6 entre corchetes).
      * Devuelve (host, port). Si no se puede parsear, usa localhost:defPort.
@@ -131,15 +126,12 @@ public class AdminService extends DataNodeAdminGrpc.DataNodeAdminImplBase {
 
         String addr = endpoint.trim();
 
-        // Quitar esquema si trae (p.ej. dns:///)
         int schemeIdx = addr.indexOf("://");
         if (schemeIdx >= 0) {
             addr = addr.substring(schemeIdx + 3);
         }
-        // Quitar slashes extra (dns:///host:port -> host:port)
         while (addr.startsWith("/")) addr = addr.substring(1);
 
-        // IPv6: [2001:db8::1]:50052
         if (addr.startsWith("[")) {
             int r = addr.indexOf(']');
             if (r > 0) {

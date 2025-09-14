@@ -3,14 +3,20 @@
 #include <stdexcept>
 #include <set>
 #include <algorithm>
+
 static const char* kCreate = "CREATE TABLE IF NOT EXISTS file_blocks (filename TEXT, idx INTEGER, block_id TEXT, primary_dn TEXT, replicas_csv TEXT, owner TEXT, PRIMARY KEY(filename,idx,owner));";
 static const char* kInsert = "INSERT OR REPLACE INTO file_blocks(filename,idx,block_id,primary_dn,replicas_csv,owner) VALUES(?1,?2,?3,?4,?5,?6);";
 static const char* kQuery = "SELECT filename,idx,block_id,primary_dn,replicas_csv FROM file_blocks WHERE filename=?1 AND owner=?2 ORDER BY idx;";
 static const char* kCreateDir = "CREATE TABLE IF NOT EXISTS directories (dirname TEXT, owner TEXT, PRIMARY KEY(dirname,owner));";
 static const char* kCreateUser = "CREATE TABLE IF NOT EXISTS users (user TEXT PRIMARY KEY, pass TEXT);";
+
 MetaStore::MetaStore(const std::string& db){ if(sqlite3_open(db.c_str(),&db_)!=SQLITE_OK) throw std::runtime_error("No metadb"); InitSchema(); }
+
 MetaStore::~MetaStore(){ if(db_) sqlite3_close(db_);}
+
 void MetaStore::InitSchema(){ char* err=nullptr; if(sqlite3_exec(db_,kCreate,nullptr,nullptr,&err)!=SQLITE_OK){ std::string m=err?err:"err"; sqlite3_free(err); throw std::runtime_error(m);} if(sqlite3_exec(db_,kCreateDir,nullptr,nullptr,&err)!=SQLITE_OK){ std::string m=err?err:"err"; sqlite3_free(err); throw std::runtime_error(m);} if(sqlite3_exec(db_, kCreateUser, nullptr, nullptr, &err) != SQLITE_OK){ std::string m=err?err:"err"; sqlite3_free(err); throw std::runtime_error(m);} }
+
+
 void MetaStore::SavePutPlan(const std::string& fn, const std::vector<proto::BlockAssignment>& asgs, const std::string& owner) {
     sqlite3_exec(db_, "BEGIN;", nullptr, nullptr, nullptr);
     sqlite3_stmt* s = nullptr;

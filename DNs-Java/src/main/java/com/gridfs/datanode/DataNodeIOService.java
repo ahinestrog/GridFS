@@ -17,7 +17,7 @@ public class DataNodeIOService extends DataNodeIOGrpc.DataNodeIOImplBase {
         this.storage = storage;
     }
 
-    // Cliente -> stream chunks -> ACK final
+    // Flujo: Cliente -> stream chunks -> ACK final
     @Override
     public StreamObserver<BlockChunk> writeBlock(StreamObserver<WriteAck> responseObserver) {
         return new StreamObserver<BlockChunk>() {

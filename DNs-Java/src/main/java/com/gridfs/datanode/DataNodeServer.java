@@ -15,15 +15,8 @@ import java.io.IOException;
  * - Levanta dos servidores gRPC:
  *   * IO server (cliente<->DN y DN<->DN): DataNodeIOService + ReplicationServiceImpl
  *   * Admin server (master->DN): AdminService
- * - Envía heartbeats al Master por un stream bidi (HeartbeatClient)
+ * - Envía heartbeats al Master por un stream bidireccional (HeartbeatClient)
  *
- * Variables de entorno (con defaults):
- *   DN_ID           (default: dn-1)
- *   MASTER_ADDR     (default: localhost:50051)
- *   DN_IO_PORT      (default: 50052)
- *   DN_ADMIN_PORT   (default: 50053)
- *   DN_CHUNK_SIZE   (default: 65536)
- *   DN_DATA_DIR     (default: ./data)
  */
 public class DataNodeServer {
 
@@ -41,10 +34,10 @@ public class DataNodeServer {
 
         StorageManager storage = new StorageManager(Path.of(dataDir), chunkSize);
 
-        // >>> FIX: normaliza MASTER_ADDR para evitar resolver 'unix://'
+       
         String normalizedMaster = normalizeTarget(masterAddr);
 
-        // Heartbeats al Master (usará el target normalizado)
+        // Heartbeats al Master 
         this.hb = new HeartbeatClient(nodeId, normalizedMaster, storage);
 
         // Servidor de I/O (WriteBlock, ReadBlock, FsOp) + Replicación DN<->DN
@@ -84,17 +77,16 @@ public class DataNodeServer {
         String envDataDir   = System.getenv("DN_DATA_DIR");
         String envChunkSize = System.getenv("DN_CHUNK_SIZE");
 
-        // 1) Seleccionar puertos: si no están definidos, buscar par libre empezando en 50052/50053
+        // Seleccionar puertos: si no están definidos, buscar par libre empezando en 50052/50053
         int[] pair = selectIoAdminPorts(envIoPort, envAdminPort);
         int ioPort = pair[0];
         int adminPort = pair[1];
 
-        // 2) Derivar índice y defaults coherentes: dn-{n} y /tmp/gridfs/dn{n}
         int index = Math.max(1, ((ioPort - 50052) / 2) + 1);
         String nodeId = envNodeId == null || envNodeId.isBlank() ? ("dn-" + index) : envNodeId;
         String dataDir = envDataDir == null || envDataDir.isBlank() ? ("/tmp/gridfs/dn" + index) : envDataDir;
 
-        // 3) Chunk size default
+        // Chunk size default
         int chunkSize = parseIntOrDefault(envChunkSize, 65536);
 
         DataNodeServer app = new DataNodeServer(nodeId, masterAddr, ioPort, adminPort, chunkSize, dataDir);
@@ -107,7 +99,7 @@ public class DataNodeServer {
                 "data_dir", dataDir
         ), 2000);
 
-        // Shutdown ordenado
+        
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try { app.hb.close(); } catch (Exception ignore) {}
             app.shutdown();
@@ -124,7 +116,7 @@ public class DataNodeServer {
         return (v == null || v.isBlank()) ? def : v;
     }
 
-    // ---- FIX: normaliza targets para gRPC forTarget(...) ----
+    // ---- Normaliza targets para gRPC forTarget(...) ----
     // Si no hay esquema, antepone "dns:///" (evita caer en 'unix://')
     private static String normalizeTarget(String addr) {
         if (addr == null || addr.isBlank()) return "dns:///localhost:50051";
@@ -134,9 +126,7 @@ public class DataNodeServer {
         return "dns:///" + a;
     }
 
-    // ---- Utilidades de selección de puertos y parsing ----
     private static int[] selectIoAdminPorts(String envIo, String envAdmin) {
-        // Si ambos definidos, usarlos
         if (isNonBlank(envIo) && isNonBlank(envAdmin)) {
             return new int[]{parseIntOrDefault(envIo, 50052), parseIntOrDefault(envAdmin, 50053)};
         }
@@ -182,7 +172,7 @@ public class DataNodeServer {
             }
             p += 2;
         }
-        // Fallback: usar puertos efímeros si no encontramos (muy improbable)
+        
         int io = randomFreePort();
         int admin = randomFreePort();
         return new int[]{io, admin};
@@ -210,7 +200,6 @@ public class DataNodeServer {
             ss.setReuseAddress(true);
             return ss.getLocalPort();
         } catch (IOException e) {
-            // último recurso
             return 0;
         }
     }
@@ -219,7 +208,7 @@ public class DataNodeServer {
      * DualServer: wrapper de dos io.grpc.Server
      * - Arranca ambos
      * - Espera por ambos
-     * - Implementa correctamente awaitTermination(long, TimeUnit) devolviendo boolean
+     * - Implementa correctamente awaitTermination(long, TimeUnit) devolviendo un booleano
      */
     private static class DualServer extends Server {
         private final Server a, b;
@@ -282,7 +271,6 @@ public class DataNodeServer {
 
         @Override
         public int getPort() {
-            // No hay puerto único; devolvemos -1
             return -1;
         }
 

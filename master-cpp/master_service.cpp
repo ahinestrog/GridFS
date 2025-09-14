@@ -9,8 +9,6 @@
 #include <algorithm>
 #include <map>
 
-// ...
-
 using grpc::ServerContext;
 using grpc::Status;
 using grpc::StatusCode;
@@ -18,12 +16,10 @@ using proto::MasterService;
 using proto::PutPlanRequest; using proto::PutPlanResponse; using proto::BlockAssignment;
 using proto::GetPlanRequest; using proto::GetPlanResponse; using proto::BlockLocation;
 
-// ---- SOLO IO (no admin). Sube aquí los DN IO que tengas (50052, 50054, ...).
 static std::vector<std::string> kDataNodes = {
     "127.0.0.1:50052", "127.0.0.1:50054"
 };
 
-// Normaliza host:puerto → 127.0.0.1 y fuerza IO (si vino admin 50053/50055 ⇒ 50052/50054)
 static std::string NormalizeIO(const std::string& ep) {
     auto s = ep;
     // host:port
@@ -62,7 +58,6 @@ public:
             if (!ms_->ValidateUser(auth.user(), auth.pass())) {
                 return Status(StatusCode::PERMISSION_DENIED, "Usuario o contraseña incorrectos");
             }
-            // ...existing code...
             const auto fname = req->filename();
             const int64_t blocks = (req->filesize() + req->block_size() - 1) / req->block_size();
             if (blocks == 0) {
@@ -142,8 +137,6 @@ public:
     }
 
     Status GetPlan(ServerContext*, const GetPlanRequest* req, GetPlanResponse* resp) override {
-            // Autenticación (opcional, si quieres proteger Get también)
-            // ...existing code...
             const auto fname = req->filename();
                 auto rows = ms_->GetFileLayout(fname, req->has_auth() ? req->auth().user() : "");
             if (rows.empty()) {
@@ -168,7 +161,6 @@ public:
             return Status::OK;
     }
 
-    // NUEVOS MÉTODOS
     Status Ls(ServerContext* ctx, const proto::LsRequest* req, proto::LsResponse* resp) override {
             // Autenticación
             const auto& auth = req->auth();
@@ -225,7 +217,6 @@ public:
             return Status::OK;
     }
 
-    // Eliminado: método Auth no existe en el proto
 
 private:
     std::mutex mu_;
@@ -240,8 +231,6 @@ private:
     // Método para mapear dirección IP a ID de nodo
     std::string MapIPToNodeId(const std::string& node_ip);
 };
-
-// ...
 
 std::string MasterSvcImpl::SelectBestNode(const std::vector<std::string>& available_nodes) {
     if (available_nodes.empty()) {
@@ -267,13 +256,12 @@ std::string MasterSvcImpl::SelectBestNode(const std::vector<std::string>& availa
 }
 
 std::string MasterSvcImpl::MapNodeIdToIP(const std::string& node_id) {
-    // Mapeo simple basado en el ID del nodo
+    // Mapeo basado en el ID del nodo
     if (node_id == "dn-1") {
         return "127.0.0.1:50052";
     } else if (node_id == "dn-2") {
         return "127.0.0.1:50054";
     }
-    // Agregar más mapeos según sea necesario
     return "";
 }
 

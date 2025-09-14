@@ -1,23 +1,20 @@
 cmake_minimum_required(VERSION 3.16)
 project(master_cpp LANGUAGES CXX)
 
-# ---- C++ standard & warnings -------------------------------------------------
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_options(-Wall -Wextra -Wpedantic)
 
-# ---- Hints Ubuntu/WSL (opcionales) -----------------------------------------
 list(APPEND CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake/protobuf")
 list(APPEND CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake/grpc")
 
-# ---- Dependencias: Protobuf + gRPC ------------------------------------------
+# ---- Dependencias: Protobuf + gRPC -----------------------
 find_package(Protobuf REQUIRED)          # puede resolver en modo "módulo"
 find_package(gRPC CONFIG REQUIRED)       # gRPC::grpc++
 
 message(STATUS "Protobuf libs: ${Protobuf_LIBRARIES}")
 message(STATUS "gRPC OK: gRPC::grpc++")
 
-# Compat: target moderno vs variables del módulo
 if (TARGET protobuf::libprotobuf)
   set(PROTOBUF_TARGET protobuf::libprotobuf)
 elseif (TARGET Protobuf::libprotobuf)
@@ -26,13 +23,12 @@ else()
   set(PROTOBUF_TARGET ${Protobuf_LIBRARIES})
 endif()
 
-# Herramientas necesarias
 find_program(GRPC_CPP_PLUGIN_EXECUTABLE grpc_cpp_plugin REQUIRED)
 if (NOT Protobuf_PROTOC_EXECUTABLE)
   find_program(Protobuf_PROTOC_EXECUTABLE protoc REQUIRED)
 endif()
 
-# ---- SQLite3 -----------------------------------------------------------------
+# ---- SQLite3 ---------------------------------------------------
 find_package(SQLite3 REQUIRED)
 message(STATUS "SQLite3 include dir: ${SQLite3_INCLUDE_DIRS}")
 message(STATUS "SQLite3 libs: ${SQLite3_LIBRARIES}")
@@ -44,8 +40,8 @@ else()
   include_directories(${SQLite3_INCLUDE_DIRS})
 endif()
 
-# ---- Proto files --------------------------------------------------------------
-# Todos los .proto ubicados en ../proto (hermano de master-cpp)
+# ---- Protos -------------------------------------------------
+# Todos los .proto ubicados en ../proto
 set(PROTO_ROOT "${CMAKE_SOURCE_DIR}/../proto")
 if (NOT EXISTS "${PROTO_ROOT}")
   message(FATAL_ERROR "No existe ${PROTO_ROOT}. Ajusta PROTO_ROOT en CMakeLists.txt.")
@@ -57,10 +53,9 @@ if (PROTO_FILES STREQUAL "")
 endif()
 message(STATUS "Proto files: ${PROTO_FILES}")
 
-# Directorios de includes (headers generados quedan en el binario actual)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${Protobuf_INCLUDE_DIRS})
-include_directories(${PROTO_ROOT})  # por si hay imports entre .proto
+include_directories(${PROTO_ROOT}) 
 
 # Mensajes protobuf (genera *.pb.cc/*.pb.h para TODOS los .proto)
 include(${CMAKE_ROOT}/Modules/FindProtobuf.cmake)
@@ -89,7 +84,6 @@ foreach(_pf ${PROTO_FILES})
   list(APPEND GRPC_HDRS ${_grpc_hdr})
 endforeach()
 
-# Librería con todo lo generado
 add_library(dfs_proto_lib
   ${PROTO_SRCS} ${PROTO_HDRS}
   ${GRPC_SRCS} ${GRPC_HDRS}
@@ -97,8 +91,8 @@ add_library(dfs_proto_lib
 target_include_directories(dfs_proto_lib PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 target_link_libraries(dfs_proto_lib PUBLIC gRPC::grpc++ ${PROTOBUF_TARGET})
 
-# ---- Ejecutable master --------------------------------------------------------
-# Compila TODOS los .cpp en master-cpp/ (no recursivo)
+# ---- Ejecutable master -------------------------------------
+# Compila TODOS los .cpp en master-cpp/
 file(GLOB MASTER_SOURCES CONFIGURE_DEPENDS
   "${CMAKE_SOURCE_DIR}/*.cpp"
 )

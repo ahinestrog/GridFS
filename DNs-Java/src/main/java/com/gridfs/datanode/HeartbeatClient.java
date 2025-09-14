@@ -15,8 +15,8 @@ import java.util.concurrent.*;
 
 /**
  * Cliente de heartbeats hacia el Master.
- * - Acepta MASTER_ADDR en formas: "host:port", "dns:///host:port", "127.0.0.1:50051", "[::1]:50051"
- * - Siempre construye el canal con forAddress(host, port) para evitar resolver "unix://"
+ * - Acepta MASTER_ADDR en formas: "host:port", "dns:///host:port", "127.0.0.1:50051"
+ * - Siempre construye el canal con forAddress(host, port) "
  */
 public class HeartbeatClient implements AutoCloseable {
     private final String nodeId;
@@ -43,7 +43,7 @@ public class HeartbeatClient implements AutoCloseable {
         System.out.printf("[HB] MASTER_ADDR resolved -> %s:%d%n", host, port);
 
         this.ch = ManagedChannelBuilder
-                .forAddress(host, port)   // <- clave: no usar forTarget
+                .forAddress(host, port)
                 .usePlaintext()
                 .build();
 
@@ -53,7 +53,7 @@ public class HeartbeatClient implements AutoCloseable {
     /** Inicia el stream y programa beats periódicos. */
     public void start(Map<String,String> initialKv, long periodMs) {
         this.upstream = stub.streamStatus(new StreamObserver<>() {
-            @Override public void onNext(HeartbeatAck value) { /* opcional: log acks */ }
+            @Override public void onNext(HeartbeatAck value) {}
             @Override public void onError(Throwable t) {
                 System.err.println("[HB] stream error: " + t.getMessage());
             }
@@ -62,7 +62,6 @@ public class HeartbeatClient implements AutoCloseable {
             }
         });
 
-        // Primer envío de KV iniciales (metadata del nodo)
         if (initialKv != null) {
             initialKv.forEach(this::send);
         }
@@ -71,7 +70,7 @@ public class HeartbeatClient implements AutoCloseable {
         ses.scheduleAtFixedRate(() -> {
             try { 
                 send("heartbeat", "1");
-                // Reportar espacio disponible periódicamente
+                // Reportar espacio disponible de nodos periódicamente
                 sendSpaceInfo();
             }
             catch (Exception e) { e.printStackTrace(); }
@@ -119,15 +118,6 @@ public class HeartbeatClient implements AutoCloseable {
         }
     }
 
-    // ---------- helpers ----------
-
-    /**
-     * Parsea host:puerto con soporte para:
-     *   - prefijo de esquema (dns:///)
-     *   - múltiples '/' iniciales
-     *   - IPv6 entre corchetes: [::1]:50051
-     * Si no se puede parsear, devuelve localhost:defPort.
-     */
     private static AbstractMap.SimpleEntry<String,Integer> parseHostPortSafe(String endpoint, int defPort) {
         String host = "localhost";
         int port = defPort;
@@ -141,10 +131,8 @@ public class HeartbeatClient implements AutoCloseable {
         // Quitar esquema si viene (p.ej., "dns:///" o "ipv4:///")
         int schemeIdx = addr.indexOf("://");
         if (schemeIdx >= 0) addr = addr.substring(schemeIdx + 3);
-        // Quitar slashes extra (dns:///host:port -> host:port)
         while (addr.startsWith("/")) addr = addr.substring(1);
 
-        // IPv6: [2001:db8::1]:50051
         if (addr.startsWith("[")) {
             int r = addr.indexOf(']');
             if (r > 0) {

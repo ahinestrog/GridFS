@@ -8,7 +8,6 @@
 #include "heartbeat_store.h"
 #include "metastore.h"
 
-// Implementadas en tus .cpp correspondientes:
 std::unique_ptr<proto::MasterService::Service>   MakeMasterService(MetaStore*, HeartbeatStore*);
 std::unique_ptr<proto::MasterHeartbeat::Service> MakeHeartbeatService(HeartbeatStore*);
 

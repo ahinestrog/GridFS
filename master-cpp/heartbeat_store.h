@@ -13,7 +13,7 @@ public:
         const std::string& value,
         long long ts_unix_ms);
 
-    // Nuevos métodos para consultar información de espacio
+    // Consultar información de espacio
     std::vector<std::string> GetActiveNodes();
     long long GetFreeSpace(const std::string& node_id);
     bool IsNodeActive(const std::string& node_id, long long timeout_ms = 10000);
