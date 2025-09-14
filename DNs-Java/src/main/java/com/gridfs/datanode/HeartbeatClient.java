@@ -119,7 +119,12 @@ public class HeartbeatClient implements AutoCloseable {
     }
 
     private static AbstractMap.SimpleEntry<String,Integer> parseHostPortSafe(String endpoint, int defPort) {
-        String host = "localhost";
+        // Get default host from environment variable
+        String defaultHost = System.getenv("GRIDFS_HOST");
+        if (defaultHost == null || defaultHost.isBlank()) {
+            defaultHost = "localhost";
+        }
+        String host = defaultHost;
         int port = defPort;
 
         if (endpoint == null || endpoint.isBlank()) {
@@ -155,7 +160,7 @@ public class HeartbeatClient implements AutoCloseable {
             port = defPort;
         }
 
-        if (host.isEmpty()) host = "localhost";
+        if (host.isEmpty()) host = defaultHost;
         return new AbstractMap.SimpleEntry<>(host, port);
     }
 

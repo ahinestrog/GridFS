@@ -20,6 +20,14 @@ static std::vector<std::string> kDataNodes = {
     "127.0.0.1:50052", "127.0.0.1:50054"
 };
 
+static std::vector<std::string> GetDataNodes() {
+    const char* host = std::getenv("GRIDFS_HOST");
+    if (host) {
+        return {std::string(host) + ":50052", std::string(host) + ":50054"};
+    }
+    return kDataNodes;
+}
+
 static std::string NormalizeIO(const std::string& ep) {
     auto s = ep;
     // host:port
@@ -84,9 +92,10 @@ public:
             }
             
             if (active_nodes.empty()) {
-                // Fallback a la lista estática si no hay nodos activos
-                std::vector<std::string> ios; ios.reserve(kDataNodes.size());
-                for (auto& ep : kDataNodes) ios.push_back(NormalizeIO(ep));
+                // Fallback a la lista configurada si no hay nodos activos
+                std::vector<std::string> configured_nodes = GetDataNodes();
+                std::vector<std::string> ios; ios.reserve(configured_nodes.size());
+                for (auto& ep : configured_nodes) ios.push_back(NormalizeIO(ep));
                 std::sort(ios.begin(), ios.end());
                 ios.erase(std::unique(ios.begin(), ios.end()), ios.end());
                 if (ios.empty()) return Status(StatusCode::FAILED_PRECONDITION, "Sin DataNodes registrados (IO)");
@@ -256,20 +265,28 @@ std::string MasterSvcImpl::SelectBestNode(const std::vector<std::string>& availa
 }
 
 std::string MasterSvcImpl::MapNodeIdToIP(const std::string& node_id) {
+    // Get host from environment variable
+    const char* host = std::getenv("GRIDFS_HOST");
+    std::string host_str = host ? std::string(host) : "127.0.0.1";
+    
     // Mapeo basado en el ID del nodo
     if (node_id == "dn-1") {
-        return "127.0.0.1:50052";
+        return host_str + ":50052";
     } else if (node_id == "dn-2") {
-        return "127.0.0.1:50054";
+        return host_str + ":50054";
     }
     return "";
 }
 
 std::string MasterSvcImpl::MapIPToNodeId(const std::string& node_ip) {
+    // Get host from environment variable
+    const char* host = std::getenv("GRIDFS_HOST");
+    std::string host_str = host ? std::string(host) : "127.0.0.1";
+    
     // Mapeo inverso de IP a ID de nodo
-    if (node_ip == "127.0.0.1:50052") {
+    if (node_ip == host_str + ":50052") {
         return "dn-1";
-    } else if (node_ip == "127.0.0.1:50054") {
+    } else if (node_ip == host_str + ":50054") {
         return "dn-2";
     }
     return "";

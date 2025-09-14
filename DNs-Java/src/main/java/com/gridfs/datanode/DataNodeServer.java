@@ -69,7 +69,8 @@ public class DataNodeServer {
 
     public static void main(String[] args) throws Exception {
         // Leemos MASTER_ADDR y dejamos que el resto se autocalcule si no está en env
-        String masterAddr = getenv("MASTER_ADDR", "localhost:50051");
+        String defaultHost = getenv("GRIDFS_HOST", "localhost");
+        String masterAddr = getenv("MASTER_ADDR", defaultHost + ":50051");
 
         String envIoPort    = System.getenv("DN_IO_PORT");
         String envAdminPort = System.getenv("DN_ADMIN_PORT");
@@ -119,7 +120,10 @@ public class DataNodeServer {
     // ---- Normaliza targets para gRPC forTarget(...) ----
     // Si no hay esquema, antepone "dns:///" (evita caer en 'unix://')
     private static String normalizeTarget(String addr) {
-        if (addr == null || addr.isBlank()) return "dns:///localhost:50051";
+        if (addr == null || addr.isBlank()) {
+            String defaultHost = getenv("GRIDFS_HOST", "localhost");
+            return "dns:///" + defaultHost + ":50051";
+        }
         String a = addr.trim();
         // soporta IPv6 con corchetes [::1]:50051
         if (a.contains("://")) return a; // ya trae esquema

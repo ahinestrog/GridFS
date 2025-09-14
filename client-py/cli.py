@@ -26,13 +26,15 @@ from datanode_pb2_grpc import DataNodeIOStub
 
 
 
-MASTER_ADDR = os.environ.get("MASTER_ADDR", "127.0.0.1:50051")
+MASTER_ADDR = os.environ.get("MASTER_ADDR", os.environ.get("GRIDFS_HOST", "127.0.0.1") + ":50051")
 BLOCK_SIZE  = int(os.environ.get("CHUNK_SIZE", 1024*1024))  # tamaño por bloque por defecto
 STREAM_CHUNK = 256 * 1024  # tamaño de los fragmentos que se envían por streaming
 
 def _parse_host_port(s: str, default_port: int = 50052):
     """Admite 'dns:///host:port', 'host:port', '[::1]:50052', 'localhost:50052'."""
-    if not s: return ("127.0.0.1", default_port)
+    if not s: 
+        default_host = os.environ.get("GRIDFS_HOST", "127.0.0.1")
+        return (default_host, default_port)
     t = s.strip()
     i = t.find("://")
     if i >= 0:
@@ -52,7 +54,8 @@ def _parse_host_port(s: str, default_port: int = 50052):
         else:
             host, port = t, default_port
     # normalizaciones
-    if host in ("localhost", "::1", "0:0:0:0:0:0:0:1"): host = "127.0.0.1"
+    if host in ("localhost", "::1", "0:0:0:0:0:0:0:1"): 
+        host = os.environ.get("GRIDFS_HOST", "127.0.0.1")
     # workaround: si viene puerto admin (50053/50055) usa IO (puerto-1)
     if port in (50053, 50055): port -= 1
     return host, port
@@ -68,7 +71,8 @@ def _target_from_assignment(asg):
             try: port = int(port)
             except: pass
             return _parse_host_port(f"{host}:{port}")
-    return ("127.0.0.1", 50052)
+    default_host = os.environ.get("GRIDFS_HOST", "127.0.0.1")
+    return (default_host, 50052)
 
 def put(path: str, replication: int = 2, auth=None):
     size = os.path.getsize(path)

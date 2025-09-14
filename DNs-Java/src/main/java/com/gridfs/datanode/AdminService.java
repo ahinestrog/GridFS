@@ -117,7 +117,12 @@ public class AdminService extends DataNodeAdminGrpc.DataNodeAdminImplBase {
      * Devuelve (host, port). Si no se puede parsear, usa localhost:defPort.
      */
     private static AbstractMap.SimpleEntry<String, Integer> parseHostPort(String endpoint, int defPort) {
-        String host = "localhost";
+        // Get default host from environment variable
+        String defaultHost = System.getenv("GRIDFS_HOST");
+        if (defaultHost == null || defaultHost.isBlank()) {
+            defaultHost = "localhost";
+        }
+        String host = defaultHost;
         int port = defPort;
 
         if (endpoint == null || endpoint.isBlank()) {
@@ -151,7 +156,7 @@ public class AdminService extends DataNodeAdminGrpc.DataNodeAdminImplBase {
             try { port = Integer.parseInt(addr.substring(lastColon + 1).trim()); } catch (Exception ignore) { port = defPort; }
         } else {
             // solo host
-            host = addr.isBlank() ? "localhost" : addr;
+            host = addr.isBlank() ? defaultHost : addr;
             port = defPort;
         }
         return new AbstractMap.SimpleEntry<>(host, port);
